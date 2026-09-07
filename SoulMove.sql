@@ -60,3 +60,13 @@ CREATE TABLE TB_VIAGEM (
         FOREIGN KEY (usuario_id)
         REFERENCES TB_USUARIO (usuario_id)
 );
+
+CREATE TABLE TB_MISSAO (
+    missao_id     INTEGER       GENERATED ALWAYS AS IDENTITY,
+    pontos_missao INTEGER       NOT NULL,
+    titulo        VARCHAR2(150) NOT NULL,
+    descricao     VARCHAR2(150) NOT NULL,
+    tipo_missao   VARCHAR2(30)  NOT NULL,
+    CONSTRAINT TB_MISSAO_PK
+        PRIMARY KEY (missao_id)
+);
