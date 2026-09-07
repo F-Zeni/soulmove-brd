@@ -72,20 +72,6 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="viagem_id" id="5B034081-151B-2965-83E3-F7E5AE6FF30A">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-01 19:33:14 UTC</createdTime>
-<generatorID>F118B4E0-8ABB-4E0C-AAC5-1618D01FF359</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
-</engineerTo>
-<referedAttribute>885AA627-CFFB-269B-F58D-7CFF53AE69E4</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="missao_id" id="97CDC166-0F31-49D2-B30B-14CBE9EF06D2">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 19:33:26 UTC</createdTime>

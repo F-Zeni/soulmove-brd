@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="54B46967-0E2F-70FA-FCF8-DC0AF16D1E13" name="TB_RECARGA">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:18:55 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="recarga_id" id="5F529438-3C92-5D84-2061-F04463C4358D">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:19:35 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor_recarga" id="DD4059E1-BA86-835E-3A02-A74EB2CCA2D2">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:19:47 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>10</beginValue>
+<endValue>200</endValue>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+<Attribute name="codigo_barras" id="31123000-183F-5764-2484-2953E18FE99E">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:21:21 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="status_recarga" id="7B740D7F-3DD1-19BA-343B-ECE1D1EE0C35">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:21:46 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<listOfValues>
+<valueDef value="creditado" description=""/>
+<valueDef value="pendente" description=""/>
+<valueDef value="recusado" description=""/>
+</listOfValues>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_solicitacao" id="8D41CEA3-A89C-6D6E-A434-D498204B7083">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:05:06 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_pagamento" id="01CFE183-1ABA-FE87-A45F-6F89F69769E7">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:05:22 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_credito" id="7969AED7-A7AD-F419-2BA4-AC5E7F1B3D73">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:05:32 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="usuario_id" id="3BEEFA43-0B69-F776-FE7B-3B470C6D43E1">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:15:07 UTC</createdTime>
+<generatorID>8C3546F7-394B-EE2C-1166-B69E414EAD31</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>879300AA-A05F-F1C9-86C0-908044B2334B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="22343EA2-C731-3035-D556-BEBB7D1EEBA4" name="TB_RECARGA PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:19:46 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5F529438-3C92-5D84-2061-F04463C4358D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,146 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3AE945CD-3CA3-EBB3-2905-C83364D1C63C" name="TB_RECARGA">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>54B46967-0E2F-70FA-FCF8-DC0AF16D1E13</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="recarga_id" id="F8A92248-979F-31EE-DA31-0D5B5C444A42">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>5F529438-3C92-5D84-2061-F04463C4358D</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor_recarga" id="BE6830BC-9FA8-1A54-186B-447FE3FEA12C">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>DD4059E1-BA86-835E-3A02-A74EB2CCA2D2</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>10</beginValue>
+<endValue>200</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="codigo_barras" id="6B6A46E5-7757-23FA-06ED-95B8499B102D">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>31123000-183F-5764-2484-2953E18FE99E</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status_recarga" id="1F6943F6-BDF7-6420-DD8B-53D8093D0C7A">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>7B740D7F-3DD1-19BA-343B-ECE1D1EE0C35</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<listOfValues>
+<valueDef value="creditado" description=""/>
+<valueDef value="pendente" description=""/>
+<valueDef value="recusado" description=""/>
+</listOfValues>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_solicitacao" id="C8228EA0-5171-FA37-B604-1BE6A450A9DC">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>8D41CEA3-A89C-6D6E-A434-D498204B7083</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_pagamento" id="D9EF73E2-6659-3CD2-A658-F861F136E9E7">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>01CFE183-1ABA-FE87-A45F-6F89F69769E7</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_credito" id="A4ECF3E1-ED69-416B-BAD9-36A8D82ACA0A">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>7969AED7-A7AD-F419-2BA4-AC5E7F1B3D73</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usuario_id" id="75D38292-F5AE-282A-20CC-D8186B44E331">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>3BEEFA43-0B69-F776-FE7B-3B470C6D43E1</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="38416431-A0E6-9105-45A0-C76416E0202E" referredColumn="82957B40-2D31-BD18-94E8-D04FF5A55E32"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5BFBA3BD-B3EA-D156-B14E-0551AAC6CE7C" name="TB_RECARGA_PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>22343EA2-C731-3035-D556-BEBB7D1EEBA4</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F8A92248-979F-31EE-DA31-0D5B5C444A42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BC475E56-E91C-C7F5-7B79-ED650A9FFBCE" name="TB_RECARGA_USUARIO_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>8C3546F7-394B-EE2C-1166-B69E414EAD31</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="75D38292-F5AE-282A-20CC-D8186B44E331"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

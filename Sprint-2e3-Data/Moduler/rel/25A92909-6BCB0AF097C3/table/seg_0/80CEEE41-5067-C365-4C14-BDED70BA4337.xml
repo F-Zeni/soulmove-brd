@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="80CEEE41-5067-C365-4C14-BDED70BA4337" name="TB_CARTEIRA">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>D06C9E0B-DE49-FE12-C082-6ED8072C9386</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="carteira_id" id="923402CF-B91F-337C-92F0-F370744AF5B5">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>0FB1285A-BD34-FA6A-FD8F-59F7B5D3B44C</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="saldo_mobilidade" id="D724CF13-7E71-4D84-FF56-01A22CDF6696">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>C4F34471-0CD3-E375-1D18-8F6D0AA1B044</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usuario_id" id="5B71E4A3-51B1-8D77-1571-9BED5D91FFB1">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>D3ACB4AA-DD4D-7E5D-0788-94FA75357F85</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B43C93CB-0080-4961-3020-AB698F856D07" referredColumn="82957B40-2D31-BD18-94E8-D04FF5A55E32"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1159D675-3F74-3302-366D-2AE9C6A051A3" name="TB_CARTEIRA_PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>5E150DE0-CE3D-A9E2-9287-CC66992872B4</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="923402CF-B91F-337C-92F0-F370744AF5B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="705988DD-D6FD-D2D6-2943-7687DD0695DA" name="TB_CARTEIRA_usuario_id_UN">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>30609EB9-3BC6-D5FD-A66A-496057D491C6</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B71E4A3-51B1-8D77-1571-9BED5D91FFB1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F57A3DDF-BBBE-2EF5-379D-01C268D2C665" name="TB_CARTEIRA_USUARIO_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>ED943A2C-22D1-6B23-FBA9-1F521901217D</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B71E4A3-51B1-8D77-1571-9BED5D91FFB1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D06C9E0B-DE49-FE12-C082-6ED8072C9386" name="TB_CARTEIRA">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:08:32 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="carteira_id" id="0FB1285A-BD34-FA6A-FD8F-59F7B5D3B44C">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:08:41 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="saldo_mobilidade" id="C4F34471-0CD3-E375-1D18-8F6D0AA1B044">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:09:18 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="usuario_id" id="D3ACB4AA-DD4D-7E5D-0788-94FA75357F85">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:10:38 UTC</createdTime>
+<generatorID>ED943A2C-22D1-6B23-FBA9-1F521901217D</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>879300AA-A05F-F1C9-86C0-908044B2334B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5E150DE0-CE3D-A9E2-9287-CC66992872B4" name="TB_CARTEIRA PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:08:52 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0FB1285A-BD34-FA6A-FD8F-59F7B5D3B44C</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="30609EB9-3BC6-D5FD-A66A-496057D491C6" name="TB_CARTEIRA_UK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:11:33 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<newElementsIDs>D3ACB4AA-DD4D-7E5D-0788-94FA75357F85</newElementsIDs>
+<usedAttributes>
+<attributeRef>D3ACB4AA-DD4D-7E5D-0788-94FA75357F85</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

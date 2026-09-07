@@ -80,6 +80,18 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="pontos_gerados" id="F7C528E8-F576-429F-403E-6D7117663391">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 20:16:05 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="3FA921C9-B755-A92F-1ADF-5F2E43CBAEAF" name="TB_PONTOS PK">

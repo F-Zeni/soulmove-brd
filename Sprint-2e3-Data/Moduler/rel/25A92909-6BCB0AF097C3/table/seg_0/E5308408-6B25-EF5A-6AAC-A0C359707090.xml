@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="usuario_id" id="D9352DF0-718E-C019-DC35-43AB5DAD1D6A">
+<Column name="TB_USUARIO_usuario_id" id="D9352DF0-718E-C019-DC35-43AB5DAD1D6A">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>3B0F99FD-5AE4-93BE-7977-F9933D16B4AD</generatorID>
@@ -67,6 +67,17 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pontos_gerados" id="DAF9E412-F3E5-8FAF-F9EA-7CEBDE49284B">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>F7C528E8-F576-429F-403E-6D7117663391</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>

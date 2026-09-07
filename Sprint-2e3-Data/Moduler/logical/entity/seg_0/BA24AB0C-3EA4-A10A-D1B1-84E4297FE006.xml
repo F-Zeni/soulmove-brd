@@ -53,20 +53,6 @@
 <defaultValue>0</defaultValue>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="creditos" id="D4230734-5921-695C-0B71-37A9FDCF6651">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-01 18:50:34 UTC</createdTime>
-<ownerDesignName>Moduler</ownerDesignName>
-<engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>6</dataTypePrecision>
-<dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,6,2</ownDataTypeParameters>
-</Attribute>
 <Attribute name="email" id="D7DBF8CB-4BA2-865F-74BA-0A2E5DF190AF">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 18:50:34 UTC</createdTime>

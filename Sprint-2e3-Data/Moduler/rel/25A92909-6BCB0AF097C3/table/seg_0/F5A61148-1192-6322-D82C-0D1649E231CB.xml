@@ -142,7 +142,7 @@
 <colUsage columnID="6D3CE332-4169-10C6-8E49-C8E4D6D85AD3"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="49B63370-F75A-A719-86FB-A58E2C5DE8A1" name="TB_VIAGEM_TB_USUARIO_FK">
+<ind_PK_UK id="49B63370-F75A-A719-86FB-A58E2C5DE8A1" name="TB_VIAGEM_USUARIO_FK">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>9359B612-2291-D637-401A-2FE93ED122A3</generatorID>

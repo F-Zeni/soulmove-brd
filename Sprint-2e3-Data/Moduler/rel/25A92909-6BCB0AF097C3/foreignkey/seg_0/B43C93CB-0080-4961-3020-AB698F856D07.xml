@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A890C0AD-6AE7-07B2-D185-FCDAB5782723" containerWithKeyObject="F5A61148-1192-6322-D82C-0D1649E231CB" localFKIndex="49B63370-F75A-A719-86FB-A58E2C5DE8A1" name="TB_VIAGEM_USUARIO_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B43C93CB-0080-4961-3020-AB698F856D07" containerWithKeyObject="80CEEE41-5067-C365-4C14-BDED70BA4337" localFKIndex="F57A3DDF-BBBE-2EF5-379D-01C268D2C665" name="TB_CARTEIRA_USUARIO_FK">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>9359B612-2291-D637-401A-2FE93ED122A3</generatorID>
+<createdTime>2026-09-07 21:24:15 UTC</createdTime>
+<generatorID>ED943A2C-22D1-6B23-FBA9-1F521901217D</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <referredTableLongName>TB_USUARIO</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
