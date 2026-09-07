@@ -70,3 +70,23 @@ CREATE TABLE TB_MISSAO (
     CONSTRAINT TB_MISSAO_PK
         PRIMARY KEY (missao_id)
 );
+
+CREATE TABLE TB_USUARIO_MISSAO (
+    pontuacao_recebida INTEGER      NOT NULL,
+    usuario_id         INTEGER      NOT NULL,
+    missao_id          INTEGER      NOT NULL,
+    viagem_id          INTEGER,
+    status_missao      VARCHAR2(30) NOT NULL,
+    data_cumprimento   DATE         NOT NULL,
+    CONSTRAINT TB_USUARIO_MISSAO_PK
+        PRIMARY KEY (usuario_id, missao_id),
+    CONSTRAINT TB_USUARIO_MISSAO_USU_FK
+        FOREIGN KEY (usuario_id)
+        REFERENCES TB_USUARIO (usuario_id),
+    CONSTRAINT TB_USUARIO_MISSAO_VIA_FK
+        FOREIGN KEY (viagem_id)
+        REFERENCES TB_VIAGEM (viagem_id),
+    CONSTRAINT TB_USUARIO_MISSAO_MIS_FK
+        FOREIGN KEY (missao_id)
+        REFERENCES TB_MISSAO (missao_id)
+);
