@@ -29,6 +29,30 @@ CREATE TABLE TB_CARTEIRA (
         CHECK (saldo_mobilidade >= 0)
 );
 
+CREATE TABLE TB_RECARGA (
+    recarga_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    usuario_id INTEGER NOT NULL,
+    valor_recarga NUMERIC(6,2) NOT NULL,
+    codigo_barras VARCHAR2(100) NOT NULL,
+    status_recarga VARCHAR2(30) NOT NULL,
+    data_solicitacao DATE NOT NULL,
+    data_pagamento DATE,
+    data_credito DATE,
+    CONSTRAINT TB_RECARGA_PK
+        PRIMARY KEY (recarga_id),
+    CONSTRAINT TB_RECARGA_USUARIO_FK
+        FOREIGN KEY (usuario_id)
+        REFERENCES TB_USUARIO (usuario_id),
+    CONSTRAINT TB_RECARGA_VALOR_CK
+        CHECK (valor_recarga BETWEEN 10 and 200),
+    CONSTRAINT TB_RECARGA_STATUS_CK
+        CHECK (status_recarga IN (
+            'pendente',
+            'creditado',
+            'recusado'
+        ))
+);
+
 CREATE TABLE TB_PONTOS (
     pontos_id        INTEGER      GENERATED ALWAYS AS IDENTITY,
     usuario_id       INTEGER      NOT NULL,
