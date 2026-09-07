@@ -43,3 +43,20 @@ CREATE TABLE TB_USUARIO_CONQUISTA (
         FOREIGN KEY (conquista_id)
         REFERENCES TB_CONQUISTA (conquista_id)
 );
+
+CREATE TABLE TB_VIAGEM (
+    viagem_id           INTEGER       GENERATED ALWAYS AS IDENTITY,
+    usuario_id          INTEGER       NOT NULL,
+    origem              VARCHAR2(250) NOT NULL,
+    destino             VARCHAR2(250) NOT NULL,
+    tipo_veiculo        VARCHAR2(50)  NOT NULL,
+    carbono_economizado NUMERIC(6,2)  NOT NULL,
+    carbono_emitido     NUMERIC(6,2)  NOT NULL,
+    km_percorrio        NUMERIC(4,3)  NOT NULL,
+    data_viagem         DATE          NOT NULL,
+    CONSTRAINT TB_VIAGEM_PK
+        PRIMARY KEY (viagem_id),
+    CONSTRAINT TB_VIAGEM_USUARIO_FK
+        FOREIGN KEY (usuario_id)
+        REFERENCES TB_USUARIO (usuario_id)
+);
