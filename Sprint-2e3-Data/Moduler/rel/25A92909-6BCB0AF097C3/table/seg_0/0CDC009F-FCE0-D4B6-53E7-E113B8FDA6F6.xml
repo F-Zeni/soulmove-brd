@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0CDC009F-FCE0-D4B6-53E7-E113B8FDA6F6" name="TB_MISSAO">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>D20AAA2C-DF77-5F1D-8015-E865C27DEE23</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="missao_id" id="12A77889-BBDD-ED66-4772-97E47C24B25F">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>5B8EC139-7DAB-63DE-DB07-D9E3FA7E4758</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="titulo" id="E30276C5-A5A2-28D1-6F34-1CF9B5D0BB06">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>920F89A7-2BD6-D0E9-BC0B-C8B41E3FD57B</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_missao" id="5693F45A-1FBD-5F7A-990C-F603A7410516">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>FF9FE77B-317D-AC1E-20F6-B805AE921ABF</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descricao" id="C92964FD-CA00-0F53-1B9F-15AD5C9280C2">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>80556D8C-144C-BFAF-4E29-F2C45EA90EEC</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pontos_missao" id="6C01CB5F-F242-9231-F050-FD8F8994F452">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>2F56CE6C-DD10-1067-4891-5F31ADD35CFA</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="xp" id="DBB7B4FD-9FF9-6840-AB63-A93E3963261C">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>5F05E22F-CFEC-8CBD-65DB-DA6383C76D9C</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0988FC4C-C5DD-DDEC-4346-4D7A9B6563CD" name="TB_MISSAO_PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>489302B6-000E-ABED-D95E-50AE2380F0B6</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12A77889-BBDD-ED66-4772-97E47C24B25F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

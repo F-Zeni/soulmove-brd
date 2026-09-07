@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0EEDAD38-135F-ED3B-F3BB-89B073B06509" name="TB_USUARIO_MISSAO">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 18:50:18 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="data_cumprimento" id="8C12958E-45CD-1975-9BEB-364828025475">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 19:05:02 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="status_missao" id="F2055FC1-BC79-4352-54E3-CEE79B8EEC81">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 19:05:10 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<listOfValues>
+<valueDef value="cancelada" description=""/>
+<valueDef value="concluida" description=""/>
+<valueDef value="em_andamento" description=""/>
+<valueDef value="pendente" description=""/>
+</listOfValues>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pontuacao_recebida" id="7C8AE794-FC86-2D52-C95B-57A641050CCC">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 19:05:29 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="usuario_id" id="A85C8921-E8D9-C09A-91BA-7DF42DE9AC61">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 19:32:56 UTC</createdTime>
+<generatorID>9BBF51AA-2472-B99B-2369-9271B2405DD3</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>879300AA-A05F-F1C9-86C0-908044B2334B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="viagem_id" id="5B034081-151B-2965-83E3-F7E5AE6FF30A">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 19:33:14 UTC</createdTime>
+<generatorID>F118B4E0-8ABB-4E0C-AAC5-1618D01FF359</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>885AA627-CFFB-269B-F58D-7CFF53AE69E4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="missao_id" id="97CDC166-0F31-49D2-B30B-14CBE9EF06D2">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 19:33:26 UTC</createdTime>
+<generatorID>C3A7F008-3D57-10E1-5A7D-A5846959CF10</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>5B8EC139-7DAB-63DE-DB07-D9E3FA7E4758</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="374E891C-49D6-1A72-1857-0F24974CCC78" name="TB_USUARIO_MISSAO_PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 20:28:06 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<newElementsIDs>A85C8921-E8D9-C09A-91BA-7DF42DE9AC61,97CDC166-0F31-49D2-B30B-14CBE9EF06D2</newElementsIDs>
+<usedAttributes>
+<attributeRef>A85C8921-E8D9-C09A-91BA-7DF42DE9AC61</attributeRef>
+<attributeRef>97CDC166-0F31-49D2-B30B-14CBE9EF06D2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

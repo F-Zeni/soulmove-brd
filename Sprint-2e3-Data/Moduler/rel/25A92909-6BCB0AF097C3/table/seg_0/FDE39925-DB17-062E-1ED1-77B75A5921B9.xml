@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FDE39925-DB17-062E-1ED1-77B75A5921B9" name="TB_USUARIO">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>BA24AB0C-3EA4-A10A-D1B1-84E4297FE006</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="usuario_id" id="3E1B79EA-958C-1B98-5712-45C0531F3D39">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>879300AA-A05F-F1C9-86C0-908044B2334B</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="81DF5F8C-C112-284B-C9BD-5039ED8F1C06">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>C460B737-546B-EC7C-0281-968D3BFB0369</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pontos" id="20C8AF69-7B6F-26F0-1224-3640642FBEAC">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>3D7EAB6D-EB72-3A1A-491A-6BAAD0AB8486</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="creditos" id="B0200E46-B36C-BEFF-C3E4-2DE7DC79A07C">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>D4230734-5921-695C-0B71-37A9FDCF6651</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="A833C7F3-8413-9C81-7AB9-2FB1CF79DCC7">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>D7DBF8CB-4BA2-865F-74BA-0A2E5DF190AF</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_cadastro" id="E685B4EB-B6CA-C881-895F-72905175FD2F">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>435C0F24-02E6-2179-4B84-0D6EDFB1964F</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="xp" id="7F7A78F5-2D42-1B66-BCC9-F7232470464B">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>07FBFF74-6918-B9A9-A228-1AC06B061E80</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F2125739-B127-CB43-8D59-E91D97259D38" name="TB_USUARIO_PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>C38869C8-405C-8E65-00A4-5522141A9D40</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3E1B79EA-958C-1B98-5712-45C0531F3D39"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9097ECD5-3241-378D-657B-8ECE23C3D25B" name="TB_USUARIO_email_UN">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>6E3D1B4C-8889-ADC4-1E2B-D38A19B27296</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A833C7F3-8413-9C81-7AB9-2FB1CF79DCC7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

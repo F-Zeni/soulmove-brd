@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1A0C27F2-EE1A-DB6E-5CAD-8F02477E7E2A" containerWithKeyObject="3CA359F6-9B59-9ABB-4437-25C559F769A3" localFKIndex="408B4A93-8700-B8B5-D3F4-279E3AD32CA6" name="TB_USUARIO_MISSAO_VIAGEM_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>F118B4E0-8ABB-4E0C-AAC5-1618D01FF359</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<referredTableLongName>TB_VIAGEM</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4F724FCE-90E3-7EDA-EAE0-DC3FB9F872F1</referredTableID>
+<keyObject>E0D905EC-2A8B-A483-0946-B0D925704DE1</keyObject>
+<referredKeyID>E0D905EC-2A8B-A483-0946-B0D925704DE1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>viagem_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

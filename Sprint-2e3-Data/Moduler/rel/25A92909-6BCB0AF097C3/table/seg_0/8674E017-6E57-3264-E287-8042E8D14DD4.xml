@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8674E017-6E57-3264-E287-8042E8D14DD4" name="TB_PONTOS">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>9BCA0FF4-0C17-3D93-B633-70549E3DF850</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="pontos_id" id="A34607E8-E16B-D500-20D2-FA29F3121D24">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>847BACCE-3EB8-7D7F-C6D9-4F847507A755</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_pontuacao" id="5EDB5980-4691-357F-BEF1-E8A25CE6C1B7">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>3E50C39B-3EBC-340E-6E5C-44CE09B130F3</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="creditos_gerados" id="2B2557B3-2A6B-2E55-8FE0-5CBED1745163">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>39BCF423-9ABB-89A2-D1A6-62EE4761D9F1</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usuario_id" id="5C92C770-ADED-EB8D-6496-6EFFC771F0C9">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>3B0F99FD-5AE4-93BE-7977-F9933D16B4AD</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AA2BA901-6053-F25E-08E4-F80B3059973A" referredColumn="3E1B79EA-958C-1B98-5712-45C0531F3D39"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9AE4B0F5-A4B4-8EFA-50EA-81B1BD339257" name="TB_PONTOS_USUARIO_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>33E5C692-3DF7-5C59-B5B9-562DDBB7B83D</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C92C770-ADED-EB8D-6496-6EFFC771F0C9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="D14E26F5-D44B-3E1B-ED2E-8EEB822E330F" mainViewID="156C7F42-55AC-1BF8-94B2-E225E9EA1D41">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 18:49:05 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

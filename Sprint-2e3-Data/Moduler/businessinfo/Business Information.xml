@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="6BC0A336-0059-8A2F-0EE8-BBD823532A29">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 18:49:05 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

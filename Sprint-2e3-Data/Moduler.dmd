@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Moduler" id="5861F65B-0DB8-03C2-8287-B1AA78B24C27" version="3.5">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 18:49:05 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>5861F65B-0DB8-03C2-8287-B1AA78B24C27</designId>
+</OSDM_Design>

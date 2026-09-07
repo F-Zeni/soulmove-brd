@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_3" directorySegmentName="seg_0" id="F118B4E0-8ABB-4E0C-AAC5-1618D01FF359">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 19:33:14 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<sourcePk>93F07090-0D99-63CD-4624-2C1294CC6C28</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>311E5971-9ABC-BB5E-6314-13E917ECFBB8</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>0EEDAD38-135F-ED3B-F3BB-89B073B06509</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

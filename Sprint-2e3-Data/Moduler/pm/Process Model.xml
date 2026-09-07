@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="EAACD252-6E6B-3266-E69A-EF1CA6490730">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 18:49:05 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

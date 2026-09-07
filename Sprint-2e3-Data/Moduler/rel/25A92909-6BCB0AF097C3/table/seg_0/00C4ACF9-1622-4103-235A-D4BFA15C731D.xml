@@ -1,0 +1,142 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="00C4ACF9-1622-4103-235A-D4BFA15C731D" name="TB_COMPROVANTE">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>E5B6D1E7-683C-CEF6-C5F3-416881575472</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="comprovante_id" id="E1A30D3C-E235-4931-6E0B-7465C795907A">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>546DF880-A2B9-8C22-2E66-77F9A0CA82F1</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="arquivo" id="92D540EE-AF2F-8339-7580-A41F5A72C1D0">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>2880D8A3-47C0-1B9D-CAC7-98D96AF0A4BF</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT010</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_envio" id="58EE002F-B5D4-3BCD-C51F-55D7F9421C1A">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>10B929E7-D4AA-0682-CF44-66A0A20F9CBD</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status_validacao" id="8BC0748E-9D00-E00A-13E0-F87B4A500A11">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>5FAE4EC0-B06A-0B21-DBBD-EBAE965010E2</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<listOfValues>
+<valueDef value="APROVADO" description=""/>
+<valueDef value="PENDENTE" description=""/>
+<valueDef value="REPROVADO" description=""/>
+</listOfValues>
+<defaultValue>PENDENTE</defaultValue>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_validacao" id="9029FF27-256E-459D-A03C-087C06F5F5B2">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>D9A39B5B-86FE-DC33-1442-3BA946B44674</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usuario_id" id="4096EDD2-CD4D-E635-4132-5DC4656A5478">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>43277CF8-7A90-3BEF-4D93-D8281B1A5BA3</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A6740739-D2E0-DD2D-C239-B4D8D58309E0" referredColumn="72E71B8A-F8D2-A211-F8A1-C705D45AFAC1"/>
+</associations>
+</Column>
+<Column name="missao_id" id="A28857D1-D029-D90B-BA8B-F8F49AC3C85B">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>28F8D5C4-1E37-4D33-3568-BED234CCF2D0</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A6740739-D2E0-DD2D-C239-B4D8D58309E0" referredColumn="DA0CB99B-A8FE-7C1D-A22E-65A9FCCC4DFB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="34D40EB8-7B55-2BA7-18BA-44B5A5A74AD5" name="TB_COMPROVANTE_PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>8F840AB5-B4DA-BB34-D6AF-EF08DFAEA226</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1A30D3C-E235-4931-6E0B-7465C795907A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0B70DABC-E7A9-CA20-40A3-2D2A832DAF53" name="TB_USUARIO_MISSAO_id">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>2CB5DC6B-74C2-E77C-0E3F-3CEC22AE3D1E</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4096EDD2-CD4D-E635-4132-5DC4656A5478"/>
+<colUsage columnID="A28857D1-D029-D90B-BA8B-F8F49AC3C85B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BAC6CCF0-4D8F-3933-53D5-C0DC8684191A" name="TB_USUARIO_MISSAO_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>9129A718-9420-FAF8-1113-D1A71CBECB9B</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4096EDD2-CD4D-E635-4132-5DC4656A5478"/>
+<colUsage columnID="A28857D1-D029-D90B-BA8B-F8F49AC3C85B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

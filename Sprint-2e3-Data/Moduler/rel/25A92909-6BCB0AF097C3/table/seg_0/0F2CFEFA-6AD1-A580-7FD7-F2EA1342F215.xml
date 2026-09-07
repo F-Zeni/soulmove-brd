@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0F2CFEFA-6AD1-A580-7FD7-F2EA1342F215" name="TB_USUARIO_COMUNIDADE">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>6BF7BE87-324C-6D1D-3C2C-F8FF36823F2C</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="usuario_id" id="3B733038-9C52-23A1-4BD5-5863F35AC393">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>04825771-9705-BD4F-594F-5D7A09CB8F02</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1D2F30AE-241A-A7D8-87DC-A9B6BE226D95" referredColumn="3E1B79EA-958C-1B98-5712-45C0531F3D39"/>
+</associations>
+</Column>
+<Column name="comunidade_id" id="0C25824E-A094-41D4-DD4D-8F9322093783">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>C166FDCB-31A4-8F86-475D-A2CCDA9BBED2</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6C89BECC-4116-78BD-6D5E-A6066A98AD51" referredColumn="3B6EF9B9-23C7-30EA-6013-DB53A995A3EE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="962D57D9-4272-1A38-3EAD-1796484F6794" name="TB_USUARIO_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>2E85A954-C403-CDE3-A248-A65584DB454D</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3B733038-9C52-23A1-4BD5-5863F35AC393"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BF8697F1-B374-1EB1-02A0-65E51BCD4B95" name="TB_COMUNIDADE_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<generatorID>668DD295-4ED9-080E-BF33-02DBE6379350</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0C25824E-A094-41D4-DD4D-8F9322093783"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

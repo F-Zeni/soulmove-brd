@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E5B6D1E7-683C-CEF6-C5F3-416881575472" name="TB_COMPROVANTE">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 20:20:34 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="comprovante_id" id="546DF880-A2B9-8C22-2E66-77F9A0CA82F1">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 20:20:42 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="arquivo" id="2880D8A3-47C0-1B9D-CAC7-98D96AF0A4BF">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 20:21:10 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT010</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_envio" id="10B929E7-D4AA-0682-CF44-66A0A20F9CBD">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 20:21:25 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="status_validacao" id="5FAE4EC0-B06A-0B21-DBBD-EBAE965010E2">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 20:21:34 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<listOfValues>
+<valueDef value="APROVADO" description=""/>
+<valueDef value="PENDENTE" description=""/>
+<valueDef value="REPROVADO" description=""/>
+</listOfValues>
+<defaultValue>PENDENTE</defaultValue>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_validacao" id="D9A39B5B-86FE-DC33-1442-3BA946B44674">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 20:22:11 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="usuario_id" id="43277CF8-7A90-3BEF-4D93-D8281B1A5BA3">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 20:28:31 UTC</createdTime>
+<generatorID>9129A718-9420-FAF8-1113-D1A71CBECB9B</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>A85C8921-E8D9-C09A-91BA-7DF42DE9AC61</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="missao_id" id="28F8D5C4-1E37-4D33-3568-BED234CCF2D0">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 20:28:31 UTC</createdTime>
+<generatorID>9129A718-9420-FAF8-1113-D1A71CBECB9B</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>97CDC166-0F31-49D2-B30B-14CBE9EF06D2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8F840AB5-B4DA-BB34-D6AF-EF08DFAEA226" name="TB_COMPROVANTE PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 20:20:57 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>546DF880-A2B9-8C22-2E66-77F9A0CA82F1</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="2CB5DC6B-74C2-E77C-0E3F-3CEC22AE3D1E" name="TB_USUARIO_MISSAO_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 20:29:56 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<newElementsIDs>43277CF8-7A90-3BEF-4D93-D8281B1A5BA3,28F8D5C4-1E37-4D33-3568-BED234CCF2D0</newElementsIDs>
+<usedAttributes>
+<attributeRef>43277CF8-7A90-3BEF-4D93-D8281B1A5BA3</attributeRef>
+<attributeRef>28F8D5C4-1E37-4D33-3568-BED234CCF2D0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
