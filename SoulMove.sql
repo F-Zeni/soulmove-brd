@@ -1,7 +1,6 @@
 CREATE TABLE TB_USUARIO (
     usuario_id    INTEGER      GENERATED ALWAYS AS IDENTITY,
     pontos        INTEGER      NOT NULL,
-    creditos      NUMERIC(6,2) NOT NULL,
     nome          VARCHAR2(150) NOT NULL,
     email         VARCHAR2(150) NOT NULL,
     data_cadastro DATE         NOT NULL,
@@ -13,6 +12,21 @@ CREATE TABLE TB_USUARIO (
         CHECK (pontos >= 0),
     CONSTRAINT TB_USUARIO_CREDITOS_CK
         CHECK (creditos >= 0)
+);
+
+CREATE TABLE TB_CARTEIRA (
+    carteira_id      INTEGER      GENERATED ALWAYS AS IDENTITY,
+    usuario_id       INTEGER      NOT NULL,
+    saldo_mobilidade NUMERIC(6,2) NOT NULL,
+    CONSTRAINT TB_CARTEIRA_PK
+        PRIMARY KEY (carteira_id),
+    CONSTRAINT TB_CARTEIRA_USUARIO_FK
+        FOREIGN KEY (usuario_id)
+        REFERENCES TB_USUARIO(usuario_id),
+    CONSTRAINT TB_CARTEIRA_USUARIO_UK
+        UNIQUE (usuario_id),
+    CONSTRAINT TB_CARTEIRO_SALDO_CK
+        CHECK (saldo_mobilidade >= 0)
 );
 
 CREATE TABLE TB_PONTOS (
@@ -150,3 +164,12 @@ CREATE TABLE TB_COMPROVANTE (
             'rejeitado'
         ))
 );
+
+DROP TABLE TB_COMPROVANTE;
+DROP TABLE TB_USUARIO_MISSAO;
+DROP TABLE TB_USUARIO_CONQUISTA;
+DROP TABLE TB_PONTOS;
+DROP TABLE TB_VIAGEM;
+DROP TABLE TB_MISSAO;
+DROP TABLE TB_CONQUISTA;
+DROP TABLE TB_USUARIO;
