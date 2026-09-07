@@ -31,3 +31,15 @@ CREATE TABLE TB_CONQUISTA (
     CONSTRAINT TB_CONQUISTA_PK
         PRIMARY KEY (conquista_id)
 );
+
+CREATE TABLE TB_USUARIO_CONQUISTA (
+    usuario_id     INTEGER NOT NULL,
+    conquista_id   INTEGER NOT NULL,
+    data_conquista DATE    NOT NULL,
+    CONSTRAINT TB_USUARIO_CONQUISTA_USU_FK
+        FOREIGN KEY (usuario_id)
+        REFERENCES TB_USUARIO (usuario_id),
+    CONSTRAINT TB_USUARIO_CONQUISTA_CON_FK
+        FOREIGN KEY (conquista_id)
+        REFERENCES TB_CONQUISTA (conquista_id)
+);
