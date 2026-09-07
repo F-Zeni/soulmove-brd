@@ -131,14 +131,14 @@ CREATE TABLE TB_USUARIO_MISSAO (
 );
 
 CREATE TABLE TB_COMPROVANTE (
-    comprovante_id INTEGER GENERATED ALWAYS AS IDENTITY,
-    usuario_id INTEGER NOT NULL,
-    missao_id INTEGER NOT NULL,
-    data_validacao DATE NOT NULL,
-    data_envio DATE NOT NULL,
+    comprovante_id   INTEGER      GENERATED ALWAYS AS IDENTITY,
+    usuario_id       INTEGER      NOT NULL,
+    missao_id        INTEGER      NOT NULL,
+    data_envio       DATE         NOT NULL,
+    data_validacao   DATE,
     status_validacao VARCHAR2(50) NOT NULL,
     -- Estarei usando o tipo BLOB para armzenar a imagem do comprovante (Ele serve para armazenar dados não estruturados em formato binário )
-    arquivo BLOB NOT NULL,
+    arquivo          BLOB         NOT NULL,
     CONSTRAINT TB_COMPROVANTE_PK
         PRIMARY KEY (comprovante_id),
     CONSTRAINT TB_COMPROVANTE_USU_MIS_FK
