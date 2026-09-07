@@ -23,3 +23,11 @@ CREATE TABLE TB_PONTOS (
         FOREIGN KEY (usuario_id)
         REFERENCES TB_USUARIO (usuario_id)
 );
+
+CREATE TABLE TB_CONQUISTA (
+    conquista_id INTEGER       GENERATED ALWAYS AS IDENTITY,
+    nome         VARCHAR2(150) NOT NULL,
+    descricao    VARCHAR2(200) NOT NULL,
+    CONSTRAINT TB_CONQUISTA_PK
+        PRIMARY KEY (conquista_id)
+);
