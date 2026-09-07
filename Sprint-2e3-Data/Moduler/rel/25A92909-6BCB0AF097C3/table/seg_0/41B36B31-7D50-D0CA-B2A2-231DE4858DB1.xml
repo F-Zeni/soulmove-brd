@@ -64,6 +64,7 @@
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>D9A39B5B-86FE-DC33-1442-3BA946B44674</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
