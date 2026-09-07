@@ -8,7 +8,11 @@ CREATE TABLE TB_USUARIO (
     CONSTRAINT TB_USUARIO_PK
         PRIMARY KEY (usuario_id),
     CONSTRAINT TB_USUARIO_UK
-        UNIQUE (email)
+        UNIQUE (email),
+    CONSTRANT TB_USUARIO_PONTOS_CK
+        CHECK (pontos >= 0),
+    CONSTRAINT TB_USUARIO_CREDITOS_CK
+        CHECK (creditos >= 0)
 );
 
 CREATE TABLE TB_PONTOS (
@@ -21,7 +25,9 @@ CREATE TABLE TB_PONTOS (
         PRIMARY KEY (pontos_id),
     CONSTRAINT TB_PONTOS_USUARIO_FK
         FOREIGN KEY (usuario_id)
-        REFERENCES TB_USUARIO (usuario_id)
+        REFERENCES TB_USUARIO (usuario_id),
+    CONSTRAINT TB_PONTOS_CREDITOS_CK
+        CHECK (creditos_gerados > 0)
 );
 
 CREATE TABLE TB_CONQUISTA (
@@ -41,7 +47,9 @@ CREATE TABLE TB_USUARIO_CONQUISTA (
         REFERENCES TB_USUARIO (usuario_id),
     CONSTRAINT TB_USUARIO_CONQUISTA_CON_FK
         FOREIGN KEY (conquista_id)
-        REFERENCES TB_CONQUISTA (conquista_id)
+        REFERENCES TB_CONQUISTA (conquista_id),
+    CONSTRAINT TB_USUARIO_CONQUISTA_PK
+        PRIMARY KEY (usuario_id, conquista_id)
 );
 
 CREATE TABLE TB_VIAGEM (
@@ -52,13 +60,28 @@ CREATE TABLE TB_VIAGEM (
     tipo_veiculo        VARCHAR2(50)  NOT NULL,
     carbono_economizado NUMERIC(6,2)  NOT NULL,
     carbono_emitido     NUMERIC(6,2)  NOT NULL,
-    km_percorrio        NUMERIC(4,3)  NOT NULL,
+    km_percorrido        NUMERIC(4,3)  NOT NULL,
     data_viagem         DATE          NOT NULL,
     CONSTRAINT TB_VIAGEM_PK
         PRIMARY KEY (viagem_id),
     CONSTRAINT TB_VIAGEM_USUARIO_FK
         FOREIGN KEY (usuario_id)
-        REFERENCES TB_USUARIO (usuario_id)
+        REFERENCES TB_USUARIO (usuario_id),
+    CONSTRAINT TB_VIAGEM_CARB_EMITIDO_CK
+        CHECK (carbono_emitido >= 0),
+    CONSTRAINT TB_VIAGEM_CARB_ECONOM_CK
+        CHECK (carbono_economizado >= 0),
+    CONSTRAINT TB_VIAGEM_KM_PERC_CK
+        CHECK (km_percorrido > 0),
+    CONSTRAINT TB_VIAGEM_TIPO_VEIC_CK
+        CHECK (tipo_veiculo IN (
+            'carro', 
+            'bicicleta', 
+            'trem', 
+            'moto', 
+            'onibus', 
+            'metro'
+            ))
 );
 
 CREATE TABLE TB_MISSAO (
@@ -68,7 +91,15 @@ CREATE TABLE TB_MISSAO (
     descricao     VARCHAR2(150) NOT NULL,
     tipo_missao   VARCHAR2(30)  NOT NULL,
     CONSTRAINT TB_MISSAO_PK
-        PRIMARY KEY (missao_id)
+        PRIMARY KEY (missao_id),
+    CONSTRAINT TB_MISSAO_PONTOS_CK
+        CHECK (pontos_missao > 0),
+    CONSTRAINT TB_MISSAO_TIPO_CK
+        CHECK (tipo_missao IN (
+            'diaria',
+            'semanal',
+            'mensal'
+        ))
 );
 
 CREATE TABLE TB_USUARIO_MISSAO (
@@ -88,7 +119,15 @@ CREATE TABLE TB_USUARIO_MISSAO (
         REFERENCES TB_VIAGEM (viagem_id),
     CONSTRAINT TB_USUARIO_MISSAO_MIS_FK
         FOREIGN KEY (missao_id)
-        REFERENCES TB_MISSAO (missao_id)
+        REFERENCES TB_MISSAO (missao_id),
+    CONSTRAINT TB_USUARIO_MISSAO_PONTOS_CK
+        CHECK (pontuacao_recebida >= 0),
+    CONSTRAINT TB_USUARIO_MISSAO_STATUS_CK
+        CHECK (status_missao IN (
+            'cancelada',
+            'concluida',
+            'em andamento'
+        ))
 );
 
 CREATE TABLE TB_COMPROVANTE (
@@ -106,5 +145,11 @@ CREATE TABLE TB_COMPROVANTE (
         FOREIGN KEY (usuario_id, missao_id)
         REFERENCES TB_USUARIO_MISSAO (usuario_id, missao_id),
     CONSTRAINT TB_COMPROVANTE_USU_MIS_UK
-        UNIQUE (usuario_id, missao_id)
+        UNIQUE (usuario_id, missao_id),
+    CONSTRAINT TB_COMPROVANTE_STATUS_CK
+        CHECK (status_validacao IN (
+            'pendente',
+            'aprovado',
+            'rejeitado'
+        ))
 );
