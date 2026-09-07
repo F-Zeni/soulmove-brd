@@ -1,17 +1,15 @@
 CREATE TABLE TB_USUARIO (
-    usuario_id    INTEGER      GENERATED ALWAYS AS IDENTITY,
-    pontos        INTEGER      NOT NULL,
+    usuario_id    INTEGER       GENERATED ALWAYS AS IDENTITY,
+    pontos        INTEGER       NOT NULL,
     nome          VARCHAR2(150) NOT NULL,
     email         VARCHAR2(150) NOT NULL,
-    data_cadastro DATE         NOT NULL,
+    data_cadastro DATE          NOT NULL,
     CONSTRAINT TB_USUARIO_PK
         PRIMARY KEY (usuario_id),
     CONSTRAINT TB_USUARIO_UK
         UNIQUE (email),
     CONSTRAINT TB_USUARIO_PONTOS_CK
-        CHECK (pontos >= 0),
-    CONSTRAINT TB_USUARIO_CREDITOS_CK
-        CHECK (creditos >= 0)
+        CHECK (pontos >= 0)
 );
 
 CREATE TABLE TB_CARTEIRA (
@@ -56,6 +54,7 @@ CREATE TABLE TB_RECARGA (
 CREATE TABLE TB_PONTOS (
     pontos_id        INTEGER      GENERATED ALWAYS AS IDENTITY,
     usuario_id       INTEGER      NOT NULL,
+    pontos_gerados   INTEGER      NOT NULL,
     origem           VARCHAR2(30) NOT NULL,
     creditos_gerados NUMERIC(6,2) NOT NULL,
     data_pontuacao   DATE         NOT NULL,
@@ -144,7 +143,6 @@ CREATE TABLE TB_USUARIO_MISSAO (
     pontuacao_recebida INTEGER      NOT NULL,
     usuario_id         INTEGER      NOT NULL,
     missao_id          INTEGER      NOT NULL,
-    viagem_id          INTEGER,
     status_missao      VARCHAR2(30) NOT NULL,
     data_cumprimento   DATE         NOT NULL,
     CONSTRAINT TB_USUARIO_MISSAO_PK
@@ -188,12 +186,3 @@ CREATE TABLE TB_COMPROVANTE (
             'rejeitado'
         ))
 );
-
-DROP TABLE TB_COMPROVANTE;
-DROP TABLE TB_USUARIO_MISSAO;
-DROP TABLE TB_USUARIO_CONQUISTA;
-DROP TABLE TB_PONTOS;
-DROP TABLE TB_VIAGEM;
-DROP TABLE TB_MISSAO;
-DROP TABLE TB_CONQUISTA;
-DROP TABLE TB_USUARIO;
