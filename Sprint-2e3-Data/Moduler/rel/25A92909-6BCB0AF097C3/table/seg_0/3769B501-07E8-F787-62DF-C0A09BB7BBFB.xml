@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3CA359F6-9B59-9ABB-4437-25C559F769A3" name="TB_USUARIO_MISSAO">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3769B501-07E8-F787-62DF-C0A09BB7BBFB" name="TB_USUARIO_MISSAO">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>0EEDAD38-135F-ED3B-F3BB-89B073B06509</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="data_cumprimento" id="E2612304-A64E-81AA-C973-B9D411A33CF0">
+<Column name="data_cumprimento" id="F62EE3F8-5407-D079-88E8-325E834B0BB8">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>8C12958E-45CD-1975-9BEB-364828025475</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -19,9 +19,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="status_missao" id="8F8E8321-7D0F-5CAC-0F0F-1A03B4518B9F">
+<Column name="status_missao" id="7F4074F7-AEBC-E27F-DE38-AAB3601610FD">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>F2055FC1-BC79-4352-54E3-CEE79B8EEC81</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -37,9 +37,9 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="pontuacao_recebida" id="8F7865F6-EBF8-3E3E-D397-B6092612E626">
+<Column name="pontuacao_recebida" id="5478973F-4ADE-2304-A20E-A1FF645CE702">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>7C8AE794-FC86-2D52-C95B-57A641050CCC</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -48,20 +48,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="xp_recebida" id="E126813F-2CE9-B65B-3F45-E8CA9B45E909">
+<Column name="usuario_id" id="A4A71371-C98B-47EE-B467-76E0D9087B04">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
-<generatorID>AB9C034C-7D30-42EF-C0B3-B4A12EA95AD9</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="usuario_id" id="72E71B8A-F8D2-A211-F8A1-C705D45AFAC1">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>A85C8921-E8D9-C09A-91BA-7DF42DE9AC61</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -71,12 +60,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="A49748E7-B89C-4593-A078-78D3C9846318" referredColumn="3E1B79EA-958C-1B98-5712-45C0531F3D39"/>
+<colAssociation fkAssociation="5249E7F3-7A00-E49A-7C7C-02329A811A8E" referredColumn="82957B40-2D31-BD18-94E8-D04FF5A55E32"/>
 </associations>
 </Column>
-<Column name="viagem_id" id="E0FBECC3-9808-62D7-920F-AD897B4F5678">
+<Column name="viagem_id" id="BA66D19A-ABA3-DEDF-7E8F-8BC22EEF1C04">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>5B034081-151B-2965-83E3-F7E5AE6FF30A</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -86,12 +75,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="1A0C27F2-EE1A-DB6E-5CAD-8F02477E7E2A" referredColumn="2C655482-8C78-C8A6-0155-27D411252C2F"/>
+<colAssociation fkAssociation="CCB83840-17ED-EFBE-F9EC-84DD6CC29088" referredColumn="6D3CE332-4169-10C6-8E49-C8E4D6D85AD3"/>
 </associations>
 </Column>
-<Column name="missao_id" id="DA0CB99B-A8FE-7C1D-A22E-65A9FCCC4DFB">
+<Column name="missao_id" id="960FA40F-5099-FB7C-9BCA-5DA5DD51401C">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>97CDC166-0F31-49D2-B30B-14CBE9EF06D2</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -101,54 +90,54 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="9C5CEAE0-242F-797F-781D-05D076DE1B2D" referredColumn="12A77889-BBDD-ED66-4772-97E47C24B25F"/>
+<colAssociation fkAssociation="621021AC-EBC6-6F4C-2EE8-2D7E81FDBEF9" referredColumn="22ED5C00-8130-D31D-E0F7-E6CDF70C26F7"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="7C3AD6EE-ED72-6657-3531-DB423074364E" name="TB_USUARIO_MISSAO_UN">
+<ind_PK_UK id="EFE3FA03-433E-176E-C88B-4E3FD765403F" name="TB_USUARIO_MISSAO_UN">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>374E891C-49D6-1A72-1857-0F24974CCC78</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <indexState>Unique Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="72E71B8A-F8D2-A211-F8A1-C705D45AFAC1"/>
-<colUsage columnID="DA0CB99B-A8FE-7C1D-A22E-65A9FCCC4DFB"/>
+<colUsage columnID="A4A71371-C98B-47EE-B467-76E0D9087B04"/>
+<colUsage columnID="960FA40F-5099-FB7C-9BCA-5DA5DD51401C"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="916D5D4E-5E7A-DAF8-D995-053AFD11A139" name="TB_MISSAO_USUARIO_FK">
+<ind_PK_UK id="B2281BA1-F868-5DAF-C0CE-A728B3DF9F81" name="TB_USUARIO_MISSAO_USU_FK">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>9BBF51AA-2472-B99B-2369-9271B2405DD3</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="72E71B8A-F8D2-A211-F8A1-C705D45AFAC1"/>
+<colUsage columnID="A4A71371-C98B-47EE-B467-76E0D9087B04"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="408B4A93-8700-B8B5-D3F4-279E3AD32CA6" name="TB_USUARIO_MISSAO_VIAGEM_FK">
+<ind_PK_UK id="4BA524C2-0024-2571-2C98-33AE2DADDD52" name="TB_USUARIO_MISSAO_VIA_FK">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>F118B4E0-8ABB-4E0C-AAC5-1618D01FF359</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="E0FBECC3-9808-62D7-920F-AD897B4F5678"/>
+<colUsage columnID="BA66D19A-ABA3-DEDF-7E8F-8BC22EEF1C04"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="B4198771-1916-24C8-4BE3-71D75B738F26" name="TB_USUARIO_MISSAO_FKv2">
+<ind_PK_UK id="DC8B5C64-F180-EFC9-9E30-EB1FE2D20A55" name="TB_USUARIO_MISSAO_MIS_FK">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>C3A7F008-3D57-10E1-5A7D-A5846959CF10</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="DA0CB99B-A8FE-7C1D-A22E-65A9FCCC4DFB"/>
+<colUsage columnID="960FA40F-5099-FB7C-9BCA-5DA5DD51401C"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

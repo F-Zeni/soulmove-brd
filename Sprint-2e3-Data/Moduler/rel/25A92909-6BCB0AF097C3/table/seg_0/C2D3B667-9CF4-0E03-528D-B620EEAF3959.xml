@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6D4CA65E-8DFA-1D49-3987-6527C9DB882A" name="TB_CONQUISTA">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C2D3B667-9CF4-0E03-528D-B620EEAF3959" name="TB_CONQUISTA">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>AF8887C9-BF38-D40E-1F97-2ADB57D664B1</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="conquista_id" id="6574A6B4-B856-B150-7139-8EDCF75E25F8">
+<Column name="conquista_id" id="85F3A4B0-1DB8-1E33-8F9E-4B692E6C03D4">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>729C57B0-D60A-E483-6ED8-23EC790A1D0D</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -19,9 +19,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nome" id="83CDF99C-B6DD-0A21-1886-8AE88CE88475">
+<Column name="nome" id="0DDFC723-77D3-60E0-6FA0-DE71FD8F3061">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>77188876-E2EC-20BD-4555-48E433DB9B2C</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -31,9 +31,9 @@
 <ownDataTypeParameters>150,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="descricao" id="E6891D6E-BF9A-1220-FA53-A385ED56F64D">
+<Column name="descricao" id="27BCFACB-C0B5-4ED3-5953-F0AA4CF678C9">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>ECC8B348-5BB7-8D05-6991-8C805A0EB962</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -43,29 +43,18 @@
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="xp_conquista" id="48BFA5FD-4E1E-C530-91B5-F58DBD8B8177">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
-<generatorID>E9F77987-1A2B-F9C6-DAE5-C519ED6AC8A9</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="4CC232AB-3D30-55E3-1CD7-74237EF35DB0" name="TB_CONQUISTA_PK">
+<ind_PK_UK id="DBB25CE8-D559-9FC2-CE43-A2BB376FA59B" name="TB_CONQUISTA_PK">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>7EC99E2D-6F90-E882-F1A4-A32332DFB1BC</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="6574A6B4-B856-B150-7139-8EDCF75E25F8"/>
+<colUsage columnID="85F3A4B0-1DB8-1E33-8F9E-4B692E6C03D4"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

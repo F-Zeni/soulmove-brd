@@ -56,4 +56,20 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="27983FCC-F89E-47D5-36D7-2266A9767217" name="TB_USUARIO_CONQUISTA_PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:28:39 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>78997700-51B7-9B71-5E73-6DE53643F2AD,53C26300-332F-68D9-55A6-E4538038A14A</newElementsIDs>
+<usedAttributes>
+<attributeRef>78997700-51B7-9B71-5E73-6DE53643F2AD</attributeRef>
+<attributeRef>53C26300-332F-68D9-55A6-E4538038A14A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

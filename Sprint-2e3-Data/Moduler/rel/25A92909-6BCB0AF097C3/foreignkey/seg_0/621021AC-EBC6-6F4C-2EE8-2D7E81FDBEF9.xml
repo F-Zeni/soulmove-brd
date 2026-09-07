@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="621021AC-EBC6-6F4C-2EE8-2D7E81FDBEF9" containerWithKeyObject="3769B501-07E8-F787-62DF-C0A09BB7BBFB" localFKIndex="DC8B5C64-F180-EFC9-9E30-EB1FE2D20A55" name="TB_USUARIO_MISSAO_MIS_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
+<generatorID>C3A7F008-3D57-10E1-5A7D-A5846959CF10</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<referredTableLongName>TB_MISSAO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>28303974-899B-B2EE-722C-0348BC00A73D</referredTableID>
+<keyObject>968794AF-62C5-FFE0-3E32-58A07191E51B</keyObject>
+<referredKeyID>968794AF-62C5-FFE0-3E32-58A07191E51B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>missao_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

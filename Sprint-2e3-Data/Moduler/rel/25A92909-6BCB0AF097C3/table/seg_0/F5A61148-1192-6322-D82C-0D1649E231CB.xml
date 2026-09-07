@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4F724FCE-90E3-7EDA-EAE0-DC3FB9F872F1" name="TB_VIAGEM">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F5A61148-1192-6322-D82C-0D1649E231CB" name="TB_VIAGEM">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>311E5971-9ABC-BB5E-6314-13E917ECFBB8</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="viagem_id" id="2C655482-8C78-C8A6-0155-27D411252C2F">
+<Column name="viagem_id" id="6D3CE332-4169-10C6-8E49-C8E4D6D85AD3">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>885AA627-CFFB-269B-F58D-7CFF53AE69E4</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -19,9 +19,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="data_viagem" id="487C34C4-4373-3F32-D34E-3016877794E4">
+<Column name="data_viagem" id="DACA4447-5261-C3DA-7169-AD5B086701AA">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>03B556B0-97C6-E69B-9C25-E07D283A303E</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -30,9 +30,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="origem" id="9ED94882-409F-04A6-3BAA-B1CCF441B82F">
+<Column name="origem" id="C4B9FABB-504A-1873-3E89-010E79BAF3D5">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>A9EA2CB3-725D-7912-116D-E3ECDE5B1BCE</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -42,9 +42,9 @@
 <ownDataTypeParameters>250,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="destino" id="5E438CF2-3CB4-5A9E-705A-9B7BD96442F7">
+<Column name="destino" id="5DFEC8F9-424F-1A34-ACCC-99A48BBAE49C">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>23E43A34-9519-491F-D06F-5077A4B73E09</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -54,9 +54,9 @@
 <ownDataTypeParameters>250,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="tipo_veiculo" id="CC1C35EA-00A9-D08D-8C48-1DD41A79A3EF">
+<Column name="tipo_veiculo" id="DD9A09D1-891F-8455-3A59-A4D4734686B6">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>AFF87C62-7570-50C8-EEF7-C7279A9D788D</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -74,9 +74,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="km_percorrido" id="FB333EBD-12BA-846B-BB04-6BB49F958010">
+<Column name="km_percorrido" id="1865CF01-0FD8-1D67-5D86-579E9E09619F">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>39315855-52EA-6DC2-F38D-B1155E5AE582</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -87,9 +87,9 @@
 <ownDataTypeParameters>,4,3</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="carbono_emitido" id="44D97207-A046-1E1A-21F5-EB781BC64086">
+<Column name="carbono_emitido" id="CD599182-A975-053F-0A28-A79976A1AF06">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>47F4C441-7383-070F-79DD-7CA26454294C</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -100,9 +100,9 @@
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="carbono_economizado" id="235EE7BF-2C85-4F06-C659-433FED57809F">
+<Column name="carbono_economizado" id="2B318B92-3110-1305-F507-AC7E090C9B08">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>808DCA69-D3A4-B65D-6D05-EE9192AD2FB1</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -113,9 +113,9 @@
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="usuario_id" id="7BBBA0A1-A57C-9EFA-B5FA-CFDE022397C9">
+<Column name="usuario_id" id="6A4C1269-CB02-DD64-F1DD-0604A17A62D9">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>3805BE4D-4449-B3E3-E051-5B6885A1FD9E</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -125,32 +125,32 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="33A5D84B-9C3D-C69C-D605-AF5FF754C0BC" referredColumn="3E1B79EA-958C-1B98-5712-45C0531F3D39"/>
+<colAssociation fkAssociation="A890C0AD-6AE7-07B2-D185-FCDAB5782723" referredColumn="82957B40-2D31-BD18-94E8-D04FF5A55E32"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="E0D905EC-2A8B-A483-0946-B0D925704DE1" name="TB_VIAGEM_PK">
+<ind_PK_UK id="5360BE48-700C-7B9B-98FD-608500B56B47" name="TB_VIAGEM_PK">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>93F07090-0D99-63CD-4624-2C1294CC6C28</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="2C655482-8C78-C8A6-0155-27D411252C2F"/>
+<colUsage columnID="6D3CE332-4169-10C6-8E49-C8E4D6D85AD3"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="A55E14CE-134C-B4E3-D915-506C27242C9A" name="TB_VIAGEM_TB_USUARIO_FK">
+<ind_PK_UK id="49B63370-F75A-A719-86FB-A58E2C5DE8A1" name="TB_VIAGEM_TB_USUARIO_FK">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 22:34:56 UTC</createdTime>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>9359B612-2291-D637-401A-2FE93ED122A3</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="7BBBA0A1-A57C-9EFA-B5FA-CFDE022397C9"/>
+<colUsage columnID="6A4C1269-CB02-DD64-F1DD-0604A17A62D9"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

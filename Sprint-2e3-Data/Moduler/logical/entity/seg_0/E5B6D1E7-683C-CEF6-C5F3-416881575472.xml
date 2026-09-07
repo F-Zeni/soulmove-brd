@@ -112,18 +112,6 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="8F840AB5-B4DA-BB34-D6AF-EF08DFAEA226" name="TB_COMPROVANTE PK">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-01 20:20:57 UTC</createdTime>
-<ownerDesignName>Moduler</ownerDesignName>
-<engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
-</engineerTo>
-<pk>true</pk>
-<usedAttributes>
-<attributeRef>546DF880-A2B9-8C22-2E66-77F9A0CA82F1</attributeRef>
-</usedAttributes>
-</identifier>
 <identifier id="2CB5DC6B-74C2-E77C-0E3F-3CEC22AE3D1E" name="TB_USUARIO_MISSAO_FK">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 20:29:56 UTC</createdTime>
@@ -135,6 +123,19 @@
 <usedAttributes>
 <attributeRef>43277CF8-7A90-3BEF-4D93-D8281B1A5BA3</attributeRef>
 <attributeRef>28F8D5C4-1E37-4D33-3568-BED234CCF2D0</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="A8FE7A3C-DA05-CE47-F844-415DAE29B2D9" name="TB_COMPROVANTE PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 02:56:55 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>546DF880-A2B9-8C22-2E66-77F9A0CA82F1</newElementsIDs>
+<usedAttributes>
+<attributeRef>546DF880-A2B9-8C22-2E66-77F9A0CA82F1</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
