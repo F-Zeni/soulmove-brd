@@ -1,3 +1,12 @@
+CREATE TABLE TB_CONQUISTA (
+    conquista_id INTEGER       GENERATED ALWAYS AS IDENTITY,
+    pontos       INTEGER       NOT NULL,
+    nome         VARCHAR2(150) NOT NULL,
+    descricao    VARCHAR2(200) NOT NULL,
+    CONSTRAINT TB_CONQUISTA_PK
+        PRIMARY KEY (conquista_id)
+);
+
 CREATE TABLE TB_USUARIO (
     usuario_id      INTEGER              GENERATED ALWAYS AS IDENTITY,
     titulo_atual_id INTEGER,
@@ -11,7 +20,10 @@ CREATE TABLE TB_USUARIO (
     CONSTRAINT TB_USUARIO_UK
         UNIQUE (email),
     CONSTRAINT TB_USUARIO_PONTOS_CK
-        CHECK (pontos >= 0)
+        CHECK (pontos >= 0),
+    CONSTRAINT TB_USUARIO_TITULO_FK
+        FOREIGN KEY (titulo_atual_id)
+        REFERENCES TB_CONQUISTA (conquista_id)
 );
 
 CREATE TABLE TB_CARTEIRA (
@@ -72,15 +84,6 @@ CREATE TABLE TB_PONTOS (
             'missao',
             'conquista'
         ))
-);
-
-CREATE TABLE TB_CONQUISTA (
-    conquista_id INTEGER       GENERATED ALWAYS AS IDENTITY,
-    pontos       INTEGER       NOT NULL,
-    nome         VARCHAR2(150) NOT NULL,
-    descricao    VARCHAR2(200) NOT NULL,
-    CONSTRAINT TB_CONQUISTA_PK
-        PRIMARY KEY (conquista_id)
 );
 
 CREATE TABLE TB_USUARIO_CONQUISTA (
@@ -194,10 +197,6 @@ CREATE TABLE TB_COMPROVANTE (
             'rejeitado'
         ))
 );
-
-ALTER TABLE TB_USUARIO ADD CONSTRAINT USUARIO_TITULO_FK
-    FOREIGN KEY (titulo_atual_id)
-    REFERENCES TB_CONQUISTA (conquista_id);
 
 DROP TABLE TB_COMPROVANTE;
 DROP TABLE TB_RECARGA;
