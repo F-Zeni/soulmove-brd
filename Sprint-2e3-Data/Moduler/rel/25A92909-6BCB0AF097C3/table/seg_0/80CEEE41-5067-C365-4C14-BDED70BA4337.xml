@@ -61,7 +61,7 @@
 <colUsage columnID="923402CF-B91F-337C-92F0-F370744AF5B5"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="705988DD-D6FD-D2D6-2943-7687DD0695DA" name="TB_CARTEIRA_usuario_id_UN">
+<ind_PK_UK id="705988DD-D6FD-D2D6-2943-7687DD0695DA" name="TB_CARTEIRA_USUARIO_UN">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 21:24:15 UTC</createdTime>
 <generatorID>30609EB9-3BC6-D5FD-A66A-496057D491C6</generatorID>

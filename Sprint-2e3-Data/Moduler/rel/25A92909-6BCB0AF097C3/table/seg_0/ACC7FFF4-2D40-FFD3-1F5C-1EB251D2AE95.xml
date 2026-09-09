@@ -77,6 +77,21 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="titulo_atual" id="F9AAF5E4-91D1-2206-5CDE-A237640BDCC2">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-09 21:22:45 UTC</createdTime>
+<generatorID>B35E537D-81D9-1858-A3A3-83517FCE1949</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0594EE7F-DDB8-CA89-F61E-B6592282763F" referredColumn="85F3A4B0-1DB8-1E33-8F9E-4B692E6C03D4"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="19CF9288-2694-A705-B739-7072C0D4A67C" name="TB_USUARIO_PK">
@@ -91,7 +106,7 @@
 <colUsage columnID="82957B40-2D31-BD18-94E8-D04FF5A55E32"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="22D1616F-76FB-59BE-657D-CB6955D3AE9F" name="TB_USUARIO_email_UN">
+<ind_PK_UK id="22D1616F-76FB-59BE-657D-CB6955D3AE9F" name="TB_USUARIO_EMAIL_UN">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>6E3D1B4C-8889-ADC4-1E2B-D38A19B27296</generatorID>
@@ -100,6 +115,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="A558D91E-BA2F-D2C2-6492-D29D1886706E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8E865EFF-5A9B-BA63-9BCB-48F5ADBFBFAF" name="TB_USUARIO_CONQUISTA_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-09 21:22:45 UTC</createdTime>
+<generatorID>12DA0E15-8ADF-665F-60DD-CA87C5B6127C</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F9AAF5E4-91D1-2206-5CDE-A237640BDCC2"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

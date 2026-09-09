@@ -91,14 +91,29 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="titulo_atual" id="B35E537D-81D9-1858-A3A3-83517FCE1949">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-09 21:21:17 UTC</createdTime>
+<generatorID>12DA0E15-8ADF-665F-60DD-CA87C5B6127C</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>729C57B0-D60A-E483-6ED8-23EC790A1D0D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="C38869C8-405C-8E65-00A4-5522141A9D40" name="TB_USUARIO PK">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 18:50:49 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
@@ -109,8 +124,9 @@
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 20:05:11 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="false"/>
 </engineerTo>
 <newElementsIDs>D7DBF8CB-4BA2-865F-74BA-0A2E5DF190AF</newElementsIDs>
 <usedAttributes>

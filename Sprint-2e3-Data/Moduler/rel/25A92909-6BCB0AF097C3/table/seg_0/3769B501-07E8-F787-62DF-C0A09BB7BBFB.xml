@@ -92,7 +92,7 @@
 <colUsage columnID="960FA40F-5099-FB7C-9BCA-5DA5DD51401C"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="B2281BA1-F868-5DAF-C0CE-A728B3DF9F81" name="TB_USUARIO_MISSAO_USU_FK">
+<ind_PK_UK id="B2281BA1-F868-5DAF-C0CE-A728B3DF9F81" name="TB_USUARIO_MISSAO_USUARIO_FK">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>9BBF51AA-2472-B99B-2369-9271B2405DD3</generatorID>
@@ -103,7 +103,7 @@
 <colUsage columnID="A4A71371-C98B-47EE-B467-76E0D9087B04"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="DC8B5C64-F180-EFC9-9E30-EB1FE2D20A55" name="TB_USUARIO_MISSAO_MIS_FK">
+<ind_PK_UK id="DC8B5C64-F180-EFC9-9E30-EB1FE2D20A55" name="TB_USUARIO_MISSAO_FK">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>C3A7F008-3D57-10E1-5A7D-A5846959CF10</generatorID>

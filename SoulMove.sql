@@ -1,10 +1,11 @@
 CREATE TABLE TB_USUARIO (
-    usuario_id    INTEGER              GENERATED ALWAYS AS IDENTITY,
-    pontos        INTEGER              NOT NULL,
-    senha         VARCHAR2(100)        NOT NULL,
-    nome          VARCHAR2(150)        NOT NULL,
-    email         VARCHAR2(150)        NOT NULL,
-    data_cadastro DATE DEFAULT SYSDATE NOT NULL,
+    usuario_id      INTEGER              GENERATED ALWAYS AS IDENTITY,
+    titulo_atual_id INTEGER,
+    pontos          INTEGER              NOT NULL,
+    senha           VARCHAR2(100)        NOT NULL,
+    nome            VARCHAR2(150)        NOT NULL,
+    email           VARCHAR2(150)        NOT NULL,
+    data_cadastro   DATE DEFAULT SYSDATE NOT NULL,
     CONSTRAINT TB_USUARIO_PK
         PRIMARY KEY (usuario_id),
     CONSTRAINT TB_USUARIO_UK
@@ -193,3 +194,18 @@ CREATE TABLE TB_COMPROVANTE (
             'rejeitado'
         ))
 );
+
+ALTER TABLE TB_USUARIO ADD CONSTRAINT USUARIO_TITULO_FK
+    FOREIGN KEY (titulo_atual_id)
+    REFERENCES TB_CONQUISTA (conquista_id);
+
+DROP TABLE TB_COMPROVANTE;
+DROP TABLE TB_RECARGA;
+DROP TABLE TB_USUARIO_MISSAO;
+DROP TABLE TB_USUARIO_CONQUISTA;
+DROP TABLE TB_PONTOS;
+DROP TABLE TB_VIAGEM;
+DROP TABLE TB_CARTEIRA;
+DROP TABLE TB_MISSAO;
+DROP TABLE TB_CONQUISTA;
+DROP TABLE TB_USUARIO;

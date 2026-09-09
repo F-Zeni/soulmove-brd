@@ -52,6 +52,19 @@
 <dataTypeSize>150</dataTypeSize>
 <ownDataTypeParameters>150,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="titulo" id="7723BC63-1315-A92E-45E0-546B9CA001CE">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-09 21:11:33 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="descricao" id="ECC8B348-5BB7-8D05-6991-8C805A0EB962">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 18:59:57 UTC</createdTime>
@@ -71,8 +84,9 @@
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 19:00:13 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
