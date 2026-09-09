@@ -19,6 +19,16 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="pontos" id="F9F204CF-B58B-32A9-E539-ACA468819644">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-09 19:37:55 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="nome" id="0DDFC723-77D3-60E0-6FA0-DE71FD8F3061">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>

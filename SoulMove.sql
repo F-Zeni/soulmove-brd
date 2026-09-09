@@ -64,11 +64,17 @@ CREATE TABLE TB_PONTOS (
         FOREIGN KEY (usuario_id)
         REFERENCES TB_USUARIO (usuario_id),
     CONSTRAINT TB_PONTOS_CREDITOS_CK
-        CHECK (creditos_gerados > 0)
+        CHECK (creditos_gerados > 0),
+    CONSTRAINT TB_PONTOS_ORIGEM_CK
+        CHECK (origem IN (
+            'missao',
+            'conquista'
+        ))
 );
 
 CREATE TABLE TB_CONQUISTA (
     conquista_id INTEGER       GENERATED ALWAYS AS IDENTITY,
+    pontos       INTEGER       NOT NULL,
     nome         VARCHAR2(150) NOT NULL,
     descricao    VARCHAR2(200) NOT NULL,
     CONSTRAINT TB_CONQUISTA_PK

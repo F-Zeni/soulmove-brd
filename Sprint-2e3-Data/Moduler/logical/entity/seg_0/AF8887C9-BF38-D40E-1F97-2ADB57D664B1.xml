@@ -27,6 +27,18 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="pontos" id="7BF372BC-D2CB-B805-F25A-C1EBFC5C90D0">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-09 19:37:30 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="nome" id="77188876-E2EC-20BD-4555-48E433DB9B2C">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 18:59:14 UTC</createdTime>
