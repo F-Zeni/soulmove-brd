@@ -28,14 +28,14 @@ CREATE TABLE TB_CARTEIRA (
 );
 
 CREATE TABLE TB_RECARGA (
-    recarga_id INTEGER GENERATED ALWAYS AS IDENTITY,
-    usuario_id INTEGER NOT NULL,
-    valor_recarga NUMERIC(6,2) NOT NULL,
-    codigo_barras VARCHAR2(100) NOT NULL,
-    status_recarga VARCHAR2(30) NOT NULL,
-    data_solicitacao DATE NOT NULL,
-    data_pagamento DATE,
-    data_credito DATE,
+    recarga_id       INTEGER       GENERATED ALWAYS AS IDENTITY,
+    usuario_id       INTEGER       NOT NULL,
+    valor_recarga    NUMERIC(6,2)  NOT NULL,
+    codigo_barras    VARCHAR2(100) NOT NULL,
+    status_recarga   VARCHAR2(30)  NOT NULL,
+    data_solicitacao DATE          NOT NULL,
+    data_pagamento   DATE,
+    data_credito     DATE,
     CONSTRAINT TB_RECARGA_PK
         PRIMARY KEY (recarga_id),
     CONSTRAINT TB_RECARGA_USUARIO_FK
@@ -97,7 +97,7 @@ CREATE TABLE TB_VIAGEM (
     tipo_veiculo        VARCHAR2(50)  NOT NULL,
     carbono_economizado NUMERIC(6,2)  NOT NULL,
     carbono_emitido     NUMERIC(6,2)  NOT NULL,
-    km_percorrido        NUMERIC(4,3)  NOT NULL,
+    km_percorrido       NUMERIC(4,3)  NOT NULL,
     data_viagem         DATE          NOT NULL,
     CONSTRAINT TB_VIAGEM_PK
         PRIMARY KEY (viagem_id),

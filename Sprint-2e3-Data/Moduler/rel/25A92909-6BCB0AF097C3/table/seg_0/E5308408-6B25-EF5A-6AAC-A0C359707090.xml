@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="TB_USUARIO_usuario_id" id="D9352DF0-718E-C019-DC35-43AB5DAD1D6A">
+<Column name="usuario_id" id="D9352DF0-718E-C019-DC35-43AB5DAD1D6A">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>3B0F99FD-5AE4-93BE-7977-F9933D16B4AD</generatorID>

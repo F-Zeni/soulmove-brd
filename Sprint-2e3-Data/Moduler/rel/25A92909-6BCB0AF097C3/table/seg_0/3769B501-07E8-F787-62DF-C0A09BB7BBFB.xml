@@ -63,21 +63,6 @@
 <colAssociation fkAssociation="5249E7F3-7A00-E49A-7C7C-02329A811A8E" referredColumn="82957B40-2D31-BD18-94E8-D04FF5A55E32"/>
 </associations>
 </Column>
-<Column name="viagem_id" id="BA66D19A-ABA3-DEDF-7E8F-8BC22EEF1C04">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>5B034081-151B-2965-83E3-F7E5AE6FF30A</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="CCB83840-17ED-EFBE-F9EC-84DD6CC29088" referredColumn="6D3CE332-4169-10C6-8E49-C8E4D6D85AD3"/>
-</associations>
-</Column>
 <Column name="missao_id" id="960FA40F-5099-FB7C-9BCA-5DA5DD51401C">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
@@ -116,17 +101,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="A4A71371-C98B-47EE-B467-76E0D9087B04"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="4BA524C2-0024-2571-2C98-33AE2DADDD52" name="TB_USUARIO_MISSAO_VIA_FK">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>F118B4E0-8ABB-4E0C-AAC5-1618D01FF359</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="BA66D19A-ABA3-DEDF-7E8F-8BC22EEF1C04"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="DC8B5C64-F180-EFC9-9E30-EB1FE2D20A55" name="TB_USUARIO_MISSAO_MIS_FK">
