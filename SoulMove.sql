@@ -1,9 +1,10 @@
 CREATE TABLE TB_USUARIO (
-    usuario_id    INTEGER       GENERATED ALWAYS AS IDENTITY,
-    pontos        INTEGER       NOT NULL,
-    nome          VARCHAR2(150) NOT NULL,
-    email         VARCHAR2(150) NOT NULL,
-    data_cadastro DATE          NOT NULL,
+    usuario_id    INTEGER              GENERATED ALWAYS AS IDENTITY,
+    pontos        INTEGER              NOT NULL,
+    senha         VARCHAR2(100)        NOT NULL,
+    nome          VARCHAR2(150)        NOT NULL,
+    email         VARCHAR2(150)        NOT NULL,
+    data_cadastro DATE DEFAULT SYSDATE NOT NULL,
     CONSTRAINT TB_USUARIO_PK
         PRIMARY KEY (usuario_id),
     CONSTRAINT TB_USUARIO_UK
@@ -28,12 +29,12 @@ CREATE TABLE TB_CARTEIRA (
 );
 
 CREATE TABLE TB_RECARGA (
-    recarga_id       INTEGER       GENERATED ALWAYS AS IDENTITY,
-    usuario_id       INTEGER       NOT NULL,
-    valor_recarga    NUMERIC(6,2)  NOT NULL,
-    codigo_barras    VARCHAR2(100) NOT NULL,
-    status_recarga   VARCHAR2(30)  NOT NULL,
-    data_solicitacao DATE          NOT NULL,
+    recarga_id       INTEGER              GENERATED ALWAYS AS IDENTITY,
+    usuario_id       INTEGER              NOT NULL,
+    valor_recarga    NUMERIC(6,2)         NOT NULL,
+    codigo_barras    VARCHAR2(100)        NOT NULL,
+    status_recarga   VARCHAR2(30)         NOT NULL,
+    data_solicitacao DATE DEFAULT SYSDATE NOT NULL,
     data_pagamento   DATE,
     data_credito     DATE,
     CONSTRAINT TB_RECARGA_PK
@@ -52,12 +53,12 @@ CREATE TABLE TB_RECARGA (
 );
 
 CREATE TABLE TB_PONTOS (
-    pontos_id        INTEGER      GENERATED ALWAYS AS IDENTITY,
-    usuario_id       INTEGER      NOT NULL,
-    pontos_gerados   INTEGER      NOT NULL,
-    origem           VARCHAR2(30) NOT NULL,
-    creditos_gerados NUMERIC(6,2) NOT NULL,
-    data_pontuacao   DATE         NOT NULL,
+    pontos_id        INTEGER              GENERATED ALWAYS AS IDENTITY,
+    usuario_id       INTEGER              NOT NULL,
+    pontos_gerados   INTEGER              NOT NULL,
+    origem           VARCHAR2(30)         NOT NULL,
+    creditos_gerados NUMERIC(6,2)         NOT NULL,
+    data_pontuacao   DATE DEFAULT SYSDATE NOT NULL,
     CONSTRAINT TB_PONTOS_PK
         PRIMARY KEY (pontos_id),
     CONSTRAINT TB_PONTOS_USUARIO_FK
@@ -82,9 +83,9 @@ CREATE TABLE TB_CONQUISTA (
 );
 
 CREATE TABLE TB_USUARIO_CONQUISTA (
-    usuario_id     INTEGER NOT NULL,
-    conquista_id   INTEGER NOT NULL,
-    data_conquista DATE    NOT NULL,
+    usuario_id     INTEGER              NOT NULL,
+    conquista_id   INTEGER              NOT NULL,
+    data_conquista DATE DEFAULT SYSDATE NOT NULL,
     CONSTRAINT TB_USUARIO_CONQUISTA_USU_FK
         FOREIGN KEY (usuario_id)
         REFERENCES TB_USUARIO (usuario_id),
@@ -146,11 +147,11 @@ CREATE TABLE TB_MISSAO (
 );
 
 CREATE TABLE TB_USUARIO_MISSAO (
-    pontuacao_recebida INTEGER      NOT NULL,
-    usuario_id         INTEGER      NOT NULL,
-    missao_id          INTEGER      NOT NULL,
-    status_missao      VARCHAR2(30) NOT NULL,
-    data_cumprimento   DATE         NOT NULL,
+    pontuacao_recebida INTEGER              NOT NULL,
+    usuario_id         INTEGER              NOT NULL,
+    missao_id          INTEGER              NOT NULL,
+    status_missao      VARCHAR2(30)         NOT NULL,
+    data_cumprimento   DATE DEFAULT SYSDATE NOT NULL,
     CONSTRAINT TB_USUARIO_MISSAO_PK
         PRIMARY KEY (usuario_id, missao_id),
     CONSTRAINT TB_USUARIO_MISSAO_USU_FK
@@ -170,12 +171,12 @@ CREATE TABLE TB_USUARIO_MISSAO (
 );
 
 CREATE TABLE TB_COMPROVANTE (
-    comprovante_id   INTEGER      GENERATED ALWAYS AS IDENTITY,
-    usuario_id       INTEGER      NOT NULL,
-    missao_id        INTEGER      NOT NULL,
-    data_envio       DATE         NOT NULL,
+    comprovante_id   INTEGER              GENERATED ALWAYS AS IDENTITY,
+    usuario_id       INTEGER              NOT NULL,
+    missao_id        INTEGER              NOT NULL,
+    data_envio       DATE DEFAULT SYSDATE NOT NULL,
     data_validacao   DATE,
-    status_validacao VARCHAR2(50) NOT NULL,
+    status_validacao VARCHAR2(50)         NOT NULL,
     -- Estarei usando o tipo BLOB para armzenar a imagem do comprovante (Ele serve para armazenar dados não estruturados em formato binário )
     arquivo          BLOB         NOT NULL,
     CONSTRAINT TB_COMPROVANTE_PK
