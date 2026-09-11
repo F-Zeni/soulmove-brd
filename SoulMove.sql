@@ -5,7 +5,9 @@ CREATE TABLE TB_CONQUISTA (
     titulo       VARCHAR2(150) NOT NULL,
     descricao    VARCHAR2(200) NOT NULL,
     CONSTRAINT TB_CONQUISTA_PK
-        PRIMARY KEY (conquista_id)
+        PRIMARY KEY (conquista_id),
+    CONSTRAINT TB_CONQUISTA_PONTOS_CK
+        CHECK (pontos >=0)
 );
 
 CREATE TABLE TB_USUARIO (
