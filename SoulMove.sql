@@ -12,7 +12,7 @@ CREATE TABLE TB_CONQUISTA (
 
 CREATE TABLE TB_USUARIO (
     usuario_id      INTEGER              GENERATED ALWAYS AS IDENTITY,
-    titulo_atual_id INTEGER,
+    titulo_atual    INTEGER,
     pontos          INTEGER              NOT NULL,
     senha           VARCHAR2(100)        NOT NULL,
     nome            VARCHAR2(150)        NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE TB_USUARIO (
     CONSTRAINT TB_USUARIO_PONTOS_CK
         CHECK (pontos >= 0),
     CONSTRAINT TB_USUARIO_TITULO_FK
-        FOREIGN KEY (titulo_atual_id)
+        FOREIGN KEY (titulo_atual)
         REFERENCES TB_CONQUISTA (conquista_id)
 );
 
