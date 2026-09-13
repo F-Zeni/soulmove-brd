@@ -200,3 +200,6 @@ CREATE TABLE TB_COMPROVANTE (
             'rejeitado'
         ))
 );
+
+SELECT * FROM TB_VIAGEM;
+TRUNCATE TABLE TB_VIAGEM;

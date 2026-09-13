@@ -96,9 +96,9 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>4</dataTypePrecision>
-<dataTypeScale>3</dataTypeScale>
-<ownDataTypeParameters>,4,3</ownDataTypeParameters>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="carbono_emitido" id="47F4C441-7383-070F-79DD-7CA26454294C">
 <createdBy>wspot</createdBy>
