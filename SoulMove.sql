@@ -104,15 +104,15 @@ CREATE TABLE TB_USUARIO_CONQUISTA (
 );
 
 CREATE TABLE TB_VIAGEM (
-    viagem_id           INTEGER       GENERATED ALWAYS AS IDENTITY,
-    usuario_id          INTEGER       NOT NULL,
-    origem              VARCHAR2(250) NOT NULL,
-    destino             VARCHAR2(250) NOT NULL,
-    tipo_veiculo        VARCHAR2(50)  NOT NULL,
-    carbono_economizado NUMERIC(6,2)  NOT NULL,
-    carbono_emitido     NUMERIC(6,2)  NOT NULL,
-    km_percorrido       NUMERIC(4,3)  NOT NULL,
-    data_viagem         DATE          NOT NULL,
+    viagem_id           INTEGER              GENERATED ALWAYS AS IDENTITY,
+    usuario_id          INTEGER              NOT NULL,
+    origem              VARCHAR2(250)        NOT NULL,
+    destino             VARCHAR2(250)        NOT NULL,
+    tipo_veiculo        VARCHAR2(50)         NOT NULL,
+    carbono_economizado NUMERIC(6,2)         NOT NULL,
+    carbono_emitido     NUMERIC(6,2)         NOT NULL,
+    km_percorrido       NUMERIC(6,2)         NOT NULL,
+    data_viagem         DATE DEFAULT SYSDATE NOT NULL,
     CONSTRAINT TB_VIAGEM_PK
         PRIMARY KEY (viagem_id),
     CONSTRAINT TB_VIAGEM_USUARIO_FK
@@ -185,7 +185,7 @@ CREATE TABLE TB_COMPROVANTE (
     data_validacao   DATE,
     status_validacao VARCHAR2(50)         NOT NULL,
     -- Estarei usando o tipo BLOB para armzenar a imagem do comprovante (Ele serve para armazenar dados não estruturados em formato binário )
-    arquivo          BLOB         NOT NULL,
+    arquivo          BLOB                 NOT NULL,
     CONSTRAINT TB_COMPROVANTE_PK
         PRIMARY KEY (comprovante_id),
     CONSTRAINT TB_COMPROVANTE_USU_MIS_FK
