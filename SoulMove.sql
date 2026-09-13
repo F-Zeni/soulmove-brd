@@ -201,5 +201,195 @@ CREATE TABLE TB_COMPROVANTE (
         ))
 );
 
+-- INSERTS
+
+-- TB_CONQUISTA
+INSERT INTO TB_CONQUISTA (pontos, nome, titulo, descricao)
+VALUES (100, 'Primeira Viagem', 'Viajante Iniciante', 'Realize sua primeira viagem sustentável');
+
+INSERT INTO TB_CONQUISTA (pontos, nome, titulo, descricao)
+VALUES (250, 'Eco Guerreiro', 'Eco Guerreiro', 'Economize carbono utilizando transporte sustentável');
+
+INSERT INTO TB_CONQUISTA (pontos, nome, titulo, descricao)
+VALUES (500, 'Mestre da Mobilidade', 'Mestre da Mobilidade', 'Acumule 500 pontos através de atividades sustentáveis');
+SELECT * FROM TB_CONQUISTA;
+
+-- TB_USUARIO
+INSERT INTO TB_USUARIO 
+(titulo_atual, pontos, senha, nome, email)
+VALUES (4, 100, 'senha123', 'João Silva', 'joao@email.com');
+
+INSERT INTO TB_USUARIO 
+(titulo_atual, pontos, senha, nome, email)
+VALUES (5, 250, 'senha456', 'Maria Souza', 'maria@email.com');
+
+INSERT INTO TB_USUARIO 
+(titulo_atual, pontos, senha, nome, email)
+VALUES (NULL, 0, 'senha789', 'Pedro Santos', 'pedro@email.com');
+SELECT * FROM TB_USUARIO;
+
+-- TB_CARTEIRA
+INSERT INTO TB_CARTEIRA (usuario_id, saldo_mobilidade)
+VALUES (6, 50.00);
+
+INSERT INTO TB_CARTEIRA (usuario_id, saldo_mobilidade)
+VALUES (7, 120.50);
+
+INSERT INTO TB_CARTEIRA (usuario_id, saldo_mobilidade)
+VALUES (8, 0.00);
+SELECT * FROM TB_CARTEIRA;
+
+-- TB_RECARGA
+INSERT INTO TB_RECARGA
+(usuario_id, valor_recarga, codigo_barras, status_recarga)
+VALUES (6, 50.00, '84670000000500000000000000000000000000000000', 'pendente');
+
+INSERT INTO TB_RECARGA
+(usuario_id, valor_recarga, codigo_barras, status_recarga, data_pagamento, data_credito)
+VALUES (7, 100.00, '84670000000100000000000000000000000000000000', 
+        'creditado', SYSDATE, SYSDATE);
+
+INSERT INTO TB_RECARGA
+(usuario_id, valor_recarga, codigo_barras, status_recarga)
+VALUES (8, 200.00, '84670000000200000000000000000000000000000000', 'recusado');
+SELECT * FROM TB_RECARGA;
+
+-- TB_PONTOS
+INSERT INTO TB_PONTOS
+(usuario_id, pontos_gerados, origem, creditos_gerados)
+VALUES (6, 100, 'conquista', 10.00);
+
+INSERT INTO TB_PONTOS
+(usuario_id, pontos_gerados, origem, creditos_gerados)
+VALUES (7, 50, 'missao', 5.00);
+
+INSERT INTO TB_PONTOS
+(usuario_id, pontos_gerados, origem, creditos_gerados)
+VALUES (8, 250, 'conquista', 25.00);
+SELECT * FROM TB_PONTOS;
+
+-- TB_USUARIO_CONQUISTA;
+INSERT INTO TB_USUARIO_CONQUISTA
+(usuario_id, conquista_id)
+VALUES (6, 4);
+
+INSERT INTO TB_USUARIO_CONQUISTA
+(usuario_id, conquista_id)
+VALUES (7, 5);
+
+INSERT INTO TB_USUARIO_CONQUISTA
+(usuario_id, conquista_id)
+VALUES (8, 6);
+SELECT * FROM TB_USUARIO_CONQUISTA;
+
+-- TB_VIAGEM
+INSERT INTO TB_VIAGEM
+(usuario_id, origem, destino, tipo_veiculo, carbono_economizado, carbono_emitido, km_percorrido)
+VALUES (
+    6,
+    'Av. Paulista',
+    'FIAP Aclimação',
+    'metro',
+    2.50,
+    0.30,
+    8.50
+);
+
+INSERT INTO TB_VIAGEM
+(usuario_id, origem, destino, tipo_veiculo, carbono_economizado, carbono_emitido, km_percorrido)
+VALUES (
+    7,
+    'Centro',
+    'Vila Mariana',
+    'onibus',
+    1.80,
+    0.45,
+    6.20
+);
+
+INSERT INTO TB_VIAGEM
+(usuario_id, origem, destino, tipo_veiculo, carbono_economizado, carbono_emitido, km_percorrido)
+VALUES (
+    8,
+    'Santo André',
+    'São Paulo',
+    'trem',
+    4.20,
+    0.60,
+    15.00
+);
 SELECT * FROM TB_VIAGEM;
-TRUNCATE TABLE TB_VIAGEM;
+
+-- TB_MISSAO
+INSERT INTO TB_MISSAO
+(pontos_missao, titulo, descricao, tipo_missao)
+VALUES (
+    50,
+    'Use o metrô',
+    'Realize uma viagem utilizando o metrô',
+    'diaria'
+);
+
+INSERT INTO TB_MISSAO
+(pontos_missao, titulo, descricao, tipo_missao)
+VALUES (
+    100,
+    'Transporte sustentável',
+    'Utilize transporte público durante a semana',
+    'semanal'
+);
+
+INSERT INTO TB_MISSAO
+(pontos_missao, titulo, descricao, tipo_missao)
+VALUES (
+    300,
+    'Desafio do mês',
+    'Economize carbono durante o mês',
+    'mensal'
+);
+SELECT * FROM TB_MISSAO;
+
+-- TB_USUARIO_MISSAO
+INSERT INTO TB_USUARIO_MISSAO
+(pontuacao_recebida, usuario_id, missao_id, status_missao)
+VALUES (50, 8, 5, 'concluida');
+
+INSERT INTO TB_USUARIO_MISSAO
+(pontuacao_recebida, usuario_id, missao_id, status_missao)
+VALUES (0, 7, 6, 'em andamento');
+
+INSERT INTO TB_USUARIO_MISSAO
+(pontuacao_recebida, usuario_id, missao_id, status_missao)
+VALUES (100, 6, 7, 'concluida');
+SELECT * FROM TB_USUARIO_MISSAO;
+
+-- TB_COMPROVANTE
+INSERT INTO TB_COMPROVANTE
+(usuario_id, missao_id, status_validacao, arquivo, data_validacao)
+VALUES (
+    8,
+    5,
+    'aprovado',
+    EMPTY_BLOB(),
+    SYSDATE
+);
+
+INSERT INTO TB_COMPROVANTE
+(usuario_id, missao_id, status_validacao, arquivo)
+VALUES (
+    7,
+    6,
+    'pendente',
+    EMPTY_BLOB()
+);
+
+INSERT INTO TB_COMPROVANTE
+(usuario_id, missao_id, status_validacao, arquivo, data_validacao)
+VALUES (
+    6,
+    7,
+    'rejeitado',
+    EMPTY_BLOB(),
+    SYSDATE
+);
+SELECT * FROM TB_COMPROVANTE;
