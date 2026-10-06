@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AF8887C9-BF38-D40E-1F97-2ADB57D664B1" name="TB_CONQUISTA">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="49ECB4A2-3D58-C25C-2E55-C3B16A4C58B1" name="TB_TIPO_MISSAO">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 18:49:56 UTC</createdTime>
+<createdTime>2026-10-05 21:24:30 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="conquista_id" id="729C57B0-D60A-E483-6ED8-23EC790A1D0D">
+<Attribute name="tipo_missao_id" id="A82D811E-7737-8BAF-2525-C666A9AA7B34">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 18:59:04 UTC</createdTime>
+<createdTime>2026-10-05 21:24:40 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
@@ -27,9 +27,22 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nome" id="77188876-E2EC-20BD-4555-48E433DB9B2C">
+<Attribute name="nome" id="B37C3909-5C8E-9D09-2AD3-73F39C46F12C">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 18:59:14 UTC</createdTime>
+<createdTime>2026-10-05 21:24:53 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descricao" id="3C4CC538-96E0-1C78-DAD4-FC67892D2FFF">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-05 21:29:09 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
@@ -40,45 +53,35 @@
 <dataTypeSize>150</dataTypeSize>
 <ownDataTypeParameters>150,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="titulo" id="7723BC63-1315-A92E-45E0-546B9CA001CE">
+<Attribute name="ciclo_dias" id="A91A4458-2A0C-6106-D40F-B4852D31E5E4">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-09 21:11:33 UTC</createdTime>
+<createdTime>2026-10-05 21:25:08 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>150</dataTypeSize>
-<ownDataTypeParameters>150,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="descricao" id="ECC8B348-5BB7-8D05-6991-8C805A0EB962">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-01 18:59:57 UTC</createdTime>
-<ownerDesignName>Moduler</ownerDesignName>
-<engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>200</dataTypeSize>
-<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<listOfValues>
+<valueDef value="1" description="diaria"/>
+<valueDef value="30" description="mensal"/>
+<valueDef value="7" description="semanal"/>
+</listOfValues>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="7EC99E2D-6F90-E882-F1A4-A32332DFB1BC" name="TB_CONQUISTA PK">
+<identifier id="F20D88BF-1A22-2816-4CFC-4B5436660292" name="TB_TIPO_MISSAO PK">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 19:00:13 UTC</createdTime>
+<createdTime>2026-10-05 21:24:51 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="false"/>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>729C57B0-D60A-E483-6ED8-23EC790A1D0D</attributeRef>
+<attributeRef>A82D811E-7737-8BAF-2525-C666A9AA7B34</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

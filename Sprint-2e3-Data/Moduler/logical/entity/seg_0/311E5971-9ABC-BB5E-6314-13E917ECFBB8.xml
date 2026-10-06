@@ -27,16 +27,32 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="data_viagem" id="03B556B0-97C6-E69B-9C25-E07D283A303E">
+<Attribute name="usuario_id" id="3805BE4D-4449-B3E3-E051-5B6885A1FD9E">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 18:53:37 UTC</createdTime>
+<createdTime>2026-09-01 19:32:05 UTC</createdTime>
+<generatorID>9359B612-2291-D637-401A-2FE93ED122A3</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
 </engineerTo>
+<referedAttribute>879300AA-A05F-F1C9-86C0-908044B2334B</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_veiculo_id" id="3776A9F6-6AA9-A27C-5974-036608BA57EE">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-05 21:13:46 UTC</createdTime>
+<generatorID>04EABB31-8D60-5E86-7D05-35A7485A1A6E</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>D7095CD0-4B69-C1EA-9B6F-13DB50C0E86A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="origem" id="A9EA2CB3-725D-7912-116D-E3ECDE5B1BCE">
@@ -64,27 +80,6 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>250</dataTypeSize>
 <ownDataTypeParameters>250,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="tipo_veiculo" id="AFF87C62-7570-50C8-EEF7-C7279A9D788D">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-01 18:54:25 UTC</createdTime>
-<ownerDesignName>Moduler</ownerDesignName>
-<engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<listOfValues>
-<valueDef value="bicicleta" description=""/>
-<valueDef value="carro" description=""/>
-<valueDef value="metro" description=""/>
-<valueDef value="moto" description=""/>
-<valueDef value="onibus" description=""/>
-<valueDef value="trem" description=""/>
-</listOfValues>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="km_percorrido" id="39315855-52EA-6DC2-F38D-B1155E5AE582">
 <createdBy>wspot</createdBy>
@@ -128,18 +123,16 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="usuario_id" id="3805BE4D-4449-B3E3-E051-5B6885A1FD9E">
+<Attribute name="data_viagem" id="03B556B0-97C6-E69B-9C25-E07D283A303E">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 19:32:05 UTC</createdTime>
-<generatorID>9359B612-2291-D637-401A-2FE93ED122A3</generatorID>
+<createdTime>2026-09-01 18:53:37 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
 </engineerTo>
-<referedAttribute>879300AA-A05F-F1C9-86C0-908044B2334B</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

@@ -27,6 +27,20 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="usuario_id" id="3BEEFA43-0B69-F776-FE7B-3B470C6D43E1">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 21:15:07 UTC</createdTime>
+<generatorID>8C3546F7-394B-EE2C-1166-B69E414EAD31</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>879300AA-A05F-F1C9-86C0-908044B2334B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="valor_recarga" id="DD4059E1-BA86-835E-3A02-A74EB2CCA2D2">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 20:19:47 UTC</createdTime>
@@ -114,20 +128,6 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="usuario_id" id="3BEEFA43-0B69-F776-FE7B-3B470C6D43E1">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 21:15:07 UTC</createdTime>
-<generatorID>8C3546F7-394B-EE2C-1166-B69E414EAD31</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
-</engineerTo>
-<referedAttribute>879300AA-A05F-F1C9-86C0-908044B2334B</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

@@ -27,6 +27,34 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="tipo_missao_id" id="7AD7A11C-D57A-F5D8-34E4-384573D92A03">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-05 21:30:01 UTC</createdTime>
+<generatorID>E053725A-3223-6DCC-1C35-2213A9A1CE43</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>A82D811E-7737-8BAF-2525-C666A9AA7B34</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="conquista_id" id="ED670822-99B6-1686-440C-6B435653CEBF">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-05 21:31:59 UTC</createdTime>
+<generatorID>016A7F41-5066-F865-07C4-C26CA2C97473</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>729C57B0-D60A-E483-6ED8-23EC790A1D0D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="titulo" id="920F89A7-2BD6-D0E9-BC0B-C8B41E3FD57B">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 19:07:57 UTC</createdTime>
@@ -39,19 +67,6 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>150</dataTypeSize>
 <ownDataTypeParameters>150,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="tipo_missao" id="FF9FE77B-317D-AC1E-20F6-B805AE921ABF">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-01 19:08:00 UTC</createdTime>
-<ownerDesignName>Moduler</ownerDesignName>
-<engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="descricao" id="80556D8C-144C-BFAF-4E29-F2C45EA90EEC">
 <createdBy>wspot</createdBy>

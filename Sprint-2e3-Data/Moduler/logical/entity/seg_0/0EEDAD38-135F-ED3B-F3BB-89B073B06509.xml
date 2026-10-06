@@ -15,40 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="data_cumprimento" id="8C12958E-45CD-1975-9BEB-364828025475">
+<Attribute name="usuario_missao_id" id="C7A69661-A291-8E45-9C64-FB8E3E89E8B3">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 19:05:02 UTC</createdTime>
-<ownerDesignName>Moduler</ownerDesignName>
-<engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="status_missao" id="F2055FC1-BC79-4352-54E3-CEE79B8EEC81">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-01 19:05:10 UTC</createdTime>
-<ownerDesignName>Moduler</ownerDesignName>
-<engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<listOfValues>
-<valueDef value="cancelada" description=""/>
-<valueDef value="concluida" description=""/>
-<valueDef value="em_andamento" description=""/>
-<valueDef value="pendente" description=""/>
-</listOfValues>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="pontuacao_recebida" id="7C8AE794-FC86-2D52-C95B-57A641050CCC">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-01 19:05:29 UTC</createdTime>
+<createdTime>2026-10-05 21:34:59 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
@@ -86,6 +55,64 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="status_missao" id="F2055FC1-BC79-4352-54E3-CEE79B8EEC81">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 19:05:10 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<listOfValues>
+<valueDef value="cancelada" description=""/>
+<valueDef value="concluida" description=""/>
+<valueDef value="em andamento" description=""/>
+<valueDef value="pendente" description=""/>
+</listOfValues>
+<defaultValue>pendente</defaultValue>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pontuacao_recebida" id="7C8AE794-FC86-2D52-C95B-57A641050CCC">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-01 19:05:29 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_inicio" id="CFCD9E14-C5F6-B659-0D82-24ADD2D35B3C">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-05 21:36:10 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_conclusao" id="90C2A762-AC9D-0EB2-3A1C-FB51F219B9A2">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-05 21:37:40 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="374E891C-49D6-1A72-1857-0F24974CCC78" name="TB_USUARIO_MISSAO_PK">
@@ -99,6 +126,18 @@
 <usedAttributes>
 <attributeRef>A85C8921-E8D9-C09A-91BA-7DF42DE9AC61</attributeRef>
 <attributeRef>97CDC166-0F31-49D2-B30B-14CBE9EF06D2</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="40535ED3-7FBE-352A-CAA0-2480E9EB15AA" name="TB_USUARIO_MISSAO PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-05 21:47:27 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C7A69661-A291-8E45-9C64-FB8E3E89E8B3</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

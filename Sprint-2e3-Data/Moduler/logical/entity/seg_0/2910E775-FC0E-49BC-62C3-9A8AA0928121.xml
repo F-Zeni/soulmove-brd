@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9BCA0FF4-0C17-3D93-B633-70549E3DF850" name="TB_PONTOS">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2910E775-FC0E-49BC-62C3-9A8AA0928121" name="TB_CONVERSAO_PONTOS">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 18:49:38 UTC</createdTime>
+<createdTime>2026-10-05 21:49:17 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="pontos_id" id="847BACCE-3EB8-7D7F-C6D9-4F847507A755">
+<Attribute name="conversao_id" id="C88B78EB-5D50-1FAE-EA29-4CFC47D8F08C">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 18:52:01 UTC</createdTime>
+<createdTime>2026-10-05 21:51:14 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
@@ -27,10 +27,10 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="usuario_id" id="3B0F99FD-5AE4-93BE-7977-F9933D16B4AD">
+<Attribute name="usuario_id" id="B8BB1A86-311A-18B0-FBA8-0A0BED04F83E">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 19:33:49 UTC</createdTime>
-<generatorID>33E5C692-3DF7-5C59-B5B9-562DDBB7B83D</generatorID>
+<createdTime>2026-10-05 21:52:52 UTC</createdTime>
+<generatorID>B853753B-8C1A-38F2-DC35-F8EB85372326</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
@@ -41,22 +41,21 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="origem" id="1AE67BD6-DC65-3429-F457-ED11C86E2EF4">
+<Attribute name="pontos_convertidos" id="63CAEA59-5714-7E87-7200-8A83FD9D2199">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 23:03:30 UTC</createdTime>
+<createdTime>2026-10-05 21:51:35 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="creditos_gerados" id="39BCF423-9ABB-89A2-D1A6-62EE4761D9F1">
+<Attribute name="creditos_gerados" id="D1C02823-3E02-4FE8-ECEF-B7710F9056A2">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 18:53:00 UTC</createdTime>
+<createdTime>2026-10-05 21:51:47 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
@@ -68,9 +67,9 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="data_pontuacao" id="3E50C39B-3EBC-340E-6E5C-44CE09B130F3">
+<Attribute name="data_conversao" id="DD376010-A2C5-B61C-C278-8A09F94DFA61">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 18:52:43 UTC</createdTime>
+<createdTime>2026-10-05 21:51:57 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
@@ -80,30 +79,18 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="pontos_gerados" id="F7C528E8-F576-429F-403E-6D7117663391">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 20:16:05 UTC</createdTime>
-<ownerDesignName>Moduler</ownerDesignName>
-<engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="3FA921C9-B755-A92F-1ADF-5F2E43CBAEAF" name="TB_PONTOS PK">
+<identifier id="62892956-8C36-36FA-B12F-2FB4D79F6666" name="TB_CONVERSAO_PONTOS PK">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 23:03:14 UTC</createdTime>
+<createdTime>2026-10-05 21:51:25 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>847BACCE-3EB8-7D7F-C6D9-4F847507A755</attributeRef>
+<attributeRef>C88B78EB-5D50-1FAE-EA29-4CFC47D8F08C</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

@@ -27,20 +27,6 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="usuario_id" id="78997700-51B7-9B71-5E73-6DE53643F2AD">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-01 19:34:44 UTC</createdTime>
-<generatorID>4050D2A4-819D-7EEF-3178-83EB4ACC7B16</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
-</engineerTo>
-<referedAttribute>879300AA-A05F-F1C9-86C0-908044B2334B</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="conquista_id" id="53C26300-332F-68D9-55A6-E4538038A14A">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 19:35:11 UTC</createdTime>
@@ -55,6 +41,38 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="usuario_id" id="72E8E74D-1767-609B-A0B7-8D8F82F29004">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-05 21:21:00 UTC</createdTime>
+<generatorID>5D833633-D90D-727E-7AD9-ADD17F897E64</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>879300AA-A05F-F1C9-86C0-908044B2334B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="flag_titulo_atual" id="C0D90DDB-6A50-9E55-30B2-EACB3C2D785D">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-05 22:20:59 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<listOfValues>
+<valueDef value="N" description=""/>
+<valueDef value="S" description=""/>
+</listOfValues>
+<defaultValue>N</defaultValue>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="27983FCC-F89E-47D5-36D7-2266A9767217" name="TB_USUARIO_CONQUISTA_PK">
@@ -65,9 +83,8 @@
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
 </engineerTo>
 <pk>true</pk>
-<newElementsIDs>78997700-51B7-9B71-5E73-6DE53643F2AD,53C26300-332F-68D9-55A6-E4538038A14A</newElementsIDs>
+<newElementsIDs>53C26300-332F-68D9-55A6-E4538038A14A</newElementsIDs>
 <usedAttributes>
-<attributeRef>78997700-51B7-9B71-5E73-6DE53643F2AD</attributeRef>
 <attributeRef>53C26300-332F-68D9-55A6-E4538038A14A</attributeRef>
 </usedAttributes>
 </identifier>
