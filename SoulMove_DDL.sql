@@ -69,17 +69,17 @@ CREATE TABLE TB_VIAGEM (
         CHECK (carbono_economizado >= 0)
 );
 
+/* O tipo representa COMO o progresso é medido, não representa o prazo.
+O prazo e a meta ficam em TB_MISSAO, e o progresso individual em TB_USUARIO_MISSAO.*/
 CREATE TABLE TB_TIPO_MISSAO (
     tipo_missao_id     INTEGER       GENERATED ALWAYS AS IDENTITY,
     nome               VARCHAR2(30)  NOT NULL,
     descricao          VARCHAR2(150) NOT NULL,
-    periodicidade_dias INTEGER       NOT NULL,
+    unidade_medida     VARCHAR2(30)  NOT NULL,
     CONSTRAINT TB_TIPO_MISSAO_PK
         PRIMARY KEY (tipo_missao_id),
     CONSTRAINT TB_TIPO_MISSAO_NOME_UK
-        UNIQUE (nome),
-    CONSTRAINT TB_TIPO_MISSAO_PERIOD_CK
-        CHECK (periodicidade_dias > 0)
+        UNIQUE (nome)
 );
 
 CREATE TABLE TB_CONQUISTA (
@@ -94,12 +94,15 @@ CREATE TABLE TB_CONQUISTA (
 );
 
 CREATE TABLE TB_MISSAO (
-    missao_id      INTEGER       GENERATED ALWAYS AS IDENTITY,
-    tipo_missao_id INTEGER       NOT NULL,
-    conquista_id   INTEGER,
-    titulo         VARCHAR2(150) NOT NULL,
-    descricao      VARCHAR2(150) NOT NULL,
-    pontos_missao  INTEGER       NOT NULL,
+    missao_id          INTEGER       GENERATED ALWAYS AS IDENTITY,
+    tipo_missao_id     INTEGER       NOT NULL,
+    conquista_id       INTEGER,
+    titulo             VARCHAR2(150) NOT NULL,
+    descricao          VARCHAR2(150) NOT NULL,
+    meta_missao        NUMBER(10,2)  NOT NULL,
+    pontos_missao      INTEGER       NOT NULL,
+    periodicidade_dias INTEGER,
+    prazo_dias         INTEGER,
     CONSTRAINT TB_MISSAO_PK
         PRIMARY KEY (missao_id),
     CONSTRAINT TB_MISSAO_TITULO_UK
@@ -110,8 +113,14 @@ CREATE TABLE TB_MISSAO (
     CONSTRAINT TB_MISSAO_CONQUISTA_FK
         FOREIGN KEY (conquista_id)
         REFERENCES TB_CONQUISTA (conquista_id),
+    CONSTRAINT TB_MISSAO_META_CK
+        CHECK (meta_missao > 0),
     CONSTRAINT TB_MISSAO_PONTOS_CK
-        CHECK (pontos_missao > 0)
+        CHECK (pontos_missao > 0),
+    CONSTRAINT TB_MISSAO_PERIOD_CK
+        CHECK (periodicidade_dias IS NULL OR periodicidade_dias IN (1, 7, 30)),
+    CONSTRAINT TB_MISSAO_PRAZO_CK
+        CHECK (prazo_dias IS NULL OR prazo_dias > 0)
 );
 
 CREATE TABLE TB_USUARIO_MISSAO (
@@ -120,6 +129,7 @@ CREATE TABLE TB_USUARIO_MISSAO (
     missao_id          INTEGER              NOT NULL,
     status_missao      VARCHAR2(30)         DEFAULT 'pendente' NOT NULL,
     pontuacao_recebida INTEGER              DEFAULT 0 NOT NULL,
+    progresso_atual    NUMBER(10,2)         DEFAULT 0 NOT NULL,
     data_inicio        DATE,
     data_conclusao     DATE,
     CONSTRAINT TB_USUARIO_MISSAO_PK
@@ -132,6 +142,8 @@ CREATE TABLE TB_USUARIO_MISSAO (
         REFERENCES TB_MISSAO (missao_id),
     CONSTRAINT TB_USUARIO_MISSAO_PONTOS_CK
         CHECK (pontuacao_recebida >= 0),
+    CONSTRAINT TB_USUARIO_MISSAO_PROGRESSO_CK
+        CHECK (progresso_atual >= 0),
     CONSTRAINT TB_USUARIO_MISSAO_STATUS_CK
         CHECK (status_missao IN ('pendente', 'cancelada', 'concluida', 'em andamento')),
     CONSTRAINT TB_USUARIO_MISSAO_CONCL_CK
@@ -187,14 +199,14 @@ CREATE UNIQUE INDEX TB_USUARIO_CONQUISTA_TITULO_UIX
     );
 
 CREATE TABLE TB_RECARGA (
-    recarga_id       INTEGER              GENERATED ALWAYS AS IDENTITY,
-    usuario_id       INTEGER              NOT NULL,
-    valor_recarga    NUMERIC(6,2)         NOT NULL,
-    codigo_barras    VARCHAR2(100)        NOT NULL,
-    status_recarga   VARCHAR2(30)         NOT NULL,
-    data_solicitacao DATE DEFAULT SYSDATE NOT NULL,
-    data_pagamento   DATE,
-    data_credito     DATE,
+    recarga_id             INTEGER              GENERATED ALWAYS AS IDENTITY,
+    usuario_id             INTEGER              NOT NULL,
+    valor_recarga          NUMERIC(6,2)         NOT NULL,
+    codigo_pix_copia_cola  VARCHAR2(500)        NOT NULL,
+    status_recarga         VARCHAR2(30)         NOT NULL,
+    data_solicitacao       DATE DEFAULT SYSDATE NOT NULL,
+    data_pagamento         DATE,
+    data_credito           DATE,
     CONSTRAINT TB_RECARGA_PK
         PRIMARY KEY (recarga_id),
     CONSTRAINT TB_RECARGA_USUARIO_FK
@@ -296,7 +308,7 @@ COMMENT ON TABLE  TB_TIPO_MISSAO IS 'Catálogo dos tipos de missão da gamifica�
 COMMENT ON COLUMN TB_TIPO_MISSAO.tipo_missao_id     IS 'Identificador único do tipo de missão (chave primária gerada automaticamente).';
 COMMENT ON COLUMN TB_TIPO_MISSAO.nome               IS 'Nome do tipo de missão. Valores: diaria, semanal, mensal.';
 COMMENT ON COLUMN TB_TIPO_MISSAO.descricao          IS 'Descrição do tipo de missão e de como a ciclo funciona.';
-COMMENT ON COLUMN TB_TIPO_MISSAO.periodicidade_dias IS 'Quantidade de dias de duração/janela da missão (ex: 1 = diária, 7 = semanal, 30 = mensal).';
+COMMENT ON COLUMN TB_TIPO_MISSAO.unidade_medida IS 'Unidade usada no progresso da missão, por exemplo kg/CO2, missoes ou trajetos.';
 
 -- TB_CONQUISTA
 COMMENT ON TABLE  TB_CONQUISTA IS 'Catálogo de conquistas (títulos) que o usuário pode desbloquear ao concluir missões.';
@@ -308,11 +320,14 @@ COMMENT ON COLUMN TB_CONQUISTA.descricao    IS 'Descrição de como a conquista 
 -- TB_MISSAO
 COMMENT ON TABLE  TB_MISSAO IS 'Catálogo de missões de mobilidade sustentável. Ao ser concluída, a missão gera pontos e, opcionalmente, uma conquista para o usuário.';
 COMMENT ON COLUMN TB_MISSAO.missao_id      IS 'Identificador único da missão (chave primária gerada automaticamente).';
-COMMENT ON COLUMN TB_MISSAO.tipo_missao_id IS 'Tipo da missão (diária, semanal ou mensal). Chave estrangeira para TB_TIPO_MISSAO.';
+COMMENT ON COLUMN TB_MISSAO.tipo_missao_id IS 'Critério usado para medir o objetivo da missão. Chave estrangeira para TB_TIPO_MISSAO.';
 COMMENT ON COLUMN TB_MISSAO.conquista_id   IS 'Conquista concedida ao usuário quando conclui a missão. Opcional; chave estrangeira para TB_CONQUISTA.';
 COMMENT ON COLUMN TB_MISSAO.titulo         IS 'Título único da missão exibido ao usuário.';
 COMMENT ON COLUMN TB_MISSAO.descricao      IS 'Descrição do que o usuário precisa fazer para cumprir a missão.';
-COMMENT ON COLUMN TB_MISSAO.pontos_missao  IS 'Quantidade de pontos concedidos ao usuário ao concluir a missão. Deve ser maior que zero.';
+COMMENT ON COLUMN TB_MISSAO.meta_missao   IS 'Valor que o usuário precisa atingir para concluir a missão, medido na unidade definida em TB_TIPO_MISSAO.';
+COMMENT ON COLUMN TB_MISSAO.pontos_missao IS 'Quantidade de pontos concedidos ao usuário ao concluir a missão. Deve ser maior que zero.';
+COMMENT ON COLUMN TB_MISSAO.periodicidade_dias IS 'Intervalo em dias para a missão voltar a ficar disponível: 1 = diária, 7 = semanal, 30 = mensal. NULL significa que a missão não é recorrente.';
+COMMENT ON COLUMN TB_MISSAO.prazo_dias    IS 'Prazo em dias para concluir a missão. NULL significa que não há prazo configurado.';
 
 -- TB_USUARIO_CONQUISTA
 COMMENT ON TABLE  TB_USUARIO_CONQUISTA IS 'Tabela associativa entre usuários e conquistas: registra quais conquistas cada usuário desbloqueou e qual delas está escolhida como título atual.';
@@ -322,15 +337,15 @@ COMMENT ON COLUMN TB_USUARIO_CONQUISTA.data_conquista  IS 'Data em que a conquis
 COMMENT ON COLUMN TB_USUARIO_CONQUISTA.flag_titulo_atual IS 'Indica se esta conquista está selecionada como título atual do usuário: S = sim, N = não. Apenas uma conquista por usuário pode ser S.';
 
 -- TB_RECARGA
-COMMENT ON TABLE  TB_RECARGA IS 'Solicitações de recarga de crédito na carteira de mobilidade, pagas por boleto/código de barras.';
-COMMENT ON COLUMN TB_RECARGA.recarga_id       IS 'Identificador único da recarga (chave primária gerada automaticamente).';
-COMMENT ON COLUMN TB_RECARGA.usuario_id       IS 'Usuário que solicitou a recarga. Chave estrangeira para TB_USUARIO.';
-COMMENT ON COLUMN TB_RECARGA.valor_recarga    IS 'Valor da recarga em reais (R$). Entre 10 e 200.';
-COMMENT ON COLUMN TB_RECARGA.codigo_barras    IS 'Código de barras gerado para pagamento da recarga.';
-COMMENT ON COLUMN TB_RECARGA.status_recarga   IS 'Situação da recarga. Valores: pendente, creditado, recusado.';
-COMMENT ON COLUMN TB_RECARGA.data_solicitacao IS 'Data em que a recarga foi solicitada. Padrão: data atual.';
-COMMENT ON COLUMN TB_RECARGA.data_pagamento   IS 'Data em que o pagamento foi confirmado. Nulo enquanto não pago.';
-COMMENT ON COLUMN TB_RECARGA.data_credito     IS 'Data em que o valor foi creditado na carteira. Nulo enquanto não creditado.';
+COMMENT ON TABLE  TB_RECARGA IS 'Solicitações de recarga de crédito na carteira de mobilidade, pagas por Pix copia e cola.';
+COMMENT ON COLUMN TB_RECARGA.recarga_id            IS 'Identificador único da recarga (chave primária gerada automaticamente).';
+COMMENT ON COLUMN TB_RECARGA.usuario_id            IS 'Usuário que solicitou a recarga. Chave estrangeira para TB_USUARIO.';
+COMMENT ON COLUMN TB_RECARGA.valor_recarga         IS 'Valor da recarga em reais (R$). Entre 10 e 200.';
+COMMENT ON COLUMN TB_RECARGA.codigo_pix_copia_cola IS 'Código Pix copia e cola gerado para pagamento da recarga.';
+COMMENT ON COLUMN TB_RECARGA.status_recarga        IS 'Situação da recarga. Valores: pendente, creditado, recusado.';
+COMMENT ON COLUMN TB_RECARGA.data_solicitacao      IS 'Data em que a recarga foi solicitada. Padrão: data atual.';
+COMMENT ON COLUMN TB_RECARGA.data_pagamento        IS 'Data em que o pagamento foi confirmado. Nulo enquanto não pago.';
+COMMENT ON COLUMN TB_RECARGA.data_credito          IS 'Data em que o valor foi creditado na carteira. Nulo enquanto não creditado.';
 
 -- TB_CONVERSAO_PONTOS
 COMMENT ON TABLE  TB_CONVERSAO_PONTOS IS 'Registro das conversões de pontos acumulados pelos usuários em créditos de mobilidade.';
@@ -346,6 +361,7 @@ COMMENT ON COLUMN TB_USUARIO_MISSAO.usuario_id         IS 'Usuário que executa 
 COMMENT ON COLUMN TB_USUARIO_MISSAO.missao_id          IS 'Missão executada. Chave estrangeira para TB_MISSAO.';
 COMMENT ON COLUMN TB_USUARIO_MISSAO.status_missao      IS 'Situação da execução. Valores: pendente, em andamento, concluida ou cancelada.';
 COMMENT ON COLUMN TB_USUARIO_MISSAO.pontuacao_recebida IS 'Pontos efetivamente recebidos pelo usuário. Zero enquanto a missão não é concluída.';
+COMMENT ON COLUMN TB_USUARIO_MISSAO.progresso_atual IS 'Progresso atual do usuário na missão, usando a unidade definida no tipo de missão; por exemplo, kg de CO2 economizados, missões concluídas ou trajetos realizados.';
 COMMENT ON COLUMN TB_USUARIO_MISSAO.data_inicio        IS 'Data em que o usuário iniciou a missão. Nula enquanto a execução estiver pendente.';
 COMMENT ON COLUMN TB_USUARIO_MISSAO.data_conclusao     IS 'Data de conclusão da missão. Obrigatória quando status_missao = concluida.';
 
