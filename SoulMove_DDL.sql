@@ -241,33 +241,33 @@ CREATE TABLE TB_CONVERSAO_PONTOS (
 -- Tabela de resumo do usuario / Serve mais para vermos se está tudo certo / FOI DIFICIL ENTENDER COMO FAZER ISSO --
 
 CREATE OR REPLACE VIEW VW_USUARIO_RESUMO AS
-    SELECT u.usuario_id,
-           u.nome,
-           u.email,
-           GREATEST(NVL(m.pontos_missoes, 0) - NVL(c.pontos_convertidos, 0), 0) AS pontos_totais,
-           NVL(c.creditos_totais, 0) AS creditos_totais,
-           t.titulo AS titulo_atual
-    FROM   TB_USUARIO u
-        LEFT JOIN (
-                SELECT usuario_id,
-                       SUM(pontuacao_recebida) AS pontos_missoes
-                FROM   TB_USUARIO_MISSAO
-                WHERE  status_missao = 'concluida'
-                GROUP BY usuario_id
-              ) m ON m.usuario_id = u.usuario_id
-        LEFT JOIN (
-                SELECT usuario_id,
-                       SUM(pontos_convertidos) AS pontos_convertidos,
-                       SUM(creditos_gerados) AS creditos_totais
-                FROM   TB_CONVERSAO_PONTOS
-                GROUP BY usuario_id
-              ) c ON c.usuario_id = u.usuario_id
-        LEFT JOIN (
-                SELECT uc.usuario_id, c2.titulo
-                FROM   TB_USUARIO_CONQUISTA uc
-                JOIN   TB_CONQUISTA c2 ON c2.conquista_id = uc.conquista_id
-                WHERE  uc.flag_titulo_atual = 'S'
-              ) t ON t.usuario_id = u.usuario_id;
+SELECT u.usuario_id,
+       u.nome,
+       u.email,
+       GREATEST(NVL(m.pontos_missoes, 0) - NVL(c.pontos_convertidos, 0), 0) AS pontos_totais,
+       NVL(c.creditos_totais, 0) AS creditos_totais,
+       t.titulo AS titulo_atual
+FROM   TB_USUARIO u
+LEFT JOIN (
+        SELECT usuario_id,
+               SUM(pontuacao_recebida) AS pontos_missoes
+        FROM   TB_USUARIO_MISSAO
+        WHERE  status_missao = 'concluida'
+        GROUP BY usuario_id
+      ) m ON m.usuario_id = u.usuario_id
+LEFT JOIN (
+        SELECT usuario_id,
+               SUM(pontos_convertidos) AS pontos_convertidos,
+               SUM(creditos_gerados) AS creditos_totais
+        FROM   TB_CONVERSAO_PONTOS
+        GROUP BY usuario_id
+      ) c ON c.usuario_id = u.usuario_id
+LEFT JOIN (
+        SELECT uc.usuario_id, c2.titulo
+        FROM   TB_USUARIO_CONQUISTA uc
+        JOIN   TB_CONQUISTA c2 ON c2.conquista_id = uc.conquista_id
+        WHERE  uc.flag_titulo_atual = 'S'
+      ) t ON t.usuario_id = u.usuario_id;
 
 -- COMENTARIOS
 
@@ -383,3 +383,15 @@ COMMENT ON COLUMN VW_USUARIO_RESUMO.pontos_totais   IS 'Saldo atual de pontos: p
 COMMENT ON COLUMN VW_USUARIO_RESUMO.creditos_totais IS 'Soma dos créditos (R$) gerados nas conversões de pontos.';
 COMMENT ON COLUMN VW_USUARIO_RESUMO.titulo_atual    IS 'Título atualmente escolhido pelo usuário entre as conquistas desbloqueadas. Nulo se ainda não houver título selecionado.';
 
+
+--ALTERAÇÕES PROVISÓRIAS
+CREATE TABLE tb_imagem_missao (
+    tb_imagem_missao_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    dados_imagem BLOB NOT NULL,
+    tipo_mime VARCHAR2(50) NOT NULL,
+    CONSTRAINT tb_imagem_missao_pk PRIMARY KEY (tb_imagem_missao_id)
+);
+
+
+ALTER TABLE tb_missao ADD tb_imagem_missao_id INTEGER;
+ALTER TABLE tb_missao ADD CONSTRAINT tb_missao_imagem_fk FOREIGN KEY (tb_imagem_missao_id) REFERENCES tb_imagem_missao (tb_imagem_missao_id);
