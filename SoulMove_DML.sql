@@ -12,6 +12,7 @@ INSERT INTO TB_USUARIO (nome, email, senha)
 INSERT INTO TB_USUARIO (nome, email, senha)
     VALUES ('Rodrigo Pera', 'rodrigo@gmail.com', 'teste456');
 
+
 -- TB_CARTEIRA
 SELECT * FROM TB_CARTEIRA;
 --
