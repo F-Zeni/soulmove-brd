@@ -82,20 +82,47 @@ CREATE TABLE TB_TIPO_MISSAO (
         UNIQUE (nome)
 );
 
+CREATE TABLE TB_TIPO_CONQUISTA (
+    tipo_conquista_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    unidade_medida      VARCHAR2(100) NOT NULL,
+    nome VARCHAR2(150),
+    descricao VARCHAR2(150),
+    CONSTRAINT TB_TIPO_CONQUISTA_PK
+        PRIMARY KEY (tipo_conquista_id),
+    CONSTRAINT TB_TIPO_CONQUISTA_UK
+        UNIQUE (nome)
+);
+
 CREATE TABLE TB_CONQUISTA (
-    conquista_id INTEGER       GENERATED ALWAYS AS IDENTITY,
-    nome         VARCHAR2(150) NOT NULL,
-    titulo       VARCHAR2(150) NOT NULL,
-    descricao    VARCHAR2(200) NOT NULL,
+    conquista_id        INTEGER       GENERATED ALWAYS AS IDENTITY,
+    tipo_conquista_id   INTEGER       NOT NULL,
+    meta                NUMERIC (6,2) NOT NULL,
+    nome                VARCHAR2(150) NOT NULL,
+    titulo              VARCHAR2(150) NOT NULL,
+    descricao           VARCHAR2(200) NOT NULL,
+    pontos              INTEGER       NOT NULL,
     CONSTRAINT TB_CONQUISTA_PK
         PRIMARY KEY (conquista_id),
     CONSTRAINT TB_CONQUISTA_NOME_UK
-        UNIQUE (nome)
+        UNIQUE (nome),
+    CONSTRAINT TB_CONQUISTA_TIPO_FK
+        FOREIGN KEY (tipo_conquista_id)
+        REFERENCES tb_tipo_conquista (tipo_conquista_id),
+    CONSTRAINT TB_CONQUISTA_PONTOS_CK
+        CHECK(pontos > 0)
+);
+
+CREATE TABLE tb_imagem_missao (
+    imagem_missao_id INTEGER GENERATED ALWAYS AS IDENTITY,
+    dados_imagem BLOB NOT NULL,
+    tipo_mime VARCHAR2(50) NOT NULL,
+    CONSTRAINT tb_imagem_missao_pk PRIMARY KEY (imagem_missao_id)
 );
 
 CREATE TABLE TB_MISSAO (
     missao_id          INTEGER       GENERATED ALWAYS AS IDENTITY,
     tipo_missao_id     INTEGER       NOT NULL,
+    imagem_missao_id   INTEGER,
     conquista_id       INTEGER,
     titulo             VARCHAR2(150) NOT NULL,
     descricao          VARCHAR2(150) NOT NULL,
@@ -110,6 +137,9 @@ CREATE TABLE TB_MISSAO (
     CONSTRAINT TB_MISSAO_TIPO_FK
         FOREIGN KEY (tipo_missao_id)
         REFERENCES TB_TIPO_MISSAO (tipo_missao_id),
+    CONSTRAINT TB_MISSAO_IMAGEM_FK
+        FOREIGN KEY (imagem_missao_id)
+        REFERENCES tb_imagem_missao (imagem_missao_id),
     CONSTRAINT TB_MISSAO_CONQUISTA_FK
         FOREIGN KEY (conquista_id)
         REFERENCES TB_CONQUISTA (conquista_id),
@@ -176,10 +206,11 @@ CREATE TABLE TB_COMPROVANTE (
 );
 
 CREATE TABLE TB_USUARIO_CONQUISTA (
-    usuario_id      INTEGER              NOT NULL,
-    conquista_id    INTEGER              NOT NULL,
-    data_conquista  DATE DEFAULT SYSDATE NOT NULL,
-    flag_titulo_atual CHAR(1) DEFAULT 'N' NOT NULL,
+    usuario_id          INTEGER              NOT NULL,
+    conquista_id        INTEGER              NOT NULL,
+    data_conquista      DATE DEFAULT SYSDATE NOT NULL,
+    pontuacao_recebida  INTEGER              DEFAULT 0 NOT NULL,
+    flag_titulo_atual   CHAR(1) DEFAULT 'N'  NOT NULL,
     CONSTRAINT TB_USUARIO_CONQUISTA_PK
         PRIMARY KEY (usuario_id, conquista_id),
     CONSTRAINT TB_USUARIO_CONQUISTA_USU_FK
@@ -244,11 +275,15 @@ CREATE OR REPLACE VIEW VW_USUARIO_RESUMO AS
 SELECT u.usuario_id,
        u.nome,
        u.email,
-       GREATEST(NVL(m.pontos_missoes, 0) - NVL(c.pontos_convertidos, 0), 0) AS pontos_totais,
+       GREATEST(
+           (NVL(m.pontos_missoes, 0) + NVL(ac.pontos_conquistas, 0)) - NVL(c.pontos_convertidos, 0), 
+           0
+       ) AS pontos_totais,
        NVL(c.creditos_totais, 0) AS creditos_totais,
        t.titulo AS titulo_atual
 FROM   TB_USUARIO u
 LEFT JOIN (
+        -- Soma de todos os pontos de missões concluídas
         SELECT usuario_id,
                SUM(pontuacao_recebida) AS pontos_missoes
         FROM   TB_USUARIO_MISSAO
@@ -256,6 +291,14 @@ LEFT JOIN (
         GROUP BY usuario_id
       ) m ON m.usuario_id = u.usuario_id
 LEFT JOIN (
+        -- Soma de TODOS os pontos de conquistas desbloqueadas (independente do título estar ativo ou não)
+        SELECT usuario_id,
+               SUM(pontuacao_recebida) AS pontos_conquistas
+        FROM   TB_USUARIO_CONQUISTA
+        GROUP BY usuario_id
+      ) ac ON ac.usuario_id = u.usuario_id
+LEFT JOIN (
+        -- Soma das conversões já realizadas pelo usuário
         SELECT usuario_id,
                SUM(pontos_convertidos) AS pontos_convertidos,
                SUM(creditos_gerados) AS creditos_totais
@@ -263,6 +306,7 @@ LEFT JOIN (
         GROUP BY usuario_id
       ) c ON c.usuario_id = u.usuario_id
 LEFT JOIN (
+        -- Busca exclusivamente o nome do título que está marcado como atual ('S')
         SELECT uc.usuario_id, c2.titulo
         FROM   TB_USUARIO_CONQUISTA uc
         JOIN   TB_CONQUISTA c2 ON c2.conquista_id = uc.conquista_id
@@ -383,15 +427,6 @@ COMMENT ON COLUMN VW_USUARIO_RESUMO.pontos_totais   IS 'Saldo atual de pontos: p
 COMMENT ON COLUMN VW_USUARIO_RESUMO.creditos_totais IS 'Soma dos créditos (R$) gerados nas conversões de pontos.';
 COMMENT ON COLUMN VW_USUARIO_RESUMO.titulo_atual    IS 'Título atualmente escolhido pelo usuário entre as conquistas desbloqueadas. Nulo se ainda não houver título selecionado.';
 
-
---ALTERAÇÕES PROVISÓRIAS
-CREATE TABLE tb_imagem_missao (
-    tb_imagem_missao_id INTEGER GENERATED ALWAYS AS IDENTITY,
-    dados_imagem BLOB NOT NULL,
-    tipo_mime VARCHAR2(50) NOT NULL,
-    CONSTRAINT tb_imagem_missao_pk PRIMARY KEY (tb_imagem_missao_id)
-);
+SELECT * FROM vw_usuario_resumo;
 
 
-ALTER TABLE tb_missao ADD tb_imagem_missao_id INTEGER;
-ALTER TABLE tb_missao ADD CONSTRAINT tb_missao_imagem_fk FOREIGN KEY (tb_imagem_missao_id) REFERENCES tb_imagem_missao (tb_imagem_missao_id);

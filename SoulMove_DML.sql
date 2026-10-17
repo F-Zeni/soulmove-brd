@@ -123,33 +123,33 @@ VALUES ('trajeto_longo', 'Acompanha a realização de trajetos longos utilizando
 -- TB_TIPO_CONQUISTA
 SELECT * FROM TB_TIPO_CONQUISTA;
 --
-INSERT INTO TB_TIPO_CONQUISTA (nome, descricao)
-    VALUES ('Mobilidade', 'Conquistas relacionadas ao uso de meios de transporte sustentáveis.');
+INSERT INTO TB_TIPO_CONQUISTA (unidade_medida, nome, descricao)
+    VALUES ('Transporte Público', 'Mobilidade', 'Conquistas relacionadas ao uso de meios de transporte sustentáveis.');
 --
-INSERT INTO TB_TIPO_CONQUISTA (nome, descricao)
-    VALUES ('Ambiental', 'Conquistas relacionadas à redução de emissões e à preservação ambiental.');
+INSERT INTO TB_TIPO_CONQUISTA (unidade_medida, nome, descricao)
+    VALUES ('Carbono Economizado', 'Ambiental', 'Conquistas relacionadas à redução de emissões e à preservação ambiental.');
 --
-INSERT INTO TB_TIPO_CONQUISTA (nome, descricao)
-    VALUES ('Engajamento', 'Conquistas relacionadas à participação e à conclusão de missões.');
+INSERT INTO TB_TIPO_CONQUISTA (unidade_medida, nome, descricao)
+    VALUES ('Missões', 'Engajamento', 'Conquistas relacionadas à participação e à conclusão de missões.');
 
 -- TB_CONQUISTA
 SELECT * FROM TB_CONQUISTA;
 --
-INSERT INTO TB_CONQUISTA (tipo_conquista_id, nome, titulo, descricao)
+INSERT INTO TB_CONQUISTA (tipo_conquista_id, meta ,nome, titulo, descricao, pontos)
     VALUES ((SELECT tipo_conquista_id FROM TB_TIPO_CONQUISTA WHERE nome = 'Mobilidade'),
-            'Primeira Viagem', 'Viajante Iniciante', 'Realiza sua primeria viagem sustentável');
+            50, 'Primeira Viagem', 'Viajante Iniciante', 'Realiza sua primeria viagem sustentável', 100);
 --
-INSERT INTO TB_CONQUISTA (tipo_conquista_id, nome, titulo, descricao)
+INSERT INTO TB_CONQUISTA (tipo_conquista_id, meta, nome, titulo, descricao, pontos)
     VALUES ((SELECT tipo_conquista_id FROM TB_TIPO_CONQUISTA WHERE nome = 'Ambiental'),
-            'Eco Guerreiro', 'Eco Guerreiro', 'Economize carbono utilizando transporte sustentável');
+            1, 'Eco Guerreiro', 'Eco Guerreiro', 'Economize carbono utilizando transporte sustentável', 150);
 --
-INSERT INTO TB_CONQUISTA (tipo_conquista_id, nome, titulo, descricao)
+INSERT INTO TB_CONQUISTA (tipo_conquista_id, meta, nome, titulo, descricao, pontos)
     VALUES ((SELECT tipo_conquista_id FROM TB_TIPO_CONQUISTA WHERE nome = 'Mobilidade'),
-            'Mestre da Mobilidade', 'Mestre da Mobilidade', 'Conclua o desafio mensal de mobilidade sustentável');
+            100, 'Mestre da Mobilidade', 'Mestre da Mobilidade', 'Conclua o desafio mensal de mobilidade sustentável', 100);
 --
-INSERT INTO TB_CONQUISTA (tipo_conquista_id, nome, titulo, descricao)
+INSERT INTO TB_CONQUISTA (tipo_conquista_id, meta, nome, titulo, descricao, pontos)
     VALUES ((SELECT tipo_conquista_id FROM TB_TIPO_CONQUISTA WHERE nome = 'Engajamento'),
-            'Amigo da Mobilidade Urbana', 'Amigo da Mobilidade Urbana', 'Conclua 50 missões relacionadas ao transporte público.');
+            100, 'Amigo da Mobilidade Urbana', 'Amigo da Mobilidade Urbana', 'Conclua 50 missões relacionadas ao transporte público.', 50);
 
 -- TB_MISSAO
 SELECT * FROM TB_MISSAO;
