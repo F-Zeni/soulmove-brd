@@ -93,6 +93,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>6</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_VIAGEM_KM_PERC_CK
+	CHECK (km_percorrido &gt; 0)"/>
+</checkConstraint>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="carbono_emitido" id="47F4C441-7383-070F-79DD-7CA26454294C">
@@ -107,6 +111,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>6</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CARBONO_EMITIDO
+	CHECK (carbono_emitido &gt;= 0)"/>
+</checkConstraint>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="carbono_economizado" id="808DCA69-D3A4-B65D-6D05-EE9192AD2FB1">
@@ -121,6 +129,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>6</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_VIAGEM_CARB_ECONOM_CK
+	CHECK (carbono_economizado &gt;= 0)"/>
+</checkConstraint>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="data_viagem" id="03B556B0-97C6-E69B-9C25-E07D283A303E">
@@ -141,8 +153,9 @@
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 19:32:26 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="295F6602-BE2E-2FF4-B056-5D6D00D92246" containerWithKeyObject="28303974-899B-B2EE-722C-0348BC00A73D" localFKIndex="FABF2B93-10FF-1F62-85B4-ACC6F8E61576" name="TB_MISSAO_IMAGEM_MIS_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>5D44F5A8-6BCF-CEAC-6A58-AE80484A3BBF</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<referredTableLongName>TB_IMAGEM_MISSAO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>1229661B-0DD0-6592-36F7-310E0D7B00FB</referredTableID>
+<keyObject>6BA656F4-E079-DF30-FA91-8BC677F50E0F</keyObject>
+<referredKeyID>6BA656F4-E079-DF30-FA91-8BC677F50E0F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>imagem_missao_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

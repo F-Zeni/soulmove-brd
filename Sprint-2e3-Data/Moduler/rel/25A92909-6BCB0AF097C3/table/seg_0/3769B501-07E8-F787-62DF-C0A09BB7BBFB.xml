@@ -8,39 +8,10 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="data_cumprimento" id="F62EE3F8-5407-D079-88E8-325E834B0BB8">
+<Column name="usuario_missao_id" id="2DA0CD3C-8177-20F9-86FF-4FDA666BC4E4">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>8C12958E-45CD-1975-9BEB-364828025475</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="status_missao" id="7F4074F7-AEBC-E27F-DE38-AAB3601610FD">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>F2055FC1-BC79-4352-54E3-CEE79B8EEC81</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<listOfValues>
-<valueDef value="cancelada" description=""/>
-<valueDef value="concluida" description=""/>
-<valueDef value="em_andamento" description=""/>
-<valueDef value="pendente" description=""/>
-</listOfValues>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="pontuacao_recebida" id="5478973F-4ADE-2304-A20E-A1FF645CE702">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>7C8AE794-FC86-2D52-C95B-57A641050CCC</generatorID>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>C7A69661-A291-8E45-9C64-FB8E3E89E8B3</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -78,8 +49,100 @@
 <colAssociation fkAssociation="621021AC-EBC6-6F4C-2EE8-2D7E81FDBEF9" referredColumn="22ED5C00-8130-D31D-E0F7-E6CDF70C26F7"/>
 </associations>
 </Column>
+<Column name="pontuacao_recebida" id="5478973F-4ADE-2304-A20E-A1FF645CE702">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
+<generatorID>7C8AE794-FC86-2D52-C95B-57A641050CCC</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status_missao" id="7F4074F7-AEBC-E27F-DE38-AAB3601610FD">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
+<generatorID>F2055FC1-BC79-4352-54E3-CEE79B8EEC81</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<listOfValues>
+<valueDef value="cancelada" description=""/>
+<valueDef value="concluida" description=""/>
+<valueDef value="em andamento" description=""/>
+<valueDef value="pendente" description=""/>
+</listOfValues>
+<defaultValue>pendente</defaultValue>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="progresso_atual" id="2FE32398-E25F-CB38-8CCD-D40BB2F67F63">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>F441F9B5-F7FD-EE3F-8D5C-1464962889A6</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_inicio" id="6E07FA1D-3EFE-4456-CB52-B2C577CBA846">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>CFCD9E14-C5F6-B659-0D82-24ADD2D35B3C</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_conclusao" id="9211B8C5-0DD6-1F34-20EF-A135D98B69BF">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>90C2A762-AC9D-0EB2-3A1C-FB51F219B9A2</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_cumprimento" id="F62EE3F8-5407-D079-88E8-325E834B0BB8">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
+<generatorID>8C12958E-45CD-1975-9BEB-364828025475</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AF779187-6811-AD32-A709-16D34094CB6C" name="TB_USUARIO_MISSAO_PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>40535ED3-7FBE-352A-CAA0-2480E9EB15AA</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2DA0CD3C-8177-20F9-86FF-4FDA666BC4E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="EFE3FA03-433E-176E-C88B-4E3FD765403F" name="TB_USUARIO_MISSAO_UN">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
@@ -92,7 +155,7 @@
 <colUsage columnID="960FA40F-5099-FB7C-9BCA-5DA5DD51401C"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="B2281BA1-F868-5DAF-C0CE-A728B3DF9F81" name="TB_USUARIO_MISSAO_USUARIO_FK">
+<ind_PK_UK id="B2281BA1-F868-5DAF-C0CE-A728B3DF9F81" name="TB_USUARIO_MISSAO_USU_FK">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>9BBF51AA-2472-B99B-2369-9271B2405DD3</generatorID>

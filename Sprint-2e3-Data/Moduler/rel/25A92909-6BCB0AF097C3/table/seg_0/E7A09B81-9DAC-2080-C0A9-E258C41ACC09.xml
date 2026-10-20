@@ -8,32 +8,6 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="data_conquista" id="9F606080-5B07-62F1-72BE-FFFE2F4975EA">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>E80A7352-48D3-4F8A-5612-9FFAF0D0792E</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="usuario_id" id="C64D14E4-8F3A-3349-8F74-14EAFF9DFCF0">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>78997700-51B7-9B71-5E73-6DE53643F2AD</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="6CA64C8D-799B-B8E9-2BB9-5572D4FDB114" referredColumn="82957B40-2D31-BD18-94E8-D04FF5A55E32"/>
-</associations>
-</Column>
 <Column name="conquista_id" id="3CA233A0-C062-3F7C-6ACD-77A85C160D4F">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
@@ -49,6 +23,61 @@
 <colAssociation fkAssociation="6748C58C-3F8C-0EDC-8E5E-72C5C994A35C" referredColumn="85F3A4B0-1DB8-1E33-8F9E-4B692E6C03D4"/>
 </associations>
 </Column>
+<Column name="usuario_id" id="B7359358-1C0E-31DA-F0FE-81767E9EAC0E">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>72E8E74D-1767-609B-A0B7-8D8F82F29004</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D0C64627-90BC-CCDE-4CEC-A29627A1337A" referredColumn="82957B40-2D31-BD18-94E8-D04FF5A55E32"/>
+</associations>
+</Column>
+<Column name="pontuacao_recebida" id="11163F45-6BEE-FE64-D103-A8A02CACC532">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>7CC273B4-71F6-5FB2-0382-C19FAE449D55</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_conquista" id="9F606080-5B07-62F1-72BE-FFFE2F4975EA">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
+<generatorID>E80A7352-48D3-4F8A-5612-9FFAF0D0792E</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="flag_titulo_atual" id="96688DEE-81BF-8BCB-9C37-1A4651F244F5">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>C0D90DDB-6A50-9E55-30B2-EACB3C2D785D</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<listOfValues>
+<valueDef value="N" description=""/>
+<valueDef value="S" description=""/>
+</listOfValues>
+<defaultValue>N</defaultValue>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="F0105D6F-8D62-A8CA-851C-DDB91149FA5C" name="TB_USUARIO_CONQUISTA_PK">
@@ -60,22 +89,10 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="C64D14E4-8F3A-3349-8F74-14EAFF9DFCF0"/>
 <colUsage columnID="3CA233A0-C062-3F7C-6ACD-77A85C160D4F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="1AF76D5F-F09D-4742-74C3-208670AE083F" name="TB_USUARIO_CONQUISTA_USU_FK">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>4050D2A4-819D-7EEF-3178-83EB4ACC7B16</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="C64D14E4-8F3A-3349-8F74-14EAFF9DFCF0"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="AEBA3325-2B18-880D-094B-053A76143A8F" name="TB_USUARIO_CONQUISTA_FKv1">
+<ind_PK_UK id="AEBA3325-2B18-880D-094B-053A76143A8F" name="TB_USUARIO_CONQUISTA_CON_FK">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>2D9F80CC-2267-4D1D-9108-E382491B19E3</generatorID>
@@ -84,6 +101,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="3CA233A0-C062-3F7C-6ACD-77A85C160D4F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1CD03459-B646-5271-5115-4AFC75E8D772" name="TB_USUARIO_CONQUISTA_USU_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>5D833633-D90D-727E-7AD9-ADD17F897E64</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B7359358-1C0E-31DA-F0FE-81767E9EAC0E"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

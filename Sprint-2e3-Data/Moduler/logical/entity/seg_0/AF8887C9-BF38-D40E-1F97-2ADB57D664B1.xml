@@ -27,6 +27,34 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="tipo_conquista_id" id="2BA46056-051D-DF85-128D-ED245AA5F24B">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:46:29 UTC</createdTime>
+<generatorID>59D3EC02-63C6-DF09-6FCD-B3B5F70722B2</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<referedAttribute>D184136B-8D67-D48C-61F7-89CF77BDEEF9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="meta" id="84AE217D-AEDC-CDE9-81FA-A29AD9D0D740">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:04:03 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+</Attribute>
 <Attribute name="nome" id="77188876-E2EC-20BD-4555-48E433DB9B2C">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 18:59:14 UTC</createdTime>
@@ -38,6 +66,10 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>150</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CONQUISTA_NOME_UK
+	UNIQUE (nome)"/>
+</checkConstraint>
 <ownDataTypeParameters>150,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="titulo" id="7723BC63-1315-A92E-45E0-546B9CA001CE">
@@ -65,6 +97,22 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>200</dataTypeSize>
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pontos" id="02A0C9EA-6420-E5F0-997F-2D9C7EA91644">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:04:30 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CONQUISTA_PONTOS_CK
+	CHECK (pontos &gt; 0)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

@@ -66,6 +66,24 @@
 <dataTypeSize>100</dataTypeSize>
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="tipo_usuario" id="82E91E7A-B314-6512-A767-388E6C1C6B1F">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 10:41:10 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<listOfValues>
+<valueDef value="admin" description=""/>
+<valueDef value="comum" description=""/>
+</listOfValues>
+<defaultValue>comum</defaultValue>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="data_cadastro" id="435C0F24-02E6-2179-4B84-0D6EDFB1964F">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-01 18:51:43 UTC</createdTime>

@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FE2FA311-5C5A-F15A-9720-107D481DB685" name="TB_TIPO_MISSAO">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>49ECB4A2-3D58-C25C-2E55-C3B16A4C58B1</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tipo_missao_id" id="6FF738BC-96BB-EAC0-3373-B40ED3CBA93B">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>A82D811E-7737-8BAF-2525-C666A9AA7B34</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="4E6A1C27-112A-70B6-0B62-ABEC6AAB418B">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>B37C3909-5C8E-9D09-2AD3-73F39C46F12C</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_TIPO_MISSAO_NOME_UK
+	UNIQUE (nome)"/>
+</checkConstraint>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descricao" id="DB68B309-078B-9E01-00CE-927DDA7A2405">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>3C4CC538-96E0-1C78-DAD4-FC67892D2FFF</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="unidade_medida" id="ACAC9555-83AA-99AF-79C7-B8144DCA61B6">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>8FFDA818-B64E-8CF7-1761-9F11D63C7324</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A78D0AFF-1CF9-F88B-F53C-4A628AE37F42" name="TB_TIPO_MISSAO_PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>F20D88BF-1A22-2816-4CFC-4B5436660292</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6FF738BC-96BB-EAC0-3373-B40ED3CBA93B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

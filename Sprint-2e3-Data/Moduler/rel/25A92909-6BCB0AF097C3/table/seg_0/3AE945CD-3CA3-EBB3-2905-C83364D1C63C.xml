@@ -38,7 +38,7 @@
 </rangeDef>
 </listOfRanges>
 </Column>
-<Column name="codigo_barras" id="6B6A46E5-7757-23FA-06ED-95B8499B102D">
+<Column name="codigo_pix_copia_cola" id="6B6A46E5-7757-23FA-06ED-95B8499B102D">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 21:24:15 UTC</createdTime>
 <generatorID>31123000-183F-5764-2484-2953E18FE99E</generatorID>
@@ -46,8 +46,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="status_recarga" id="1F6943F6-BDF7-6420-DD8B-53D8093D0C7A">

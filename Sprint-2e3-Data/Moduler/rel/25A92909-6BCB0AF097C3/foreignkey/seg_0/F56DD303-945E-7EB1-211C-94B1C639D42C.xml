@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F56DD303-945E-7EB1-211C-94B1C639D42C" containerWithKeyObject="C2D3B667-9CF4-0E03-528D-B620EEAF3959" localFKIndex="9055027E-7FA1-16BC-1D21-BEC6B8F361CD" name="TB_CONQUISTA_TIPO_CON_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>59D3EC02-63C6-DF09-6FCD-B3B5F70722B2</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<referredTableLongName>TB_TIPO_CONQUISTA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4DF46F43-F6DC-6D89-1B61-1373276CB3DC</referredTableID>
+<keyObject>4280CC99-3037-F6F1-5AC2-CA32FC617953</keyObject>
+<referredKeyID>4280CC99-3037-F6F1-5AC2-CA32FC617953</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>tipo_conquista_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

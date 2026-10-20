@@ -19,6 +19,45 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="usuario_missao_id" id="AE0287DE-4F4D-2D96-C8C1-9EFB4E8D7C50">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>618C1F38-9FA7-7B96-6910-6A132BD00E9B</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AC487819-C128-8309-AAB4-F4F51F95F4F8" referredColumn="2DA0CD3C-8177-20F9-86FF-4FDA666BC4E4"/>
+</associations>
+</Column>
+<Column name="usuario_id" id="90D7A052-F1C6-0116-3637-941D32835136">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
+<generatorID>43277CF8-7A90-3BEF-4D93-D8281B1A5BA3</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="missao_id" id="4AEDC6AC-47C9-623B-BAB7-F366934A7B6A">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
+<generatorID>28F8D5C4-1E37-4D33-3568-BED234CCF2D0</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="arquivo" id="57247975-5D7E-3A50-6A6A-150D04315037">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
@@ -50,10 +89,14 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_COMPROVANTE_STATUS_CK
+        CHECK (status_validacao IN (&apos;pendente&apos;, &apos;aprovado&apos;, &apos;rejeitado&apos;)),"/>
+</checkConstraint>
 <listOfValues>
 <valueDef value="APROVADO" description=""/>
 <valueDef value="PENDENTE" description=""/>
-<valueDef value="REPROVADO" description=""/>
+<valueDef value="REJEITADO" description=""/>
 </listOfValues>
 <defaultValue>PENDENTE</defaultValue>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
@@ -70,36 +113,6 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="usuario_id" id="90D7A052-F1C6-0116-3637-941D32835136">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>43277CF8-7A90-3BEF-4D93-D8281B1A5BA3</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="2FBCDC90-55CE-1722-EB1C-A285F5614BA6" referredColumn="A4A71371-C98B-47EE-B467-76E0D9087B04"/>
-</associations>
-</Column>
-<Column name="missao_id" id="4AEDC6AC-47C9-623B-BAB7-F366934A7B6A">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>28F8D5C4-1E37-4D33-3568-BED234CCF2D0</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="2FBCDC90-55CE-1722-EB1C-A285F5614BA6" referredColumn="960FA40F-5099-FB7C-9BCA-5DA5DD51401C"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -127,16 +140,15 @@
 <colUsage columnID="4AEDC6AC-47C9-623B-BAB7-F366934A7B6A"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="5236DFE4-491D-CB96-A7D8-A095707A4BF5" name="TB_COMPROVANTE_USU_MIS_FK">
+<ind_PK_UK id="A3BCDD2D-192B-FEB8-B729-FF2BF57FC5DC" name="TB_COMPROVANTE_USU_MIS_FK">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>9129A718-9420-FAF8-1113-D1A71CBECB9B</generatorID>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>469C80B5-EC83-02FC-6F19-AD4C5B6A2015</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="90D7A052-F1C6-0116-3637-941D32835136"/>
-<colUsage columnID="4AEDC6AC-47C9-623B-BAB7-F366934A7B6A"/>
+<colUsage columnID="AE0287DE-4F4D-2D96-C8C1-9EFB4E8D7C50"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -8,6 +8,51 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tipo_missao_id" id="C0F80F29-8AED-55D6-9CAC-5CB27DC77D69">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>7AD7A11C-D57A-F5D8-34E4-384573D92A03</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3E88E2C4-A403-3E26-36FA-420ADF72763E" referredColumn="6FF738BC-96BB-EAC0-3373-B40ED3CBA93B"/>
+</associations>
+</Column>
+<Column name="imagem_missao_id" id="F8E17D56-E888-B50C-E2F2-217F5CAA574D">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>DED562F7-6CE5-49A2-5E97-6A91C393C134</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="295F6602-BE2E-2FF4-B056-5D6D00D92246" referredColumn="BB72808F-E0BA-0664-A4F7-83A34C2CD804"/>
+</associations>
+</Column>
+<Column name="conquista_id" id="613F0053-085D-9EEB-5C15-46D8FAA7AE4C">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>ED670822-99B6-1686-440C-6B435653CEBF</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2BE0BBCE-5F73-EA01-CE06-2411410BAD27" referredColumn="85F3A4B0-1DB8-1E33-8F9E-4B692E6C03D4"/>
+</associations>
+</Column>
 <Column name="missao_id" id="22ED5C00-8130-D31D-E0F7-E6CDF70C26F7">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
@@ -17,6 +62,63 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="periodicidade_dias" id="81C17948-AA4B-21FA-269A-D884080E9F6D">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>4A1C90FF-DE70-8B05-E828-D22E4E08E214</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_MISSAO_PERIOD_CK
+	CHECK (periodicidade_dias IS NULL OR periodicidade_dias IN (1, 7, 30))"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prazo_dias" id="FAEF9364-A96E-B03E-095D-A5FDB34D1095">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>A1E5F4B5-B915-BF82-C9A4-4042F2DE676F</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_MISSAO_PRAZO_CK
+	CHECK (prazo_dias IS NULL OR prazo_dias &gt; 0)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pontos_missao" id="0D3AABDD-2CF5-C5FB-B1B2-2B6FCC8241E0">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
+<generatorID>2F56CE6C-DD10-1067-4891-5F31ADD35CFA</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_MISSAO_PONTOS_CK
+	CHECK (pontos_missao &gt; 0)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descricao" id="5A6E45F6-A178-0E73-A15C-31C885172B81">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
+<generatorID>80556D8C-144C-BFAF-4E29-F2C45EA90EEC</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="titulo" id="C3FB3385-DDE4-189D-33BF-5D73FC4D915A">
@@ -43,27 +145,21 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="descricao" id="5A6E45F6-A178-0E73-A15C-31C885172B81">
+<Column name="meta_missao" id="0ABAB4F3-7784-3636-AE54-BD99404C4426">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>80556D8C-144C-BFAF-4E29-F2C45EA90EEC</generatorID>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>EC2E67B8-4E9C-B89B-861B-CF99F62D652D</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>150</dataTypeSize>
-<ownDataTypeParameters>150,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="pontos_missao" id="0D3AABDD-2CF5-C5FB-B1B2-2B6FCC8241E0">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>2F56CE6C-DD10-1067-4891-5F31ADD35CFA</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_MISSAO_META_CK
+	CHECK (meta_missao &gt; 0)"/>
+</checkConstraint>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
@@ -78,6 +174,39 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="22ED5C00-8130-D31D-E0F7-E6CDF70C26F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FABF2B93-10FF-1F62-85B4-ACC6F8E61576" name="TB_MISSAO_IMAGEM_MIS_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>5D44F5A8-6BCF-CEAC-6A58-AE80484A3BBF</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F8E17D56-E888-B50C-E2F2-217F5CAA574D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5494D839-4801-A3B1-5813-E5BC91DC7528" name="TB_MISSAO_TIPO_MIS_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>E053725A-3223-6DCC-1C35-2213A9A1CE43</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0F80F29-8AED-55D6-9CAC-5CB27DC77D69"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0A22BFBE-B3F3-E331-5115-392887FAC42E" name="TB_MISSAO_CONQUISTA_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>016A7F41-5066-F865-07C4-C26CA2C97473</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="613F0053-085D-9EEB-5C15-46D8FAA7AE4C"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

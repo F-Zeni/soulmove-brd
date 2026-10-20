@@ -61,7 +61,7 @@
 </rangeDef>
 </listOfRanges>
 </Attribute>
-<Attribute name="codigo_barras" id="31123000-183F-5764-2484-2953E18FE99E">
+<Attribute name="codigo_pix_copia_cola" id="31123000-183F-5764-2484-2953E18FE99E">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 20:21:21 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
@@ -71,8 +71,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="status_recarga" id="7B740D7F-3DD1-19BA-343B-ECE1D1EE0C35">
 <createdBy>wspot</createdBy>
@@ -136,8 +136,9 @@
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 20:19:46 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

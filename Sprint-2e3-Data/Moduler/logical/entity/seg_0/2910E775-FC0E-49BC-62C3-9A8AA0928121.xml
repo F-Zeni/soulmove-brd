@@ -51,6 +51,10 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CONVERSAO_PONTOS_PONTOS_CK
+        CHECK (pontos_convertidos &gt; 0)"/>
+</checkConstraint>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="creditos_gerados" id="D1C02823-3E02-4FE8-ECEF-B7710F9056A2">
@@ -65,6 +69,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>6</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CONVERSAO_PONTOS_CREDITOS_CK
+        CHECK (creditos_gerados &gt; 0)"/>
+</checkConstraint>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="data_conversao" id="DD376010-A2C5-B61C-C278-8A09F94DFA61">

@@ -77,6 +77,10 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_COMPROVANTE_STATUS_CK
+        CHECK (status_validacao IN (&apos;pendente&apos;, &apos;aprovado&apos;, &apos;rejeitado&apos;)),"/>
+</checkConstraint>
 <listOfValues>
 <valueDef value="APROVADO" description=""/>
 <valueDef value="PENDENTE" description=""/>
@@ -103,8 +107,9 @@
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 02:56:55 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <newElementsIDs>546DF880-A2B9-8C22-2E66-77F9A0CA82F1</newElementsIDs>

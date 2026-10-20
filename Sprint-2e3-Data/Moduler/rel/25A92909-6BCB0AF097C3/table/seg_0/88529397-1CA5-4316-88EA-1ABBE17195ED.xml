@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="88529397-1CA5-4316-88EA-1ABBE17195ED" name="TB_CONVERSAO_PONTOS">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>2910E775-FC0E-49BC-62C3-9A8AA0928121</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="conversao_id" id="C90E90E5-5BBD-C3EE-B540-3F531CBBC87C">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>C88B78EB-5D50-1FAE-EA29-4CFC47D8F08C</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usuario_id" id="5B46A06F-60DB-8A59-39E5-1E7BCD156D38">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>B8BB1A86-311A-18B0-FBA8-0A0BED04F83E</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="295A7F42-A7FA-9E62-652E-3E4662214355" referredColumn="82957B40-2D31-BD18-94E8-D04FF5A55E32"/>
+</associations>
+</Column>
+<Column name="pontos_convertidos" id="0D102B47-2F3E-164F-77A7-AB2A264162B9">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>63CAEA59-5714-7E87-7200-8A83FD9D2199</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CONVERSAO_PONTOS_PONTOS_CK
+        CHECK (pontos_convertidos &gt; 0)"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="creditos_gerados" id="1BA5436C-619B-C7CC-B067-26FE98B6C736">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>D1C02823-3E02-4FE8-ECEF-B7710F9056A2</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CONVERSAO_PONTOS_CREDITOS_CK
+        CHECK (creditos_gerados &gt; 0)"/>
+</checkConstraint>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_conversao" id="C2E32974-9898-1229-120C-2B20EC2E5AC0">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>DD376010-A2C5-B61C-C278-8A09F94DFA61</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="38CCDE81-67C2-7CC7-D957-113411F9FA1C" name="TB_CONVERSAO_PONTOS_PK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>62892956-8C36-36FA-B12F-2FB4D79F6666</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C90E90E5-5BBD-C3EE-B540-3F531CBBC87C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D21DA5CB-D93A-B336-5133-AF1AC97387AD" name="TB_CONVERSAO_PONTOS_USU_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>B853753B-8C1A-38F2-DC35-F8EB85372326</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B46A06F-60DB-8A59-39E5-1E7BCD156D38"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -31,18 +31,6 @@
 <ownDataTypeParameters>150,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="pontos" id="A4744801-43E9-2E3A-7B1C-822D5ED7973D">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>3D7EAB6D-EB72-3A1A-491A-6BAAD0AB8486</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<defaultValue>0</defaultValue>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="senha" id="8B7BCA9E-E9EA-315D-442A-18012CD50CB4">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-09 20:18:33 UTC</createdTime>
@@ -66,14 +54,32 @@
 <ownDataTypeParameters>150,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="data_cadastro" id="CB39BF16-86F7-E5E8-0A98-6539356E2DE0">
+<Column name="tipo_usuario" id="4E5B0175-01BB-B92B-79C8-DCC3E529FC17">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>435C0F24-02E6-2179-4B84-0D6EDFB1964F</generatorID>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>82E91E7A-B314-6512-A767-388E6C1C6B1F</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<listOfValues>
+<valueDef value="admin" description=""/>
+<valueDef value="comum" description=""/>
+</listOfValues>
+<defaultValue>comum</defaultValue>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pontos" id="A4744801-43E9-2E3A-7B1C-822D5ED7973D">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
+<generatorID>3D7EAB6D-EB72-3A1A-491A-6BAAD0AB8486</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<defaultValue>0</defaultValue>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -91,6 +97,17 @@
 <associations>
 <colAssociation fkAssociation="0594EE7F-DDB8-CA89-F61E-B6592282763F" referredColumn="85F3A4B0-1DB8-1E33-8F9E-4B692E6C03D4"/>
 </associations>
+</Column>
+<Column name="data_cadastro" id="CB39BF16-86F7-E5E8-0A98-6539356E2DE0">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
+<generatorID>435C0F24-02E6-2179-4B84-0D6EDFB1964F</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

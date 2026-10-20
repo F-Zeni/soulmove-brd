@@ -29,6 +29,21 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="tipo_conquista_id" id="06985D74-7F12-CE87-9313-64F99C5A2F25">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>2BA46056-051D-DF85-128D-ED245AA5F24B</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F56DD303-945E-7EB1-211C-94B1C639D42C" referredColumn="D4D42B82-1517-4B5F-CA5D-7D8CA48642F2"/>
+</associations>
+</Column>
 <Column name="nome" id="0DDFC723-77D3-60E0-6FA0-DE71FD8F3061">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
@@ -38,6 +53,10 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>150</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CONQUISTA_NOME_UK
+	UNIQUE (nome)"/>
+</checkConstraint>
 <ownDataTypeParameters>150,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -64,6 +83,19 @@
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="meta" id="09C344DD-18FD-DF77-6AD9-A7A70B250B37">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>84AE217D-AEDC-CDE9-81FA-A29AD9D0D740</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="DBB25CE8-D559-9FC2-CE43-A2BB376FA59B" name="TB_CONQUISTA_PK">
@@ -76,6 +108,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="85F3A4B0-1DB8-1E33-8F9E-4B692E6C03D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9055027E-7FA1-16BC-1D21-BEC6B8F361CD" name="TB_CONQUISTA_TIPO_CON_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>59D3EC02-63C6-DF09-6FCD-B3B5F70722B2</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="06985D74-7F12-CE87-9313-64F99C5A2F25"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

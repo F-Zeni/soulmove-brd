@@ -19,6 +19,36 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="tipo_veiculo_id" id="C295B580-CDFF-77D7-52A1-EF8DCE5AA17A">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>3776A9F6-6AA9-A27C-5974-036608BA57EE</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="84DEA98E-9620-73F0-4BF0-A177CC3F44A1" referredColumn="EABFB414-E8BF-2C22-7FD5-35F154460268"/>
+</associations>
+</Column>
+<Column name="usuario_id" id="6A4C1269-CB02-DD64-F1DD-0604A17A62D9">
+<createdBy>wspot</createdBy>
+<createdTime>2026-09-07 03:49:45 UTC</createdTime>
+<generatorID>3805BE4D-4449-B3E3-E051-5B6885A1FD9E</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A890C0AD-6AE7-07B2-D185-FCDAB5782723" referredColumn="82957B40-2D31-BD18-94E8-D04FF5A55E32"/>
+</associations>
+</Column>
 <Column name="data_viagem" id="DACA4447-5261-C3DA-7169-AD5B086701AA">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
@@ -84,6 +114,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>6</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_VIAGEM_KM_PERC_CK
+	CHECK (km_percorrido &gt; 0)"/>
+</checkConstraint>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -97,6 +131,10 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>6</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CARBONO_EMITIDO
+	CHECK (carbono_emitido &gt;= 0)"/>
+</checkConstraint>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -110,23 +148,12 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>6</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_VIAGEM_CARB_ECONOM_CK
+	CHECK (carbono_economizado &gt;= 0)"/>
+</checkConstraint>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="usuario_id" id="6A4C1269-CB02-DD64-F1DD-0604A17A62D9">
-<createdBy>wspot</createdBy>
-<createdTime>2026-09-07 03:49:45 UTC</createdTime>
-<generatorID>3805BE4D-4449-B3E3-E051-5B6885A1FD9E</generatorID>
-<ownerDesignName>Moduler</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="A890C0AD-6AE7-07B2-D185-FCDAB5782723" referredColumn="82957B40-2D31-BD18-94E8-D04FF5A55E32"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -151,6 +178,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="6A4C1269-CB02-DD64-F1DD-0604A17A62D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BBC5E3B8-ADBD-BA43-3F44-78F8623C9AA1" name="TB_VIAGEM_TIPO_VEIC_FK">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:48:12 UTC</createdTime>
+<generatorID>04EABB31-8D60-5E86-7D05-35A7485A1A6E</generatorID>
+<ownerDesignName>Moduler</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C295B580-CDFF-77D7-52A1-EF8DCE5AA17A"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

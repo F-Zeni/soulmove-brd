@@ -15,16 +15,18 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="data_conquista" id="E80A7352-48D3-4F8A-5612-9FFAF0D0792E">
+<Attribute name="usuario_id" id="72E8E74D-1767-609B-A0B7-8D8F82F29004">
 <createdBy>wspot</createdBy>
-<createdTime>2026-09-01 18:58:51 UTC</createdTime>
+<createdTime>2026-10-05 21:21:00 UTC</createdTime>
+<generatorID>5D833633-D90D-727E-7AD9-ADD17F897E64</generatorID>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
 </engineerTo>
+<referedAttribute>879300AA-A05F-F1C9-86C0-908044B2334B</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="conquista_id" id="53C26300-332F-68D9-55A6-E4538038A14A">
@@ -41,18 +43,29 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="usuario_id" id="72E8E74D-1767-609B-A0B7-8D8F82F29004">
+<Attribute name="data_conquista" id="E80A7352-48D3-4F8A-5612-9FFAF0D0792E">
 <createdBy>wspot</createdBy>
-<createdTime>2026-10-05 21:21:00 UTC</createdTime>
-<generatorID>5D833633-D90D-727E-7AD9-ADD17F897E64</generatorID>
+<createdTime>2026-09-01 18:58:51 UTC</createdTime>
 <ownerDesignName>Moduler</ownerDesignName>
 <engineerTo>
 <item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
 </engineerTo>
-<referedAttribute>879300AA-A05F-F1C9-86C0-908044B2334B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pontuacao_recebida" id="7CC273B4-71F6-5FB2-0382-C19FAE449D55">
+<createdBy>wspot</createdBy>
+<createdTime>2026-10-20 11:25:04 UTC</createdTime>
+<ownerDesignName>Moduler</ownerDesignName>
+<engineerTo>
+<item key="25A92909-AF8E-184A-C860-6BCB0AF097C3" value="true"/>
+</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
+<defaultValue>0</defaultValue>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="flag_titulo_atual" id="C0D90DDB-6A50-9E55-30B2-EACB3C2D785D">
