@@ -73,8 +73,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <checkConstraint>
-<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_MISSAO_PERIOD_CK
-	CHECK (periodicidade_dias IS NULL OR periodicidade_dias IN (1, 7, 30))"/>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_MISSAO_PERIOD_CK  CHECK (periodicidade_dias IS NULL OR periodicidade_dias IN (1, 7, 30))"/>
 </checkConstraint>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -88,8 +87,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <checkConstraint>
-<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_MISSAO_PRAZO_CK
-	CHECK (prazo_dias IS NULL OR prazo_dias &gt; 0)"/>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_MISSAO_PRAZO_CK  CHECK (prazo_dias IS NULL OR prazo_dias &gt; 0)"/>
 </checkConstraint>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -103,8 +101,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <checkConstraint>
-<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_MISSAO_PONTOS_CK
-	CHECK (pontos_missao &gt; 0)"/>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_MISSAO_PONTOS_CK  CHECK (pontos_missao &gt; 0)"/>
 </checkConstraint>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -156,8 +153,7 @@
 <dataTypePrecision>10</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
 <checkConstraint>
-<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_MISSAO_META_CK
-	CHECK (meta_missao &gt; 0)"/>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_MISSAO_META_CK  CHECK (meta_missao &gt; 0)"/>
 </checkConstraint>
 <ownDataTypeParameters>,10,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -176,7 +172,7 @@
 <colUsage columnID="22ED5C00-8130-D31D-E0F7-E6CDF70C26F7"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="FABF2B93-10FF-1F62-85B4-ACC6F8E61576" name="TB_MISSAO_IMAGEM_MIS_FK">
+<ind_PK_UK id="FABF2B93-10FF-1F62-85B4-ACC6F8E61576" name="TB_MISSAO_IMG_MISS_FK">
 <createdBy>wspot</createdBy>
 <createdTime>2026-10-20 11:48:12 UTC</createdTime>
 <generatorID>5D44F5A8-6BCF-CEAC-6A58-AE80484A3BBF</generatorID>
@@ -187,7 +183,7 @@
 <colUsage columnID="F8E17D56-E888-B50C-E2F2-217F5CAA574D"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="5494D839-4801-A3B1-5813-E5BC91DC7528" name="TB_MISSAO_TIPO_MIS_FK">
+<ind_PK_UK id="5494D839-4801-A3B1-5813-E5BC91DC7528" name="TB_MISSAO_TIPO_MISSAO_FK">
 <createdBy>wspot</createdBy>
 <createdTime>2026-10-20 11:48:12 UTC</createdTime>
 <generatorID>E053725A-3223-6DCC-1C35-2213A9A1CE43</generatorID>

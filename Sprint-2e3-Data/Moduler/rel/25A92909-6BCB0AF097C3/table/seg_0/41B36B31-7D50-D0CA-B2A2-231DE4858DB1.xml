@@ -90,8 +90,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
 <checkConstraint>
-<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_COMPROVANTE_STATUS_CK
-        CHECK (status_validacao IN (&apos;pendente&apos;, &apos;aprovado&apos;, &apos;rejeitado&apos;)),"/>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_COMPROVANTE_STATUS_CK         CHECK (status_validacao IN (&apos;pendente&apos;, &apos;aprovado&apos;, &apos;rejeitado&apos;)),"/>
 </checkConstraint>
 <listOfValues>
 <valueDef value="APROVADO" description=""/>

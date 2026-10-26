@@ -673,3 +673,5 @@ COMMENT ON COLUMN VW_USUARIO_RESUMO.creditos_totais IS
 
 COMMENT ON COLUMN VW_USUARIO_RESUMO.titulo_atual IS
 'Título da conquista que o usuário selecionou como atual, obtido a partir do registro marcado com flag_titulo_atual igual a S. Pode ser NULL quando nenhum título estiver selecionado.';
+
+COMMIT;

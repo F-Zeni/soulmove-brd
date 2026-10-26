@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="295A7F42-A7FA-9E62-652E-3E4662214355" containerWithKeyObject="88529397-1CA5-4316-88EA-1ABBE17195ED" localFKIndex="D21DA5CB-D93A-B336-5133-AF1AC97387AD" name="TB_CONVERSAO_PONTOS_USU_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="295A7F42-A7FA-9E62-652E-3E4662214355" containerWithKeyObject="88529397-1CA5-4316-88EA-1ABBE17195ED" localFKIndex="D21DA5CB-D93A-B336-5133-AF1AC97387AD" name="TB_CONVERSAO_PONTOS_USUARIO_FK">
 <createdBy>wspot</createdBy>
 <createdTime>2026-10-20 11:48:12 UTC</createdTime>
 <generatorID>B853753B-8C1A-38F2-DC35-F8EB85372326</generatorID>

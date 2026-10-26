@@ -1,8 +1,7 @@
 -- No backend os inserts irão usar variavéis, estou pré-determinando antes para usar de exemplo de como funciona as tabelas
 
 -- TB_USUARIO
-SELECT * FROM TB_USUARIO;
---
+
 INSERT INTO TB_USUARIO (nome, email, senha)
     VALUES ('João Silva', 'joao@gmail.com', 'teste123');
 --
@@ -11,11 +10,16 @@ INSERT INTO TB_USUARIO (nome, email, senha)
 --
 INSERT INTO TB_USUARIO (nome, email, senha)
     VALUES ('Rodrigo Pera', 'rodrigo@gmail.com', 'teste456');
+--
+INSERT INTO TB_USUARIO (nome, email, senha)
+    VALUES ('Ana Beatriz', 'ana@gmail.com', 'senha456');
+--
+INSERT INTO TB_USUARIO (nome, email, senha)
+    VALUES ('Lucas Ferreira', 'lucas@gmail.com', 'teste789');
 
 
 -- TB_CARTEIRA
-SELECT * FROM TB_CARTEIRA;
---
+
 INSERT INTO TB_CARTEIRA (usuario_id, saldo_mobilidade)
     VALUES (
         (
@@ -36,10 +40,23 @@ INSERT INTO TB_CARTEIRA (usuario_id, saldo_mobilidade)
         SELECT usuario_id FROM TB_USUARIO WHERE email = 'rodrigo@gmail.com')
         , 0.00
     );
+--
+INSERT INTO TB_CARTEIRA (usuario_id, saldo_mobilidade)
+    VALUES (
+        (
+        SELECT usuario_id FROM TB_USUARIO WHERE email = 'ana@gmail.com')
+        , 0.00
+    );
+--
+INSERT INTO TB_CARTEIRA (usuario_id, saldo_mobilidade)
+    VALUES (
+        (
+        SELECT usuario_id FROM TB_USUARIO WHERE email = 'lucas@gmail.com')
+        , 0.00
+    );
 
 -- TB_TIPO_VEICULO
-SELECT * FROM TB_TIPO_VEICULO;
---
+
 INSERT INTO TB_TIPO_VEICULO (nome, fator_emissao, flag_referencia)
     VALUES ('carro', 0.1710, 'S');
 INSERT INTO TB_TIPO_VEICULO (nome, fator_emissao, flag_referencia)
@@ -62,8 +79,7 @@ UPDATE TB_TIPO_VEICULO
     WHERE nome = 'trem';
 
 -- TB_VIAGEM
-SELECT * FROM TB_VIAGEM;
---
+
 INSERT INTO TB_VIAGEM (usuario_id, 
                        tipo_veiculo_id, 
                        origem, 
@@ -108,10 +124,39 @@ INSERT INTO TB_VIAGEM (usuario_id,
     JOIN TB_TIPO_VEICULO tv ON tv.nome = 'carro'
     JOIN TB_TIPO_VEICULO ref ON ref.flag_referencia = 'S'
     WHERE u.email = 'rodrigo@gmail.com';
+--
+INSERT INTO TB_VIAGEM (usuario_id, 
+                       tipo_veiculo_id, 
+                       origem, 
+                       destino, 
+                       km_percorrido, 
+                       carbono_emitido, 
+                       carbono_economizado)
+    SELECT u.usuario_id, tv.tipo_veiculo_id, 'Consolação', 'Pinheiros', 5.00,
+           ROUND(5.00 * tv.fator_emissao, 2),
+           ROUND(5.00 * GREATEST(ref.fator_emissao - tv.fator_emissao, 0), 2)
+    FROM TB_USUARIO u
+    JOIN TB_TIPO_VEICULO tv ON tv.nome = 'bicicleta'
+    JOIN TB_TIPO_VEICULO ref ON ref.flag_referencia = 'S'
+    WHERE u.email = 'ana@gmail.com';
+--
+INSERT INTO TB_VIAGEM (usuario_id, 
+                       tipo_veiculo_id, 
+                       origem, 
+                       destino, 
+                       km_percorrido, 
+                       carbono_emitido, 
+                       carbono_economizado)
+    SELECT u.usuario_id, tv.tipo_veiculo_id, 'Tatuapé', 'Brás', 4.30,
+           ROUND(4.30 * tv.fator_emissao, 2),
+           ROUND(4.30 * GREATEST(ref.fator_emissao - tv.fator_emissao, 0), 2)
+    FROM TB_USUARIO u
+    JOIN TB_TIPO_VEICULO tv ON tv.nome = 'trem'
+    JOIN TB_TIPO_VEICULO ref ON ref.flag_referencia = 'S'
+    WHERE u.email = 'lucas@gmail.com';
 
 -- TB_TIPO_MISSAO
-SELECT * FROM TB_TIPO_MISSAO;
---
+
 INSERT INTO TB_TIPO_MISSAO (nome, descricao, unidade_medida)
 VALUES ('economia_co2', 'Acompanha a quantidade de CO2 economizada pelo usuário.', 'kg_CO2');
 --
@@ -120,10 +165,15 @@ VALUES ('quantidade_missoes', 'Acompanha quantas missões relacionadas ao transp
 --
 INSERT INTO TB_TIPO_MISSAO (nome, descricao, unidade_medida)
 VALUES ('trajeto_longo', 'Acompanha a realização de trajetos longos utilizando transporte público.', 'trajetos');
+--
+INSERT INTO TB_TIPO_MISSAO (nome, descricao, unidade_medida)
+VALUES ('km_percorrido', 'Acompanha a quantidade de quilômetros percorridos em transporte sustentável.', 'km');
+--
+INSERT INTO TB_TIPO_MISSAO (nome, descricao, unidade_medida)
+VALUES ('quantidade_viagens', 'Acompanha a quantidade de viagens realizadas pelo usuário.', 'viagens');
 
 -- TB_TIPO_CONQUISTA
-SELECT * FROM TB_TIPO_CONQUISTA;
---
+
 INSERT INTO TB_TIPO_CONQUISTA (unidade_medida, nome, descricao)
     VALUES ('Transporte Público', 'Mobilidade', 'Conquistas relacionadas ao uso de meios de transporte sustentáveis.');
 --
@@ -132,10 +182,15 @@ INSERT INTO TB_TIPO_CONQUISTA (unidade_medida, nome, descricao)
 --
 INSERT INTO TB_TIPO_CONQUISTA (unidade_medida, nome, descricao)
     VALUES ('Missões', 'Engajamento', 'Conquistas relacionadas à participação e à conclusão de missões.');
+--
+INSERT INTO TB_TIPO_CONQUISTA (unidade_medida, nome, descricao)
+    VALUES ('Quilômetros', 'Distância', 'Conquistas relacionadas à distância total percorrida em transporte sustentável.');
+--
+INSERT INTO TB_TIPO_CONQUISTA (unidade_medida, nome, descricao)
+    VALUES ('Viagens', 'Frequência', 'Conquistas relacionadas à quantidade de viagens sustentáveis realizadas.');
 
 -- TB_CONQUISTA
-SELECT * FROM TB_CONQUISTA;
---
+
 INSERT INTO TB_CONQUISTA (tipo_conquista_id, meta ,nome, titulo, descricao, pontos)
     VALUES ((SELECT tipo_conquista_id FROM TB_TIPO_CONQUISTA WHERE nome = 'Mobilidade'),
             50, 'Primeira Viagem', 'Viajante Iniciante', 'Realiza sua primeria viagem sustentável', 100);
@@ -151,10 +206,13 @@ INSERT INTO TB_CONQUISTA (tipo_conquista_id, meta, nome, titulo, descricao, pont
 INSERT INTO TB_CONQUISTA (tipo_conquista_id, meta, nome, titulo, descricao, pontos)
     VALUES ((SELECT tipo_conquista_id FROM TB_TIPO_CONQUISTA WHERE nome = 'Engajamento'),
             100, 'Amigo da Mobilidade Urbana', 'Amigo da Mobilidade Urbana', 'Conclua 50 missões relacionadas ao transporte público.', 50);
+--
+INSERT INTO TB_CONQUISTA (tipo_conquista_id, meta, nome, titulo, descricao, pontos)
+    VALUES ((SELECT tipo_conquista_id FROM TB_TIPO_CONQUISTA WHERE nome = 'Distância'),
+            500, 'Maratonista Verde', 'Maratonista Verde', 'Percorra 500 km utilizando transporte sustentável', 200);
 
 -- TB_MISSAO
-SELECT * FROM TB_MISSAO;
---
+
 -- Economizador de CO2: a meta é economizar 100 kg de CO2 - recompensa de 300 pontos
 INSERT INTO TB_MISSAO (tipo_missao_id, conquista_id, titulo, descricao, meta_missao, pontos_missao, periodicidade_dias, prazo_dias)
                VALUES (
@@ -193,10 +251,35 @@ INSERT INTO TB_MISSAO (tipo_missao_id, conquista_id, titulo, descricao, meta_mis
                         7, -- a missao pode ser repetida a cada 7 dias
                         3 -- prazo limite pra concluir
 );
+--
+-- Pedaleiro: percorrer 50 km de bicicleta - recompensa de 200 pontos
+INSERT INTO TB_MISSAO (tipo_missao_id, conquista_id, titulo, descricao, meta_missao, pontos_missao, periodicidade_dias, prazo_dias)
+               VALUES (
+                        (SELECT tipo_missao_id FROM TB_TIPO_MISSAO WHERE nome = 'km_percorrido'),
+                        NULL,
+                        'Pedaleiro',
+                        'Percorra 50 km utilizando bicicleta.',
+                        50,
+                        200,
+                        30, -- a missao pode ser repetida a cada 30 dias
+                        30  -- prazo limite pra concluir
+);
+--
+-- Viajante Frequente: realizar 10 viagens sustentáveis - recompensa de 150 pontos
+INSERT INTO TB_MISSAO (tipo_missao_id, conquista_id, titulo, descricao, meta_missao, pontos_missao, periodicidade_dias, prazo_dias)
+               VALUES (
+                        (SELECT tipo_missao_id FROM TB_TIPO_MISSAO WHERE nome = 'quantidade_viagens'),
+                        NULL,
+                        'Viajante Frequente',
+                        'Realize 10 viagens sustentáveis em uma semana.',
+                        10,
+                        150,
+                        7, -- a missao pode ser repetida a cada 7 dias
+                        7  -- prazo limite pra concluir
+);
 
 -- TB_USUARIO_MISSAO (tabela transacional)
-SELECT * FROM TB_USUARIO_MISSAO;
---
+
 -- João: progresso 50/100 kg de CO2 na missão Economizador de CO2
 INSERT INTO TB_USUARIO_MISSAO (usuario_id, missao_id, status_missao, pontuacao_recebida, progresso_atual, data_inicio)
     SELECT u.usuario_id, m.missao_id, 'em andamento', 0, 50, SYSDATE - 2
@@ -228,8 +311,7 @@ INSERT INTO TB_USUARIO_MISSAO (usuario_id, missao_id, status_missao, pontuacao_r
         WHERE u.email = 'marcelo@gmail.com' AND m.titulo = 'Use o Transporte Público';
 
 -- TB_COMPROVANTE (ligado a execução da missao)
-SELECT * FROM TB_COMPROVANTE;
---
+
 -- João: comprovante aprovado para a missão de trajeto longo concluída
 INSERT INTO TB_COMPROVANTE (usuario_missao_id, status_validacao, arquivo, data_validacao)
     SELECT um.usuario_missao_id, 'aprovado', EMPTY_BLOB(), SYSDATE
@@ -259,13 +341,32 @@ INSERT INTO TB_COMPROVANTE (usuario_missao_id, status_validacao, arquivo)
     WHERE u.email = 'marcelo@gmail.com'
     AND m.titulo = 'Use o Transporte Público'
     AND um.status_missao = 'em andamento';
+--
+-- Rodrigo: comprovante aprovado para a missão Amigo da Mobilidade Urbana concluída
+INSERT INTO TB_COMPROVANTE (usuario_missao_id, status_validacao, arquivo, data_validacao)
+    SELECT um.usuario_missao_id, 'aprovado', EMPTY_BLOB(), SYSDATE
+        FROM TB_USUARIO_MISSAO um
+        JOIN TB_USUARIO u ON u.usuario_id = um.usuario_id
+        JOIN TB_MISSAO m ON m.missao_id = um.missao_id
+    WHERE u.email = 'rodrigo@gmail.com'
+    AND m.titulo = 'Amigo da Mobilidade Urbana'
+    AND um.status_missao = 'concluida';
+--
+-- Marcelo: comprovante pendente para a missão Amigo da Mobilidade Urbana em andamento
+INSERT INTO TB_COMPROVANTE (usuario_missao_id, status_validacao, arquivo)
+    SELECT um.usuario_missao_id, 'pendente', EMPTY_BLOB()
+        FROM TB_USUARIO_MISSAO um
+        JOIN TB_USUARIO u ON u.usuario_id = um.usuario_id
+        JOIN TB_MISSAO m ON m.missao_id = um.missao_id
+    WHERE u.email = 'marcelo@gmail.com'
+    AND m.titulo = 'Amigo da Mobilidade Urbana'
+    AND um.status_missao = 'em andamento';
 
 -- TB_USUARIO_CONQUISTA
 /*A MISSAO GERA A CONQUISTA: toda missao concluida que tem conquista
 vinculada concede essa conquista ao usuario (se ainda nao tiver).*/
 -- O usuario pode escolhar qualquer conquista desbloquead como titulo atual
-SELECT * FROM TB_USUARIO_CONQUISTA;
---
+
 INSERT INTO TB_USUARIO_CONQUISTA (usuario_id, conquista_id, data_conquista, flag_titulo_atual)
     SELECT um.usuario_id, m.conquista_id, MIN(um.data_conclusao), 'N'
     FROM TB_USUARIO_MISSAO um
@@ -277,6 +378,26 @@ INSERT INTO TB_USUARIO_CONQUISTA (usuario_id, conquista_id, data_conquista, flag
                     WHERE uc.usuario_id = um.usuario_id
                     AND uc.conquista_id = m.conquista_id)
 GROUP BY um.usuario_id, m.conquista_id;
+--
+INSERT INTO TB_USUARIO_CONQUISTA (usuario_id, conquista_id, data_conquista, flag_titulo_atual)
+    VALUES ((SELECT usuario_id FROM TB_USUARIO WHERE email = 'joao@gmail.com'),
+            (SELECT conquista_id FROM TB_CONQUISTA WHERE nome = 'Eco Guerreiro'),
+            SYSDATE - 5, 'N');
+--
+INSERT INTO TB_USUARIO_CONQUISTA (usuario_id, conquista_id, data_conquista, flag_titulo_atual)
+    VALUES ((SELECT usuario_id FROM TB_USUARIO WHERE email = 'ana@gmail.com'),
+            (SELECT conquista_id FROM TB_CONQUISTA WHERE nome = 'Primeira Viagem'),
+            SYSDATE - 3, 'S');
+--
+INSERT INTO TB_USUARIO_CONQUISTA (usuario_id, conquista_id, data_conquista, flag_titulo_atual)
+    VALUES ((SELECT usuario_id FROM TB_USUARIO WHERE email = 'lucas@gmail.com'),
+            (SELECT conquista_id FROM TB_CONQUISTA WHERE nome = 'Maratonista Verde'),
+            SYSDATE - 1, 'S');
+--
+INSERT INTO TB_USUARIO_CONQUISTA (usuario_id, conquista_id, data_conquista, flag_titulo_atual)
+    VALUES ((SELECT usuario_id FROM TB_USUARIO WHERE email = 'marcelo@gmail.com'),
+            (SELECT conquista_id FROM TB_CONQUISTA WHERE nome = 'Eco Guerreiro'),
+            SYSDATE - 7, 'N');
 
 -- Selecao do titulo atual: o usuario escolhe entre as conquista que ja desbloqueou
 -- Nos exemplos, Joao e Rodrigo selecionam um dos titulos entre as conquistas desbloqueadas
@@ -291,8 +412,7 @@ WHERE  uc.usuario_id = (SELECT usuario_id FROM TB_USUARIO WHERE email = 'joao@gm
 AND    uc.conquista_id = (SELECT conquista_id FROM TB_CONQUISTA WHERE nome = 'Primeira Viagem');
 
 -- TB_RECARGA
-SELECT * FROM TB_RECARGA;
---
+
 -- João: recarga pendente com Pix copia e cola
 INSERT INTO TB_RECARGA (usuario_id, valor_recarga, codigo_pix_copia_cola, status_recarga)
                 VALUES ((SELECT usuario_id FROM TB_USUARIO WHERE email = 'joao@gmail.com'),
@@ -313,10 +433,23 @@ VALUES ((SELECT usuario_id FROM TB_USUARIO WHERE email = 'marcelo@gmail.com'),
         200.00,
         '00020101021226860014BR.GOV.BCB.PIX2564qrpix.bradesco.com.br/qr/v2/f6aa801a-b805-4b9c-adf7-fa3ee48cacbf520400005303986540550.005802BR5907SPTRANS6009SAO PAULO62070503***630472BA',
         'recusado');
+--
+-- Ana: recarga pendente
+INSERT INTO TB_RECARGA (usuario_id, valor_recarga, codigo_pix_copia_cola, status_recarga)
+                VALUES ((SELECT usuario_id FROM TB_USUARIO WHERE email = 'ana@gmail.com'),
+                30.00,
+                '00020101021226860014BR.GOV.BCB.PIX2564qrpix.bradesco.com.br/qr/v2/f6aa801a-b805-4b9c-adf7-fa3ee48cacbf520400005303986540530.005802BR5907SPTRANS6009SAO PAULO62070503***630472BA',
+                'pendente');
+--
+-- Lucas: recarga creditada
+INSERT INTO TB_RECARGA (usuario_id, valor_recarga, codigo_pix_copia_cola, status_recarga, data_pagamento, data_credito)
+VALUES ((SELECT usuario_id FROM TB_USUARIO WHERE email = 'lucas@gmail.com'),
+        75.00,
+        '00020101021226860014BR.GOV.BCB.PIX2564qrpix.bradesco.com.br/qr/v2/f6aa801a-b805-4b9c-adf7-fa3ee48cacbf520400005303986540575.005802BR5907SPTRANS6009SAO PAULO62070503***630472BA',
+        'creditado', SYSDATE, SYSDATE);
 
 -- TB_CONVERSAO_PONTOS
-SELECT * FROM TB_CONVERSAO_PONTOS;
---
+
 INSERT INTO TB_CONVERSAO_PONTOS (usuario_id, pontos_convertidos, creditos_gerados)
     SELECT u.usuario_id, 50, 5.00
     FROM TB_USUARIO u
@@ -327,9 +460,42 @@ INSERT INTO TB_CONVERSAO_PONTOS (usuario_id, pontos_convertidos, creditos_gerado
     FROM TB_USUARIO u
     WHERE u.email = 'rodrigo@gmail.com';
 
--- EXEMPLO DE ATUALIZACAO NA CARTEIRA COM CREDITOS GERADOS PELA CONVERSAO 
--- TEM QUE LEMBRAR QUE OS VALORES DE PONTOS CONVERTIDOS E CREDITOS GERADOS SAO CALCULADOS NO BACKEND, 
--- AQUI É APENAS UMA MANEIRA DE EXEMPLIFICAR O CONTEUDO
+INSERT INTO TB_CONVERSAO_PONTOS (usuario_id, pontos_convertidos, creditos_gerados)
+    SELECT u.usuario_id, 200, 20.00
+    FROM TB_USUARIO u
+    WHERE u.email = 'marcelo@gmail.com';
+
+INSERT INTO TB_CONVERSAO_PONTOS (usuario_id, pontos_convertidos, creditos_gerados)
+    SELECT u.usuario_id, 75, 7.50
+    FROM TB_USUARIO u
+    WHERE u.email = 'ana@gmail.com';
+
+INSERT INTO TB_CONVERSAO_PONTOS (usuario_id, pontos_convertidos, creditos_gerados)
+    SELECT u.usuario_id, 30, 3.00
+    FROM TB_USUARIO u
+    WHERE u.email = 'lucas@gmail.com';
+    
+-- TB_IMAGEM_MISSAO
+INSERT INTO TB_IMAGEM_MISSAO (dados_imagem, tipo_mime)
+    VALUES (EMPTY_BLOB(), 'image/png');
+--
+INSERT INTO TB_IMAGEM_MISSAO (dados_imagem, tipo_mime)
+    VALUES (EMPTY_BLOB(), 'image/jpeg');
+--
+INSERT INTO TB_IMAGEM_MISSAO (dados_imagem, tipo_mime)
+    VALUES (EMPTY_BLOB(), 'image/png');
+--
+INSERT INTO TB_IMAGEM_MISSAO (dados_imagem, tipo_mime)
+    VALUES (EMPTY_BLOB(), 'image/jpeg');
+--
+INSERT INTO TB_IMAGEM_MISSAO (dados_imagem, tipo_mime)
+    VALUES (EMPTY_BLOB(), 'image/png');
+
+/* 
+EXEMPLO DE ATUALIZACAO NA CARTEIRA COM CREDITOS GERADOS PELA CONVERSAO 
+TEM QUE LEMBRAR QUE OS VALORES DE PONTOS CONVERTIDOS E CREDITOS GERADOS SAO CALCULADOS NO BACKEND, 
+AQUI É APENAS UMA MANEIRA DE EXEMPLIFICAR O CONTEUDO 
+*/
 SELECT * FROM TB_CARTEIRA;
 
 UPDATE TB_CARTEIRA c

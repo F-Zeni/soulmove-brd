@@ -115,8 +115,7 @@
 <dataTypePrecision>6</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
 <checkConstraint>
-<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_VIAGEM_KM_PERC_CK
-	CHECK (km_percorrido &gt; 0)"/>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_VIAGEM_KM_PERC_CK  CHECK (km_percorrido &gt; 0)"/>
 </checkConstraint>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -132,8 +131,7 @@
 <dataTypePrecision>6</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
 <checkConstraint>
-<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CARBONO_EMITIDO
-	CHECK (carbono_emitido &gt;= 0)"/>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CARBONO_EMITIDO  CHECK (carbono_emitido &gt;= 0)"/>
 </checkConstraint>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -149,8 +147,7 @@
 <dataTypePrecision>6</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
 <checkConstraint>
-<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_VIAGEM_CARB_ECONOM_CK
-	CHECK (carbono_economizado &gt;= 0)"/>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_VIAGEM_CARB_ECONOM_CK  CHECK (carbono_economizado &gt;= 0)"/>
 </checkConstraint>
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>

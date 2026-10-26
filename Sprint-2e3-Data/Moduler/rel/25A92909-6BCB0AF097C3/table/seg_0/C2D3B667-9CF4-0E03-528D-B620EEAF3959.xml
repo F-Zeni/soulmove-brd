@@ -54,8 +54,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>150</dataTypeSize>
 <checkConstraint>
-<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CONQUISTA_NOME_UK
-	UNIQUE (nome)"/>
+<implementationDef dbType="Generic Constraint" definition="CONSTRAINT TB_CONQUISTA_NOME_UK  UNIQUE (nome)"/>
 </checkConstraint>
 <ownDataTypeParameters>150,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>

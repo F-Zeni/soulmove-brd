@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="conquista_id" id="3CA233A0-C062-3F7C-6ACD-77A85C160D4F">
+<Column name="TB_CONQUISTA_conquista_id" id="3CA233A0-C062-3F7C-6ACD-77A85C160D4F">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>53C26300-332F-68D9-55A6-E4538038A14A</generatorID>
@@ -23,7 +23,7 @@
 <colAssociation fkAssociation="6748C58C-3F8C-0EDC-8E5E-72C5C994A35C" referredColumn="85F3A4B0-1DB8-1E33-8F9E-4B692E6C03D4"/>
 </associations>
 </Column>
-<Column name="usuario_id" id="B7359358-1C0E-31DA-F0FE-81767E9EAC0E">
+<Column name="TB_USUARIO_usuario_id" id="B7359358-1C0E-31DA-F0FE-81767E9EAC0E">
 <createdBy>wspot</createdBy>
 <createdTime>2026-10-20 11:48:12 UTC</createdTime>
 <generatorID>72E8E74D-1767-609B-A0B7-8D8F82F29004</generatorID>

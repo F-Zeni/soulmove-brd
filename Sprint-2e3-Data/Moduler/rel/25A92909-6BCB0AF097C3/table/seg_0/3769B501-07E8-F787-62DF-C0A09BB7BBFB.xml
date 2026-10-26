@@ -166,7 +166,7 @@
 <colUsage columnID="A4A71371-C98B-47EE-B467-76E0D9087B04"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="DC8B5C64-F180-EFC9-9E30-EB1FE2D20A55" name="TB_USUARIO_MISSAO_FK">
+<ind_PK_UK id="DC8B5C64-F180-EFC9-9E30-EB1FE2D20A55" name="TB_USUARIO_MISSAO_MIS_FK">
 <createdBy>wspot</createdBy>
 <createdTime>2026-09-07 03:49:45 UTC</createdTime>
 <generatorID>C3A7F008-3D57-10E1-5A7D-A5846959CF10</generatorID>
