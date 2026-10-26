@@ -317,7 +317,22 @@ LEFT JOIN (
         WHERE  uc.flag_titulo_atual = 'S'
       ) t ON t.usuario_id = u.usuario_id;
 
-SELECT * FROM vw_usuario_resumo;
+CREATE OR REPLACE VIEW VW_USUARIO_HISTORICO AS 
+SELECT 
+    u.usuario_id,
+    SUM(v.carbono_economizado) AS kg_CO2,
+    SUM(
+        CASE
+            WHEN v.km_percorrido > 10 THEN 1
+            ELSE 0
+        END)
+    AS trajetos,
+    COUNT(um.usuario_id) AS missoes
+FROM tb_usuario u
+LEFT JOIN tb_viagem v ON v.usuario_id = u.usuario_id
+LEFT JOIN tb_usuario_missao um ON um.usuario_id = u.usuario_id
+GROUP BY u.usuario_id;
+
 
 -- COMENTARIOS
 
