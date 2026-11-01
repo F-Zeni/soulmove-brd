@@ -334,12 +334,13 @@ LEFT JOIN tb_usuario_missao um ON um.usuario_id = u.usuario_id
 GROUP BY u.usuario_id;
 
 
+-- =========================================================
 -- COMENTARIOS
+-- =========================================================
 
 -- TB_USUARIO
-
 COMMENT ON TABLE TB_USUARIO IS
-'Cadastro dos usuários da SoulMove, contendo dados de identificação, autenticação e tipo de acesso. Os pontos e créditos são calculados a partir das movimentações registradas nas tabelas relacionadas.';
+'Cadastro dos usuários da SoulMove, contendo informações de identificação, autenticação e tipo de acesso.';
 
 COMMENT ON COLUMN TB_USUARIO.usuario_id IS
 'Identificador único do usuário, gerado automaticamente e utilizado como chave primária.';
@@ -348,55 +349,52 @@ COMMENT ON COLUMN TB_USUARIO.nome IS
 'Nome completo do usuário cadastrado na plataforma.';
 
 COMMENT ON COLUMN TB_USUARIO.email IS
-'E-mail único do usuário, utilizado para identificação e acesso à plataforma.';
+'Endereço de e-mail único do usuário, utilizado para identificação e acesso à plataforma.';
 
 COMMENT ON COLUMN TB_USUARIO.senha IS
-'Senha de autenticação do usuário, que deve ser armazenada como hash criptográfico, nunca em texto puro.';
+'Senha de autenticação do usuário, armazenada como hash criptográfico.';
+
+COMMENT ON COLUMN TB_USUARIO.tipo_usuario IS
+'Perfil de acesso do usuário. Os valores permitidos são comum e admin. O valor padrão é comum.';
 
 COMMENT ON COLUMN TB_USUARIO.data_cadastro IS
 'Data de cadastro do usuário. Assume a data atual quando não informada.';
 
-COMMENT ON COLUMN TB_USUARIO.tipo_usuario IS
-'Perfil de acesso do usuário. Valores permitidos: comum e admin. O valor padrão é comum.';
-
 
 -- TB_CARTEIRA
-
 COMMENT ON TABLE TB_CARTEIRA IS
-'Carteira de mobilidade que armazena o saldo de créditos de cada usuário. Cada usuário pode possuir no máximo uma carteira.';
+'Carteira de mobilidade responsável por armazenar os créditos disponíveis de cada usuário. Cada usuário pode possuir apenas uma carteira.';
 
 COMMENT ON COLUMN TB_CARTEIRA.carteira_id IS
 'Identificador único da carteira, gerado automaticamente e utilizado como chave primária.';
 
 COMMENT ON COLUMN TB_CARTEIRA.usuario_id IS
-'Identificador do usuário proprietário da carteira. É chave estrangeira para TB_USUARIO e não pode se repetir nesta tabela.';
+'Identificador do usuário proprietário da carteira. É chave estrangeira para TB_USUARIO e possui restrição de unicidade.';
 
 COMMENT ON COLUMN TB_CARTEIRA.saldo_mobilidade IS
-'Saldo de créditos de mobilidade disponível na carteira, expresso em reais. O valor padrão é zero e o saldo não pode ser negativo.';
+'Saldo de créditos de mobilidade disponível na carteira, expresso em reais. O valor padrão é zero e não pode ser negativo.';
 
 
 -- TB_TIPO_VEICULO
-
 COMMENT ON TABLE TB_TIPO_VEICULO IS
-'Catálogo de tipos de veículos e modalidades de transporte utilizados no cálculo das emissões e da economia de carbono das viagens.';
+'Catálogo dos meios de transporte utilizados no cálculo das emissões e da economia de carbono das viagens.';
 
 COMMENT ON COLUMN TB_TIPO_VEICULO.tipo_veiculo_id IS
 'Identificador único do tipo de veículo, gerado automaticamente e utilizado como chave primária.';
 
 COMMENT ON COLUMN TB_TIPO_VEICULO.nome IS
-'Nome único do tipo de veículo ou modalidade de transporte, utilizado para identificar o meio de deslocamento.';
+'Nome único do tipo de veículo ou modalidade de transporte.';
 
 COMMENT ON COLUMN TB_TIPO_VEICULO.fator_emissao IS
-'Fator de emissão de carbono por passageiro-quilômetro, utilizado pelo backend para calcular as emissões das viagens. O valor não pode ser negativo e zero representa ausência de emissão direta no modelo.';
+'Fator de emissão de carbono por passageiro-quilômetro, utilizado nos cálculos de emissão e economia de carbono. Não pode ser negativo.';
 
 COMMENT ON COLUMN TB_TIPO_VEICULO.flag_referencia IS
-'Indica se o tipo de veículo é utilizado como referência para calcular o carbono economizado. S significa sim e N significa não. O índice único permite no máximo um veículo de referência.';
+'Indica se o meio de transporte é utilizado como referência para o cálculo do carbono economizado. S significa sim e N significa não. O índice único permite no máximo um registro marcado como referência.';
 
 
 -- TB_VIAGEM
-
 COMMENT ON TABLE TB_VIAGEM IS
-'Registro das viagens realizadas pelos usuários, contendo origem, destino, distância percorrida, tipo de transporte, emissões e economia de carbono.';
+'Registro das viagens realizadas pelos usuários, contendo informações sobre deslocamento, transporte utilizado e impacto ambiental.';
 
 COMMENT ON COLUMN TB_VIAGEM.viagem_id IS
 'Identificador único da viagem, gerado automaticamente e utilizado como chave primária.';
@@ -405,7 +403,7 @@ COMMENT ON COLUMN TB_VIAGEM.usuario_id IS
 'Identificador do usuário que realizou a viagem. É chave estrangeira para TB_USUARIO.';
 
 COMMENT ON COLUMN TB_VIAGEM.tipo_veiculo_id IS
-'Identificador do tipo de transporte utilizado na viagem. É chave estrangeira para TB_TIPO_VEICULO.';
+'Identificador do meio de transporte utilizado na viagem. É chave estrangeira para TB_TIPO_VEICULO.';
 
 COMMENT ON COLUMN TB_VIAGEM.origem IS
 'Local de origem do deslocamento realizado pelo usuário.';
@@ -414,190 +412,182 @@ COMMENT ON COLUMN TB_VIAGEM.destino IS
 'Local de destino do deslocamento realizado pelo usuário.';
 
 COMMENT ON COLUMN TB_VIAGEM.km_percorrido IS
-'Distância percorrida na viagem, expressa em quilômetros. Deve ser maior que zero.';
+'Distância percorrida pelo usuário na viagem, expressa em quilômetros. Deve ser maior que zero.';
 
 COMMENT ON COLUMN TB_VIAGEM.carbono_emitido IS
-'Quantidade de carbono emitida na viagem, expressa em quilogramas de CO2 equivalente, calculada com base na distância percorrida e no fator de emissão do tipo de transporte. Deve ser maior ou igual a zero.';
+'Quantidade de carbono emitida durante a viagem, expressa em quilogramas de CO2 equivalente.';
 
 COMMENT ON COLUMN TB_VIAGEM.carbono_economizado IS
-'Quantidade de carbono economizada em relação ao veículo de referência, expressa em quilogramas de CO2 equivalente. Deve ser maior ou igual a zero.';
+'Quantidade de carbono economizada em comparação com o meio de transporte definido como referência.';
 
 COMMENT ON COLUMN TB_VIAGEM.data_viagem IS
 'Data em que a viagem foi realizada. Assume a data atual quando não informada.';
 
 
 -- TB_TIPO_MISSAO
-
 COMMENT ON TABLE TB_TIPO_MISSAO IS
-'Catálogo dos tipos de missão da gamificação, definindo a unidade de medida utilizada para acompanhar o progresso dos usuários.';
+'Catálogo dos tipos de missão, definindo como o progresso dos objetivos será medido e acompanhado.';
 
 COMMENT ON COLUMN TB_TIPO_MISSAO.tipo_missao_id IS
 'Identificador único do tipo de missão, gerado automaticamente e utilizado como chave primária.';
 
 COMMENT ON COLUMN TB_TIPO_MISSAO.nome IS
-'Nome único do tipo de missão, utilizado para identificar e classificar a forma de acompanhamento do objetivo.';
+'Nome único utilizado para identificar e classificar o tipo de missão.';
 
 COMMENT ON COLUMN TB_TIPO_MISSAO.descricao IS
-'Descrição do tipo de missão e da finalidade de sua classificação.';
+'Descrição da finalidade e das características do tipo de missão.';
 
 COMMENT ON COLUMN TB_TIPO_MISSAO.unidade_medida IS
-'Unidade utilizada para medir o progresso da missão, como quilômetros, quilogramas de CO2 equivalente, quantidade de missões ou trajetos.';
+'Unidade utilizada para medir o progresso da missão, como quilômetros, quilogramas de CO2 equivalente ou quantidade de trajetos.';
 
 
 -- TB_TIPO_CONQUISTA
-
 COMMENT ON TABLE TB_TIPO_CONQUISTA IS
-'Catálogo que classifica as conquistas de acordo com a unidade de medida utilizada para avaliar seus objetivos.';
+'Catálogo responsável por classificar as conquistas de acordo com suas unidades de medida e critérios de avaliação.';
 
 COMMENT ON COLUMN TB_TIPO_CONQUISTA.tipo_conquista_id IS
 'Identificador único do tipo de conquista, gerado automaticamente e utilizado como chave primária.';
 
-COMMENT ON COLUMN TB_TIPO_CONQUISTA.unidade_medida IS
-'Unidade utilizada para medir a meta de uma conquista, como quilômetros percorridos, pontos acumulados ou quantidade de viagens.';
-
 COMMENT ON COLUMN TB_TIPO_CONQUISTA.nome IS
-'Nome utilizado para identificar e classificar um tipo de conquista. Quando informado, deve ser único.';
+'Nome único utilizado para identificar e classificar o tipo de conquista.';
+
+COMMENT ON COLUMN TB_TIPO_CONQUISTA.unidade_medida IS
+'Unidade utilizada para avaliar a meta de uma conquista, como quilômetros percorridos, pontos acumulados ou quantidade de viagens.';
 
 COMMENT ON COLUMN TB_TIPO_CONQUISTA.descricao IS
 'Descrição da finalidade e dos critérios gerais do tipo de conquista.';
 
 
 -- TB_CONQUISTA
-
 COMMENT ON TABLE TB_CONQUISTA IS
-'Catálogo de conquistas disponíveis na SoulMove, contendo suas metas, pontuação, descrições e títulos que podem ser desbloqueados pelos usuários.';
+'Catálogo de conquistas disponíveis na SoulMove, contendo metas, pontuações, descrições e títulos que podem ser desbloqueados pelos usuários.';
 
 COMMENT ON COLUMN TB_CONQUISTA.conquista_id IS
 'Identificador único da conquista, gerado automaticamente e utilizado como chave primária.';
 
 COMMENT ON COLUMN TB_CONQUISTA.tipo_conquista_id IS
-'Identificador do tipo ao qual a conquista pertence. É chave estrangeira para TB_TIPO_CONQUISTA.';
+'Identificador do tipo de conquista ao qual o registro pertence. É chave estrangeira para TB_TIPO_CONQUISTA.';
 
 COMMENT ON COLUMN TB_CONQUISTA.meta IS
-'Valor que deve ser atingido para cumprir o critério da conquista, interpretado de acordo com a unidade de medida definida em TB_TIPO_CONQUISTA.';
+'Valor que deve ser alcançado para desbloquear a conquista, interpretado conforme a unidade de medida definida em TB_TIPO_CONQUISTA.';
 
 COMMENT ON COLUMN TB_CONQUISTA.nome IS
-'Nome interno e único utilizado para identificar a conquista no sistema.';
+'Nome único utilizado para identificar a conquista no sistema.';
 
 COMMENT ON COLUMN TB_CONQUISTA.titulo IS
-'Título exibido no perfil do usuário quando a conquista correspondente é desbloqueada e selecionada como título atual.';
+'Título que pode ser selecionado pelo usuário após desbloquear a conquista.';
 
 COMMENT ON COLUMN TB_CONQUISTA.descricao IS
-'Descrição dos critérios ou das condições necessárias para obter a conquista.';
+'Descrição das condições necessárias para desbloquear a conquista.';
 
 COMMENT ON COLUMN TB_CONQUISTA.pontos IS
-'Quantidade de pontos associada à conquista. Deve ser maior que zero.';
+'Quantidade de pontos concedida pela conquista. Deve ser maior que zero.';
 
 
 -- TB_IMAGEM_MISSAO
-
 COMMENT ON TABLE TB_IMAGEM_MISSAO IS
-'Armazena os arquivos de imagem associados às missões, permitindo que uma missão faça referência a uma imagem cadastrada.';
+'Armazena os arquivos de imagem que podem ser associados às missões por meio de seus identificadores.';
 
 COMMENT ON COLUMN TB_IMAGEM_MISSAO.imagem_missao_id IS
-'Identificador único da imagem da missão, gerado automaticamente e utilizado como chave primária.';
+'Identificador único da imagem, gerado automaticamente e utilizado como chave primária.';
 
 COMMENT ON COLUMN TB_IMAGEM_MISSAO.dados_imagem IS
 'Conteúdo binário do arquivo de imagem, armazenado no formato BLOB.';
 
 COMMENT ON COLUMN TB_IMAGEM_MISSAO.tipo_mime IS
-'Tipo MIME do arquivo armazenado, utilizado para identificar seu formato, como image/png ou image/jpeg.';
+'Identificação do formato do arquivo de imagem, como image/png ou image/jpeg.';
 
 
 -- TB_MISSAO
-
 COMMENT ON TABLE TB_MISSAO IS
-'Catálogo de missões de mobilidade sustentável, com objetivos, metas, pontuação, periodicidade, prazo e referências opcionais a imagens e conquistas.';
+'Catálogo de missões de mobilidade sustentável, contendo objetivos, metas, pontuação, periodicidade, prazo e referências opcionais a imagens e conquistas.';
 
 COMMENT ON COLUMN TB_MISSAO.missao_id IS
 'Identificador único da missão, gerado automaticamente e utilizado como chave primária.';
 
 COMMENT ON COLUMN TB_MISSAO.tipo_missao_id IS
-'Identificador do tipo de missão, utilizado para definir a unidade de medida do objetivo. É chave estrangeira para TB_TIPO_MISSAO.';
+'Identificador do tipo de missão, responsável por definir a unidade de medida utilizada no acompanhamento do objetivo. É chave estrangeira para TB_TIPO_MISSAO.';
 
 COMMENT ON COLUMN TB_MISSAO.imagem_missao_id IS
-'Identificador da imagem associada à missão. É chave estrangeira opcional para TB_IMAGEM_MISSAO.';
+'Identificador da imagem associada à missão. É uma chave estrangeira opcional para TB_IMAGEM_MISSAO.';
 
 COMMENT ON COLUMN TB_MISSAO.conquista_id IS
-'Identificador da conquista associada à missão. É chave estrangeira opcional para TB_CONQUISTA e pode indicar uma conquista relacionada ao cumprimento da missão.';
+'Identificador da conquista relacionada à missão. É uma chave estrangeira opcional para TB_CONQUISTA.';
 
 COMMENT ON COLUMN TB_MISSAO.titulo IS
-'Título único da missão, utilizado para identificá-la e apresentá-la ao usuário.';
+'Título único utilizado para identificar e apresentar a missão ao usuário.';
 
 COMMENT ON COLUMN TB_MISSAO.descricao IS
-'Descrição das atividades ou condições que o usuário deve cumprir para concluir a missão.';
+'Descrição das atividades e condições necessárias para concluir a missão.';
 
 COMMENT ON COLUMN TB_MISSAO.meta_missao IS
-'Valor que deve ser atingido para concluir a missão, interpretado conforme a unidade de medida de TB_TIPO_MISSAO. Deve ser maior que zero.';
+'Valor que deve ser alcançado para concluir a missão, interpretado conforme a unidade de medida de TB_TIPO_MISSAO. Deve ser maior que zero.';
 
 COMMENT ON COLUMN TB_MISSAO.pontos_missao IS
-'Quantidade de pontos previstos para a conclusão da missão. Deve ser maior que zero.';
+'Quantidade de pontos concedida pela conclusão da missão. Deve ser maior que zero.';
 
 COMMENT ON COLUMN TB_MISSAO.periodicidade_dias IS
-'Intervalo em dias para a missão voltar a ficar disponível. Os valores permitidos são 1 para diária, 7 para semanal e 30 para mensal. NULL indica ausência de recorrência configurada.';
+'Intervalo em dias para a missão voltar a ficar disponível. Os valores permitidos são 1 para diária, 7 para semanal e 30 para mensal. NULL indica ausência de periodicidade configurada.';
 
 COMMENT ON COLUMN TB_MISSAO.prazo_dias IS
-'Quantidade de dias disponível para concluir a missão. Deve ser maior que zero quando informada. NULL indica que não há prazo configurado.';
+'Quantidade de dias disponíveis para concluir a missão. Deve ser maior que zero quando informada. NULL indica ausência de prazo configurado.';
 
 
 -- TB_USUARIO_MISSAO
-
 COMMENT ON TABLE TB_USUARIO_MISSAO IS
-'Tabela transacional que registra cada execução de missão por usuário, incluindo status, progresso, datas e pontuação efetivamente recebida.';
+'Tabela transacional que registra as execuções das missões pelos usuários, armazenando o progresso individual, status, datas e pontuação recebida.';
 
 COMMENT ON COLUMN TB_USUARIO_MISSAO.usuario_missao_id IS
 'Identificador único da execução da missão, gerado automaticamente e utilizado como chave primária.';
 
 COMMENT ON COLUMN TB_USUARIO_MISSAO.usuario_id IS
-'Identificador do usuário que executa a missão. É chave estrangeira para TB_USUARIO.';
+'Identificador do usuário responsável pela execução da missão. É chave estrangeira para TB_USUARIO.';
 
 COMMENT ON COLUMN TB_USUARIO_MISSAO.missao_id IS
 'Identificador da missão executada pelo usuário. É chave estrangeira para TB_MISSAO.';
 
 COMMENT ON COLUMN TB_USUARIO_MISSAO.status_missao IS
-'Situação atual da execução da missão. Valores permitidos: pendente, em andamento, concluida e cancelada. O valor padrão é pendente.';
+'Situação atual da execução da missão. Os valores permitidos são pendente, em andamento, concluida e cancelada. O valor padrão é pendente.';
 
 COMMENT ON COLUMN TB_USUARIO_MISSAO.pontuacao_recebida IS
-'Quantidade de pontos efetivamente recebidos pela execução da missão. O valor padrão é zero e a pontuação não pode ser negativa.';
+'Quantidade de pontos efetivamente recebidos pelo usuário pela conclusão da missão. O valor padrão é zero e não pode ser negativo.';
 
 COMMENT ON COLUMN TB_USUARIO_MISSAO.progresso_atual IS
-'Valor atual do progresso do usuário em relação à meta da missão, medido conforme a unidade definida em TB_TIPO_MISSAO. O valor padrão é zero e não pode ser negativo.';
+'Valor atual do progresso individual do usuário em relação à meta da missão, conforme a unidade de medida definida em TB_TIPO_MISSAO.';
 
 COMMENT ON COLUMN TB_USUARIO_MISSAO.data_inicio IS
-'Data em que o usuário iniciou a execução da missão. É obrigatória para missões em andamento ou concluídas, conforme a restrição de datas.';
+'Data em que o usuário iniciou a execução da missão. Deve ser informada para missões em andamento ou concluídas.';
 
 COMMENT ON COLUMN TB_USUARIO_MISSAO.data_conclusao IS
-'Data em que a execução da missão foi concluída. É obrigatória quando status_missao é concluida e não pode ser anterior à data de início quando ambas as datas são informadas.';
+'Data em que o usuário concluiu a missão. É obrigatória quando o status é concluida e não pode ser anterior à data de início.';
 
 
 -- TB_COMPROVANTE
-
 COMMENT ON TABLE TB_COMPROVANTE IS
-'Registra os comprovantes enviados pelos usuários para validar a conclusão de uma execução de missão. Cada execução pode possuir no máximo um comprovante cadastrado por vez.';
+'Armazena os comprovantes enviados pelos usuários para validação das execuções de missões. Cada execução pode possuir no máximo um comprovante.';
 
 COMMENT ON COLUMN TB_COMPROVANTE.comprovante_id IS
 'Identificador único do comprovante, gerado automaticamente e utilizado como chave primária.';
 
 COMMENT ON COLUMN TB_COMPROVANTE.usuario_missao_id IS
-'Identificador da execução de missão validada pelo comprovante. É chave estrangeira única para TB_USUARIO_MISSAO, permitindo no máximo um comprovante por execução.';
+'Identificador da execução da missão à qual o comprovante pertence. É chave estrangeira única para TB_USUARIO_MISSAO.';
 
 COMMENT ON COLUMN TB_COMPROVANTE.data_envio IS
-'Data em que o comprovante foi enviado pelo usuário. Assume a data atual quando não informada.';
+'Data em que o usuário enviou o comprovante. Assume a data atual quando não informada.';
 
 COMMENT ON COLUMN TB_COMPROVANTE.data_validacao IS
-'Data em que o comprovante foi validado. É obrigatória quando o status é diferente de pendente, conforme a restrição de validação.';
+'Data em que o comprovante foi aprovado ou rejeitado. É obrigatória quando o status não é pendente.';
 
 COMMENT ON COLUMN TB_COMPROVANTE.status_validacao IS
-'Situação da validação do comprovante. Valores permitidos: pendente, aprovado e rejeitado.';
+'Situação da validação do comprovante. Os valores permitidos são pendente, aprovado e rejeitado.';
 
 COMMENT ON COLUMN TB_COMPROVANTE.arquivo IS
-'Conteúdo binário do arquivo enviado como comprovante, armazenado no formato BLOB.';
+'Arquivo enviado pelo usuário como comprovante da execução da missão, armazenado em formato binário BLOB.';
 
 
 -- TB_USUARIO_CONQUISTA
-
 COMMENT ON TABLE TB_USUARIO_CONQUISTA IS
-'Tabela associativa que registra as conquistas desbloqueadas por cada usuário, a data de obtenção, os pontos recebidos e a conquista selecionada como título atual.';
+'Tabela associativa que registra as conquistas desbloqueadas pelos usuários, incluindo data de obtenção, pontuação recebida e seleção do título atual.';
 
 COMMENT ON COLUMN TB_USUARIO_CONQUISTA.usuario_id IS
 'Identificador do usuário que desbloqueou a conquista. Parte da chave primária composta e chave estrangeira para TB_USUARIO.';
@@ -609,16 +599,15 @@ COMMENT ON COLUMN TB_USUARIO_CONQUISTA.data_conquista IS
 'Data em que o usuário desbloqueou a conquista. Assume a data atual quando não informada.';
 
 COMMENT ON COLUMN TB_USUARIO_CONQUISTA.pontuacao_recebida IS
-'Quantidade de pontos recebidos pelo usuário pela conquista. O valor padrão é zero.';
+'Quantidade de pontos recebidos pelo usuário ao desbloquear a conquista. O valor padrão é zero.';
 
 COMMENT ON COLUMN TB_USUARIO_CONQUISTA.flag_titulo_atual IS
-'Indica se a conquista está selecionada como título atual do usuário. S significa sim e N significa não. O índice único permite que cada usuário tenha no máximo uma conquista marcada como título atual.';
+'Indica se a conquista foi selecionada pelo usuário como seu título atual. S significa sim e N significa não. O índice único permite no máximo um título atual por usuário.';
 
 
 -- TB_RECARGA
-
 COMMENT ON TABLE TB_RECARGA IS
-'Registra as solicitações de recarga de créditos de mobilidade realizadas pelos usuários, incluindo valor, código Pix, status e datas de processamento.';
+'Registra as solicitações de recarga de créditos de mobilidade dos usuários, incluindo valores, informações de pagamento, status e datas de processamento.';
 
 COMMENT ON COLUMN TB_RECARGA.recarga_id IS
 'Identificador único da recarga, gerado automaticamente e utilizado como chave primária.';
@@ -633,7 +622,7 @@ COMMENT ON COLUMN TB_RECARGA.codigo_pix_copia_cola IS
 'Código Pix no formato copia e cola utilizado para realizar o pagamento da recarga.';
 
 COMMENT ON COLUMN TB_RECARGA.status_recarga IS
-'Situação atual da recarga. Valores permitidos: pendente, creditado e recusado.';
+'Situação atual da solicitação de recarga. Os valores permitidos são pendente, creditado e recusado.';
 
 COMMENT ON COLUMN TB_RECARGA.data_solicitacao IS
 'Data em que a solicitação de recarga foi registrada. Assume a data atual quando não informada.';
@@ -642,13 +631,12 @@ COMMENT ON COLUMN TB_RECARGA.data_pagamento IS
 'Data em que o pagamento da recarga foi confirmado. Deve ser informada quando a recarga estiver creditada.';
 
 COMMENT ON COLUMN TB_RECARGA.data_credito IS
-'Data em que os créditos foram disponibilizados na carteira do usuário. Deve ser informada quando a recarga estiver creditada.';
+'Data em que os créditos da recarga foram disponibilizados ao usuário. Deve ser informada quando a recarga estiver creditada.';
 
 
 -- TB_CONVERSAO_PONTOS
-
 COMMENT ON TABLE TB_CONVERSAO_PONTOS IS
-'Histórico das conversões de pontos acumulados pelos usuários em créditos de mobilidade expressos em reais.';
+'Histórico das operações de conversão dos pontos acumulados pelos usuários em créditos de mobilidade.';
 
 COMMENT ON COLUMN TB_CONVERSAO_PONTOS.conversao_id IS
 'Identificador único da conversão, gerado automaticamente e utilizado como chave primária.';
@@ -657,7 +645,7 @@ COMMENT ON COLUMN TB_CONVERSAO_PONTOS.usuario_id IS
 'Identificador do usuário que realizou a conversão. É chave estrangeira para TB_USUARIO.';
 
 COMMENT ON COLUMN TB_CONVERSAO_PONTOS.pontos_convertidos IS
-'Quantidade de pontos utilizada na conversão. Deve ser maior que zero. O saldo disponível deve ser validado pela aplicação antes da operação.';
+'Quantidade de pontos utilizada na conversão. Deve ser maior que zero.';
 
 COMMENT ON COLUMN TB_CONVERSAO_PONTOS.creditos_gerados IS
 'Valor em reais dos créditos de mobilidade gerados pela conversão. Deve ser maior que zero.';
@@ -667,9 +655,8 @@ COMMENT ON COLUMN TB_CONVERSAO_PONTOS.data_conversao IS
 
 
 -- VW_USUARIO_RESUMO
-
 COMMENT ON TABLE VW_USUARIO_RESUMO IS
-'Visão consolidada dos usuários, apresentando pontos disponíveis após conversões, créditos gerados e título atual selecionado entre as conquistas desbloqueadas.';
+'Visão consolidada dos usuários, apresentando seus pontos disponíveis, créditos gerados por conversões e título atual selecionado.';
 
 COMMENT ON COLUMN VW_USUARIO_RESUMO.usuario_id IS
 'Identificador único do usuário, originado de TB_USUARIO.';
@@ -681,12 +668,29 @@ COMMENT ON COLUMN VW_USUARIO_RESUMO.email IS
 'E-mail do usuário, originado de TB_USUARIO.';
 
 COMMENT ON COLUMN VW_USUARIO_RESUMO.pontos_totais IS
-'Saldo de pontos calculado pela soma dos pontos de missões concluídas e dos pontos de conquistas desbloqueadas, subtraindo os pontos já convertidos. O resultado mínimo é zero.';
+'Saldo de pontos calculado pela soma das pontuações de missões concluídas e conquistas desbloqueadas, descontando os pontos convertidos. O resultado mínimo é zero.';
 
 COMMENT ON COLUMN VW_USUARIO_RESUMO.creditos_totais IS
-'Soma dos créditos em reais gerados pelas conversões de pontos do usuário. Retorna zero quando não há conversões registradas.';
+'Total de créditos em reais gerados pelas conversões de pontos do usuário. Retorna zero quando não existem conversões registradas.';
 
 COMMENT ON COLUMN VW_USUARIO_RESUMO.titulo_atual IS
-'Título da conquista que o usuário selecionou como atual, obtido a partir do registro marcado com flag_titulo_atual igual a S. Pode ser NULL quando nenhum título estiver selecionado.';
+'Título da conquista selecionada pelo usuário como atual. Pode ser NULL quando nenhum título estiver selecionado.';
+
+
+-- VW_USUARIO_HISTORICO
+COMMENT ON TABLE VW_USUARIO_HISTORICO IS
+'Visão que reúne informações históricas dos usuários relacionadas à economia de carbono, quantidade de trajetos acima de dez quilômetros e registros de execução de missões.';
+
+COMMENT ON COLUMN VW_USUARIO_HISTORICO.usuario_id IS
+'Identificador único do usuário, originado de TB_USUARIO.';
+
+COMMENT ON COLUMN VW_USUARIO_HISTORICO.kg_CO2 IS
+'Soma do carbono economizado nas viagens do usuário, expressa em quilogramas de CO2 equivalente.';
+
+COMMENT ON COLUMN VW_USUARIO_HISTORICO.trajetos IS
+'Quantidade de trajetos registrados com distância superior a dez quilômetros.';
+
+COMMENT ON COLUMN VW_USUARIO_HISTORICO.missoes IS
+'Quantidade de registros de execução de missões associados ao usuário.';
 
 COMMIT;

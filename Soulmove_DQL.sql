@@ -12,8 +12,8 @@ SELECT u.nome, c.carteira_id, c.saldo_mobilidade
     FROM TB_CARTEIRA c
         INNER JOIN TB_USUARIO u 
         ON u.usuario_id = c.usuario_id
-        ORDER BY u.nome;
-        
+        ORDER BY u.nome;   
+
 /* Consultar tipos de veiculo e seus fatores de emissão */
 SELECT tv.tipo_veiculo_id, tv.nome, tv.fator_emissao, tv.flag_referencia
     FROM TB_TIPO_VEICULO tv
@@ -220,7 +220,7 @@ SELECT m.missao_id, m.pontos_missao, m.titulo, m.descricao,
     FROM TB_MISSAO m
         INNER JOIN TB_TIPO_MISSAO t 
         ON t.tipo_missao_id = m.tipo_missao_id
-    WHERE m.missao_id = 3;
+    WHERE m.missao_id = 56;
 
 /* Lista todas as missões com tipo, unidade, prazo, periodicidade e conquista associada. */
 SELECT m.missao_id, m.pontos_missao, m.titulo, m.descricao,
@@ -248,8 +248,10 @@ SELECT m.missao_id, m.pontos_missao, m.titulo, m.descricao,
         INNER JOIN TB_TIPO_MISSAO t 
             ON t.tipo_missao_id = m.tipo_missao_id
     WHERE um.status_missao IN ('pendente', 'em andamento')
-        AND u.usuario_id = 3
+        AND u.usuario_id = 24
 ORDER BY m.titulo;
+
+select * from tb_usuario;
 
 /* Lista as missões concluídas pelo usuário informado. */
 SELECT m.missao_id, m.pontos_missao, m.titulo, m.descricao,
@@ -261,7 +263,7 @@ SELECT m.missao_id, m.pontos_missao, m.titulo, m.descricao,
             ON t.tipo_missao_id = m.tipo_missao_id
     INNER JOIN TB_USUARIO_MISSAO um 
         ON um.missao_id = m.missao_id
-    WHERE um.usuario_id = 3
+    WHERE um.usuario_id = 25
         AND um.status_missao = 'concluida'
 ORDER BY m.titulo;
 
@@ -336,19 +338,6 @@ SELECT v.viagem_id, v.data_viagem, v.origem, v.destino,
             ON tv.tipo_veiculo_id = v.tipo_veiculo_id
     WHERE v.usuario_id = 3
 ORDER BY v.data_viagem DESC;
-
-/* Busca uma viagem pelo ID, com os dados do usuário e do tipo de transporte. */
-SELECT v.viagem_id, v.data_viagem, v.origem, v.destino,
-       tv.nome AS tipo_veiculo, v.km_percorrido,
-       v.carbono_economizado, v.carbono_emitido,
-       u.usuario_id, u.nome AS usuario_nome, u.email AS usuario_email,
-       u.data_cadastro AS usuario_data_cadastro
-    FROM TB_VIAGEM v
-        INNER JOIN TB_USUARIO u 
-            ON u.usuario_id = v.usuario_id
-        INNER JOIN TB_TIPO_VEICULO tv 
-            ON tv.tipo_veiculo_id = v.tipo_veiculo_id
-    WHERE v.viagem_id = 3;
 
 /* Busca o conteúdo binário e o tipo MIME de uma imagem de missão. */
 SELECT dados_imagem, tipo_mime
