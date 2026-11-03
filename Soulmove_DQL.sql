@@ -184,7 +184,7 @@ SELECT c.conquista_id, c.pontos, c.nome, c.titulo, c.descricao, c.meta,
             ON t.tipo_conquista_id = c.tipo_conquista_id
 ORDER BY c.nome;
 
-/* Lista conquistas desbloqueadas pelo usuário informado. */
+/* Lista as conquistas desbloqueadas pelo usuário informado. */
 SELECT c.conquista_id, c.pontos, c.nome, c.titulo, c.descricao, c.meta,
        t.tipo_conquista_id, t.nome AS tipo_nome,
        t.descricao AS tipo_descricao, t.unidade_medida
@@ -198,7 +198,7 @@ SELECT c.conquista_id, c.pontos, c.nome, c.titulo, c.descricao, c.meta,
 )
 ORDER BY c.nome;
 
-/* Lista conquistas ainda não desbloqueadas pelo usuário informado. */
+/* Lista as conquistas ainda não desbloqueadas pelo usuário informado. */
 SELECT c.conquista_id, c.pontos, c.nome, c.titulo, c.descricao, c.meta,
        t.tipo_conquista_id, t.nome AS tipo_nome,
        t.descricao AS tipo_descricao, t.unidade_medida
@@ -220,7 +220,7 @@ SELECT m.missao_id, m.pontos_missao, m.titulo, m.descricao,
     FROM TB_MISSAO m
         INNER JOIN TB_TIPO_MISSAO t 
         ON t.tipo_missao_id = m.tipo_missao_id
-    WHERE m.missao_id = 56;
+    WHERE m.missao_id = 5;
 
 /* Lista todas as missões com tipo, unidade, prazo, periodicidade e conquista associada. */
 SELECT m.missao_id, m.pontos_missao, m.titulo, m.descricao,
@@ -248,10 +248,8 @@ SELECT m.missao_id, m.pontos_missao, m.titulo, m.descricao,
         INNER JOIN TB_TIPO_MISSAO t 
             ON t.tipo_missao_id = m.tipo_missao_id
     WHERE um.status_missao IN ('pendente', 'em andamento')
-        AND u.usuario_id = 24
+        AND u.usuario_id = 2
 ORDER BY m.titulo;
-
-select * from tb_usuario;
 
 /* Lista as missões concluídas pelo usuário informado. */
 SELECT m.missao_id, m.pontos_missao, m.titulo, m.descricao,
@@ -263,7 +261,7 @@ SELECT m.missao_id, m.pontos_missao, m.titulo, m.descricao,
             ON t.tipo_missao_id = m.tipo_missao_id
     INNER JOIN TB_USUARIO_MISSAO um 
         ON um.missao_id = m.missao_id
-    WHERE um.usuario_id = 25
+    WHERE um.usuario_id = 3
         AND um.status_missao = 'concluida'
 ORDER BY m.titulo;
 
@@ -278,6 +276,7 @@ SELECT tipo_missao_id, nome, descricao, unidade_medida
 ORDER BY nome;
 
 /* Verifica a existência de um tipo de missão pelo nome.
+   Usamos na API para verificar se a missão existe mesmo
    Na API, a ausência de linhas pode ser tratada como false. */
 SELECT tipo_missao_id
     FROM TB_TIPO_MISSAO
@@ -299,7 +298,7 @@ SELECT u.usuario_id, u.nome, u.email, u.senha, u.data_cadastro,
             ON c.conquista_id = uc.conquista_id
         LEFT JOIN VW_USUARIO_RESUMO vw 
             ON vw.usuario_id = u.usuario_id
-    WHERE u.usuario_id = 3;
+    WHERE u.usuario_id = 4;
 
 /* Busca o usuário por e-mail com carteira, título selecionado e resumo de pontos. */
 SELECT u.usuario_id, u.nome, u.email, u.senha, u.data_cadastro,
@@ -323,7 +322,7 @@ WHERE u.email = 'marcelo@gmail.com';
    VW_USUARIO_HISTORICO deve existir e conter as colunas usadas abaixo. */
 SELECT kg_CO2, trajetos, missoes
     FROM VW_USUARIO_HISTORICO
-WHERE usuario_id = 3;
+WHERE usuario_id = 1;
 
 /* Consulta o histórico de viagens de um usuário, com os dados do tipo de transporte. */
 SELECT v.viagem_id, v.data_viagem, v.origem, v.destino,
@@ -342,4 +341,4 @@ ORDER BY v.data_viagem DESC;
 /* Busca o conteúdo binário e o tipo MIME de uma imagem de missão. */
 SELECT dados_imagem, tipo_mime
     FROM TB_IMAGEM_MISSAO
-WHERE imagem_missao_id = 1;
+WHERE imagem_missao_id = 2;
