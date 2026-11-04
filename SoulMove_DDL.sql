@@ -13,6 +13,12 @@ CREATE TABLE TB_USUARIO (
         CHECK (tipo_usuario IN ('comum', 'admin'))
 );
 
+
+
+
+
+
+
 CREATE TABLE TB_CARTEIRA (
     carteira_id      INTEGER      GENERATED ALWAYS AS IDENTITY,
     usuario_id       INTEGER      NOT NULL,
